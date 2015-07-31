@@ -8,3 +8,5 @@
 
 #define KEY_LBL_CHAT @"Chat"
 #define KEY_LBL_OPPORTUNITY @"Opportunity"
+#define KEY_LBL_OPPORTUNITIES @"Opportunities"
+#define KEY_LBL_LEADERS @"Leaders"

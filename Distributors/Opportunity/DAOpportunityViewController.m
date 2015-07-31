@@ -45,13 +45,12 @@
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger idx = indexPath.row;
-    id value = [NSString stringWithFormat:@"Opportunity-%d", idx];
+    id value = [NSString stringWithFormat:@"Opportunity-%ld", (long)idx];
     return value;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DAOpportunityViewController *vc = [DAOpportunityViewController instance];
-    TLOG(@"self.naviC -> %@", self.navigationController);
     [self.navigationController pushViewController:vc animated:YES];
 }
 

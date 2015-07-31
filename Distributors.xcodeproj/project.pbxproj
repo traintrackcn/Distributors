@@ -17,6 +17,7 @@
 		4A8E8E401B6AFFE400F48CDD /* DAOpportunitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E3F1B6AFFE400F48CDD /* DAOpportunitiesViewController.m */; };
 		4A8E8E431B6B01CD00F48CDD /* DAOpportunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E421B6B01CD00F48CDD /* DAOpportunityViewController.m */; };
 		4A8E8E471B6B2C7B00F48CDD /* DARecentChatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E461B6B2C7B00F48CDD /* DARecentChatsViewController.m */; };
+		4A8E8E4C1B6B67A300F48CDD /* DAOpportunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E4B1B6B67A300F48CDD /* DAOpportunityCell.m */; };
 		4AB8B6B81B66081F008073B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8B6B71B66081F008073B6 /* main.m */; };
 		4AB8B6BB1B66081F008073B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8B6BA1B66081F008073B6 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,8 @@
 		4A8E8E461B6B2C7B00F48CDD /* DARecentChatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DARecentChatsViewController.m; sourceTree = "<group>"; };
 		4A8E8E481B6B31E100F48CDD /* DATextKeyDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DATextKeyDefine.h; sourceTree = "<group>"; };
 		4A8E8E491B6B328D00F48CDD /* DADefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADefine.h; sourceTree = "<group>"; };
+		4A8E8E4A1B6B67A300F48CDD /* DAOpportunityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityCell.h; sourceTree = "<group>"; };
+		4A8E8E4B1B6B67A300F48CDD /* DAOpportunityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityCell.m; sourceTree = "<group>"; };
 		4AB8B6B21B66081F008073B6 /* Distributors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Distributors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB8B6B61B66081F008073B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AB8B6B71B66081F008073B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,6 +79,8 @@
 				4A8E8E3F1B6AFFE400F48CDD /* DAOpportunitiesViewController.m */,
 				4A8E8E411B6B01CD00F48CDD /* DAOpportunityViewController.h */,
 				4A8E8E421B6B01CD00F48CDD /* DAOpportunityViewController.m */,
+				4A8E8E4A1B6B67A300F48CDD /* DAOpportunityCell.h */,
+				4A8E8E4B1B6B67A300F48CDD /* DAOpportunityCell.m */,
 			);
 			path = Opportunity;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A8E8E4C1B6B67A300F48CDD /* DAOpportunityCell.m in Sources */,
 				4AB8B6BB1B66081F008073B6 /* AppDelegate.m in Sources */,
 				4A8E8E391B6AFA1500F48CDD /* RootTabController.m in Sources */,
 				4A8E8E401B6AFFE400F48CDD /* DAOpportunitiesViewController.m in Sources */,

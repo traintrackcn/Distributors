@@ -15,12 +15,22 @@
 #import "NSObject+Singleton.h"
 #import "DATextKeyDefine.h"
 #import "DADefine.h"
+#import "RootViewController.h"
+#import "RootTabController.h"
+#import "DAOpportunityCell.h"
 //#import <UIKit/UIKit.h>
+
+typedef NS_ENUM(NSInteger, Section) {
+    SectionItem,
+    SectionCount
+};
 
 @interface DAOpportunitiesViewController(){
     
 }
 
+@property (nonatomic, strong) UIView *segmentControlContainer;
+@property (nonatomic, strong) UISegmentedControl *segmentControl;
 
 @end
 
@@ -29,17 +39,26 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-//        [self setTitle:@""];
-        [self.config setCellCls:[AGTextCell class] inSection:0];
+        
+        [self.config setCellCls:[DAOpportunityCell class] inSection:SectionItem];
+//        [self.config setCellCls:[AGTextCell class] inSection:SectionLeader];
         [self assembleTabBar];
-    }
+        
+            }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    
+    [self.segmentControlContainer addSubview:self.segmentControl];
+    [self.parentViewController.navigationItem setTitleView:self.segmentControlContainer];
+    
+//    TLOG(@"self.navigationItem -> %@", self.navigationItem);
+//    [self.parentViewController setTitle:[AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITIES]];
+
 }
 
 - (void)assembleTabBar{
@@ -51,14 +70,44 @@
 }
 
 
+#pragma mark - components
+
+- (UIView *)segmentControlContainer{
+    if (!_segmentControlContainer) {
+        _segmentControlContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.segmentControlW, 44.0)];
+        
+    }
+    return _segmentControlContainer;
+}
+
+- (UISegmentedControl *)segmentControl{
+    if (!_segmentControl) {
+        NSString *lblOpportunities = [AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITIES];
+        NSString *lblLeaders = [AGTextCoordinator textForKey:KEY_LBL_LEADERS];
+        CGFloat w = self.segmentControlW;
+        CGFloat h = 24.0;
+        CGFloat y = (self.segmentControlContainer.frame.size.height - h)/2.0;
+        _segmentControl = [[UISegmentedControl alloc] initWithItems:@[lblOpportunities, lblLeaders]];
+        [_segmentControl addTarget:self action:@selector(didTapSegmentControl:) forControlEvents:UIControlEventValueChanged];
+        [_segmentControl setFrame:CGRectMake(0, y, w, h)];
+    }
+    return _segmentControl;
+}
+
+#pragma mark - interactive ops
+
+- (void)didTapSegmentControl:(id)sender{
+    TLOG(@"sender -> %@", sender);
+}
+
 #pragma mark - table view data
 
 - (NSInteger)numberOfSections{
-    return 1;
+    return SectionCount;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
-    return 30;
+    return 10;
 }
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
@@ -73,6 +122,12 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+
+#pragma mark - styles
+
+- (CGFloat)segmentControlW{
+    return 200.0;
+}
 
 
 @end
