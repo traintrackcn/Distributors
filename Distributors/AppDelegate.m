@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
+#import "RootTabController.h"
+#import "AGUIDefine.h"
+#import "NSObject+Singleton.h"
+#import "AGNetworkDefine.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +20,95 @@
 @implementation AppDelegate
 
 
+#pragma mark - user configs
+
+- (void)configWindow{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+        RootTabController *rootTabC = [RootTabController singleton];
+    //    [rootTabC setViewControllers:@[]];
+    RootViewController *rootVC = [[RootViewController alloc] initWithRootViewController:rootTabC];
+    
+    [[self window] setRootViewController:rootVC];
+    
+
+    
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [[self window] makeKeyAndVisible];
+}
+
+- (void)configAGUI{
+//    [[AGUIDefine singleton] setLoginViewControllerClass:[AGLoginViewController class]];
+    [[AGUIDefine singleton] setRootViewController:[RootViewController singleton]];
+//    [[AGUIDefine singleton] setSessionRoleCodeBlock:^(void){
+//        return [AGSession singleton].roleCode;
+//    } ];
+//    
+//    [[AGUIDefine singleton] setSessionRoleIsRetailCustomerBlock:^(void){
+//        return [AGSession singleton].loggedRole.isRetailCustomer;
+//    } ];
+    
+//    [[AGUIDefine singleton] setAvailableLanguages:[AGConfigurationCoordinator singleton].availableLanguages];
+}
+
+- (void)configRemoter{
+    
+    //settting AGNetwork
+//    [[AGNetworkDefine singleton] setDefaultProtocolVersion:[AGConfigurationCoordinator singleton].defaultProtocolVersion];
+//    
+//    //    TLOG(@"[DSHostSettingManager selectedServerUrl] -> %@", [DSHostSettingManager selectedServerUrl]);
+//    
+//    [[AGNetworkDefine singleton] setDefaultServerUrl:[DSHostSettingManager selectedServerUrl]
+//     ];
+//    
+//    [[AGNetworkDefine singleton] setServerCurrentTimeReceivedBlock:^(NSString *serverCurrentTime) {
+//        //        TLOG(@"serverCurrentTime -> %@", serverCurrentTime);
+//        [[AGSession singleton] setServerCurrentTime:serverCurrentTime];
+//    }];
+//    
+//    
+//    [[AGNetworkDefine singleton] setClientID:[AGConfigurationCoordinator singleton].clientID];
+//    [[AGNetworkConfig singleton] setClientSecret:[AGConfigurationCoordinator singleton].clientSecret];
+//    //    [[AGNetworkConfig singleton] setIsOG:NO];
+//    
+//    [[AGNetworkDefine singleton] setErrorOccuredBlock:^(AGRemoterResult *result) {
+//        NSString *requestType = [result.request requestType];
+//        if (result.code == AGResultCodeInvalidAuthentication) {
+//            if ([requestType isEqualToString:[DSRequestType authenticationToken]]) return;
+//            TSNLOG(@"requestType -> %@", requestType);
+//            [AGLogoutViewController present];
+//        }else if(result.code == AGResultCodeInvalidAuthentication){
+//            
+//            if ([DSReachabilityManager singleton].isInternetReachable) {
+//                if ([DSReachabilityManager singleton].isHostReachable) {
+//                    [DSAlertUtil showGlobalPanelErrorOops];
+//                    //                    TLOG(@"Oops");be
+//                }else if (![DSReachabilityManager singleton].isHostReachable) {
+//                    [DSAlertUtil showGobalPanelErrorCannotReachHost];
+//                }
+//            }
+//            
+//            if(![DSReachabilityManager singleton].isInternetReachable) {
+//                [DSAlertUtil showGlobalPanelErrorConnectionError];
+//            }
+//        }
+//        
+//        
+//        [DSAlertUtil dismissSVP];
+//    }];
+}
+
+#pragma mark -
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self configRemoter];
+    [self configAGUI];
+    [self configWindow];
+    
     return YES;
 }
 

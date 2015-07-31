@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>title-dashboard</key>
+	<string>Dashboard</string>
+	<key>title-profile</key>
+	<string>Profile</string>
+	<key>title-shopping</key>
+	<string>Shopping</string>
+	<key>d-title-shopping</key>
+	<string>Shopping</string>
+	<key>title-autoship</key>
+	<string>Autoship</string>
+	<key>title-autoships</key>
+	<string>Autoships</string>
+	<key>title-gift-card</key>
+	<string>Gift Card</string>
+	<key>title-commission</key>
+	<string>Commission</string>
+	<key>title-commissions</key>
+	<string>Commissions</string>
+	<key>title-report</key>
+	<string>Report</string>
+	<key>title-reports</key>
+	<string>Reports</string>
+	<key>title-genealogy</key>
+	<string>Genealogy</string>
+	<key>title-registration</key>
+	<string>Registration</string>
+	<key>title-party</key>
+	<string>Party</string>
+	<key>title-setting</key>
+	<string>Setting</string>
+	<key>title-sponsor-id</key>
+	<string>Sponsor ID</string>
+	<key>title-login-id</key>
+	<string>Login</string>
+	<key>title-password</key>
+	<string>Password</string>
+	<key>title-password-confirmation</key>
+	<string>Password Confirmation</string>
+	<key>title-recent-orders</key>
+	<string>Recent Orders</string>
+	<key>title-welcome</key>
+	<string>BECOME\nBEAUTY</string>
+	<key>title-company-news</key>
+	<string>Company News</string>
+	<key>title-catalog</key>
+	<string>Catalog</string>
+	<key>title-loading</key>
+	<string>Loading ...</string>
+	<key>title-processing</key>
+	<string>Processing</string>
+	<key>title-searching</key>
+	<string>Searching</string>
+	<key>title-warning</key>
+	<string>Warning</string>
+	<key>title-default</key>
+	<string>My Office</string>
+	<key>content-user-agreement</key>
+	<string>In no event shall this application be liable for any direct, indirect, incidental or consequential damages such as, but not limited to, lost profits, or exemplary or punitive damages, or any other claims in connection with the usage of this application.</string>
+	<key>content-keyword-is-too-short</key>
+	<string>keyword is too short</string>
+	<key>content-keyword-is-too-long</key>
+	<string>keyword is too long</string>
+	<key>title-agree</key>
+	<string>Agree</string>
+	<key>title-disagree</key>
+	<string>Disagree</string>
+	<key>title-oops</key>
+	<string>Oops</string>
+	<key>title-create-account</key>
+	<string>Create Account</string>
+	<key>title-order</key>
+	<string>Order</string>
+	<key>title-sign-in</key>
+	<string>Log In</string>
+	<key>title-sign-out</key>
+	<string>Log Out</string>
+	<key>title-close</key>
+	<string>Close</string>
+	<key>title-rank-new</key>
+	<string>New</string>
+	<key>title-rank-miioon-angel</key>
+	<string>Miioon Angel</string>
+	<key>title-rank-emerald-angel</key>
+	<string>Emerald Angel</string>
+	<key>title-rank-ruby-angel</key>
+	<string>Ruby Angel</string>
+	<key>title-rank-diamond-angel</key>
+	<string>Diamond Angel</string>
+	<key>title-rank</key>
+	<string>Rank</string>
+	<key>title-new-distributors-in-last-30-days</key>
+	<string>New Advisors In Last 30 Days</string>
+	<key>title-distributor-id</key>
+	<string>ID</string>
+	<key>title-report-order</key>
+	<string>Order</string>
+	<key>title-report-organization</key>
+	<string>Organization</string>
+	<key>title-report-genealogy</key>
+	<string>Genealogy</string>
+	<key>title-commission-report</key>
+	<string>Monthly</string>
+	<key>title-commission-rank</key>
+	<string>Rank</string>
+	<key>title-qualification-volume</key>
+	<string>Qualification Volume</string>
+	<key>title-commission-volume</key>
+	<string>Commission Volume</string>
+	<key>title-personal-commission-volume</key>
+	<string>Personal Commission Volume</string>
+	<key>title-personal-volume</key>
+	<string>Personal Volume</string>
+	<key>title-direct-team-volume</key>
+	<string>Direct Team Volume</string>
+	<key>title-team-volume</key>
+	<string>Team Volume</string>
+	<key>title-indirect-team-volume</key>
+	<string>Indirect Team Volume</string>
+	<key>title-personal-sales</key>
+	<string>Personal Sales</string>
+	<key>title-rank-retail-customer</key>
+	<string>Retail Customer</string>
+	<key>title-rank-team-mate</key>
+	<string>Team Mate</string>
+	<key>title-rank-team-leader</key>
+	<string>Team Leader</string>
+	<key>title-rank-senior-team-leader</key>
+	<string>Senior Team Leader</string>
+	<key>title-rank-associate-director</key>
+	<string>Associate Director</string>
+	<key>title-rank-director</key>
+	<string>Director</string>
+	<key>title-rank-senior-director</key>
+	<string>Senior Director</string>
+	<key>title-rank-executive-director</key>
+	<string>Executive Director</string>
+	<key>title-rank-national-director</key>
+	<string>National Director</string>
+	<key>title-distributors</key>
+	<string>Advisors</string>
+	<key>title-distributor</key>
+	<string>Advisor</string>
+	<key>title-inactive-distributors</key>
+	<string>Inactive Users</string>
+	<key>title-rolling-three-month-pv</key>
+	<string>Rolling 3 Month PV</string>
+	<key>title-reactivation-distributors</key>
+	<string>Reactivation Advisors</string>
+	<key>content-registration-instruction</key>
+	<string>Create an account to\ncheck out faster and\ntrack new orders</string>
+	<key>content-registration-agreement</key>
+	<string>&lt;p&gt;1. I understand that as a become International Inc. (‘become’) Advisor: &lt;/br&gt;
+    a. I have the right to offer for sale become products and services in accordance with 
+      these Terms and Conditions. &lt;br/&gt;
+    b. I have the right to enroll persons in become. &lt;br/&gt;
+    c. If qualified, I have the right to earn commissions pursuant to the become Marketing 
+      and Compensation Plan. &lt;/p&gt;
+&lt;p&gt;2. I agree to present the become Marketing and Compensation Plan and become products and 
+    services as set forth in official become literature. &lt;/p&gt;
+&lt;p&gt;3. I agree that as a become Advisor I am an independent contractor, and not an employee, 
+    partner, legal representative, or franchisee of become. I agree that I will be solely 
+    responsible for paying all expenses incurred by myself, including but not limited to 
+    travel, food, lodging, secretarial, office, long distance telephone and other expenses. I 
+    UNDERSTAND THAT I SHALL NOT BE TREATED AS AN EMPLOYEE OF become 
+    FOR FEDERAL OR STATE TAX PURPOSES. Become is not responsible for 
+    withholding, and shall not withhold or deduct from my bonuses and commissions, if any, 
+    FICA, or taxes of any kind. &lt;/p&gt;
+&lt;p&gt;4. I have carefully read and agree to comply with the become Policies and Procedures and 
+    the become Marketing and Compensation Plan, both of which are incorporated into and 
+    made a part of these Terms and Conditions (these three documents shall be 
+    collectively referred to as the “Agreement”). I understand that I must be in good 
+    standing, and not in violation of the Agreement, to be eligible for bonuses or 
+    commissions from become. I understand that these Terms and Conditions, the become 
+    Policies and Procedures, or the become Marketing and Compensation Plan may be 
+    amended at the sole discretion of become, and I agree to abide by all such amendments. 
+    Notification of amendments shall be posted on the become website. Amendments shall 
+    become effective thirty (30) days after publication. The continuation of my become 
+    business or my acceptance of bonuses or commissions shall constitute my acceptance 
+    of any and all amendments. &lt;/p&gt;
+&lt;p&gt;5. The term of this Agreement is one (1) year from execution of this Agreement (“Initial 
+    Term”) and will automatically renew upon the anniversary date of the Initial Term 
+    (subject to prior cancellation for inactivity pursuant to the Policies and Procedures). If 
+    the Agreement is canceled or terminated for any reason, I understand that I will 
+    permanently lose all rights as an Advisor. I shall not be eligible to sell become products 
+    and services nor shall I be eligible to receive commissions, bonuses, or other income 
+    resulting from the activities of my former downline sales organization. In the event of 
+    cancellation, termination or non-renewal, I waive all rights I have, including but not 
+    limited to property rights, to my former downline organization and to any bonuses, 
+    commissions or other remuneration derived through the sales and other activities of 
+    my former downline organization. become reserves the right to terminate all Advisor 
+    Agreements upon thirty (30) days’ notice if become elects to: (1) cease business 
+    operations; (2) dissolve as a business entity; or (3) terminate distribution of its 
+    products and/or services via direct selling channels. Advisor may cancel this Agreement 
+    at any time, and for any reason, upon written notice to become at its principal business 
+    address. Become may cancel this Agreement for any reason upon 30 days advance 
+    written notice to Advisor. &lt;/p&gt;
+&lt;p&gt;6. I may not assign any rights or delegate my duties under the Agreement without the 
+    prior written consent of become. Any attempt to transfer or assign the Agreement 
+    without the express written consent of become renders the Agreement voidable at the 
+    option of become and may result in termination of my business. &lt;/p&gt;
+&lt;p&gt;7. I understand that if I fail to comply with the terms of the Agreement, become may, at its 
+    discretion, impose upon me disciplinary action as set forth in the Policies and 
+    Procedures. If I am in breach, default or violation of the Agreement at termination, I 
+    shall not be entitled to receive any further bonuses or commissions, whether or not 
+    the sales for such discounts, bonuses or commissions have been completed. &lt;/p&gt;
+&lt;p&gt;8. Become, its parent or affiliated companies, directors, officers, shareholders, employees, 
+    assigns, and agents (collectively referred to as “Affiliates”), shall not be liable for, and I 
+    release become and its Affiliates from, all claims for consequential and exemplary 
+    damages for any claim or cause of action relating to the Agreement. I further agree to 
+    release become and its Affiliates from all liability arising from or relating to the 
+    promotion or operation of my become business and any activities related to it (e.g., the 
+    presentation of become products or the become Marketing and Compensation Plan, the 
+    operation of a motor vehicle, the lease of meeting or training facilities), and agree to 
+    indemnify become for any liability, damages, fines, penalties, or other awards arising 
+    from any unauthorized conduct that I undertake in operating my business. &lt;/p&gt;
+&lt;p&gt;9. The Agreement, in its current form and as amended by become at its discretion, 
+    constitutes the entire contract between become and myself. Any promises, 
+    representations, offer, or other communications not expressly set forth in the 
+    Agreement are of no force or effect. &lt;/p&gt;
+&lt;p&gt;10. Any waiver by become of any breach of the Agreement must be in writing and signed by 
+    an authorized officer of become. Waiver by become of any breach of the Agreement by 
+    me shall not operate or be construed as a waiver of any subsequent breach. &lt;/p&gt;
+&lt;p&gt;11. If any provision of the Agreement is held to be invalid or unenforceable, such provision 
+    shall be reformed only to the extent necessary to make it enforceable, and the balance 
+    of the Agreement will remain in full force and effect. &lt;/p&gt;
+&lt;p&gt;12. This Agreement will be governed by and construed in accordance with the laws of the 
+    State of California without regard to principles of conflicts of laws. All disputes and 
+    claims relating to become, the Advisor Agreement, the become Marketing and 
+    Compensation Plan or its products and services, the rights and obligations of an 
+    independent Advisor and become, or any other claims or causes of action relating to the 
+    performance of either an independent Advisor or become under the Agreement or the 
+    become Policies and Procedures shall be settled totally and finally by arbitration in Los 
+    Angeles, California, or such other location as become prescribes, in accordance with the 
+    Federal Arbitration Act and the Commercial Arbitration Rules of the American 
+    Arbitration Association, except that all parties shall be entitled to discovery rights 
+    allowed under the Federal Rules of Civil Procedure. The Federal Arbitration Act shall 
+    govern all issues related to arbitration. The decision of the arbitrator shall be final and 
+    binding on the parties and may, if necessary, be reduced to a judgment in any court of 
+    competent jurisdiction. Each party to the arbitration shall be responsible for its own 
+    costs and expenses of arbitration, including legal and filing fees. This Agreement to 
+    arbitrate shall survive any termination or expiration of the Agreement. Nothing in the 
+    Agreement shall prevent become from applying to and obtaining from any court having 
+    jurisdiction a writ of attachment, garnishment, temporary injunction, preliminary 
+    injunction, permanent injunction or other equitable relief available to safeguard and 
+    protect its interest prior to, during or following the filing of any arbitration or other 
+    proceeding or pending the rendition of a decision or award in connection with any 
+    arbitration or other proceeding. &lt;/p&gt;
+&lt;p&gt;13. The parties consent to jurisdiction and venue before any federal or state court in Los 
+    Angeles County, State of California, for purposes of enforcing an award by an 
+    arbitrator or any other matter not subject to arbitration.&lt;/p&gt; 
+&lt;p&gt;14. Louisiana Residents: Notwithstanding the foregoing, Louisiana residents may bring an 
+    action against become with jurisdiction and venue as provided by Louisiana law. 
+&lt;p&gt;15. Montana Residents: A Montana resident may cancel his or her Advisor Agreement 
+    within fifteen (15) days from the date of enrollment, and may return his or her starter 
+    kit for a full refund within such time period. &lt;/p&gt;
+&lt;p&gt;16. If an Advisor wishes to bring an action against become for any act or omission relating 
+    to or arising from the Agreement, such action must be brought within one (1) year 
+    from the date of the alleged conduct giving rise to the cause of action. Failure to bring 
+    such action within such time shall bar all claims against become for such act or omission. 
+    Advisor waives all claims that any other statutes of limitations apply. &lt;/p&gt;
+&lt;p&gt;17. I authorize become to use my name, photograph, personal story and/or likeness in 
+    advertising or promotional materials and waive all claims for remuneration for such use.&lt;/p&gt; 
+&lt;p&gt;18. A faxed copy of the Agreement shall be treated as an original in all respects. You may 
+    CANCEL this transaction, without any penalty or obligation, within THREE (3) 
+    BUSINESS DAYS from your date of enrollment and five (5) business days for Alaska 
+    residents. If you cancel, any property traded in, any payments made by you under the 
+    contract or sale, and any negotiable instrument executed by you will be returned 
+    within TEN (10) BUSINESS DAYS following receipt by the seller of your cancellation 
+    notice, and any security interest arising out of the transaction will be canceled. If you 
+    cancel, you must make available to the seller at your residence, in substantially as good 
+    condition as when received, any goods delivered to you under this contract or sale, or 
+    you may, if you wish, comply with the instructions of the seller regarding the return 
+    shipment of the goods at the seller’s expense and risk. If you do make the goods 
+    available to the seller and the seller does not pick them up within twenty (20) days of 
+    the date of your Notice of Cancellation, you may retain or dispose of the goods 
+    without any further obligation. If you fail to make the goods available to the seller, or if 
+    you agree to return the goods to the seller and fail to do so, then you re- main liable 
+    for performance of all obligations under the contract. To cancel this transaction, mail 
+    or deliver a signed and dated copy of this Cancellation Notice or any other written 
+    notice to become, P.O. Box 1299, Turlock, CA 95381 NO LATER THAN MIDNIGHT 
+    of the third business day following the date set forth above. &lt;/p&gt;
+</string>
+	<key>content-registration-agreement-au</key>
+	<string></string>
+	<key>title-login-name-or-id</key>
+	<string>Login Name or ID</string>
+	<key>title-shipping-address</key>
+	<string>Shipping Address</string>
+	<key>title-shipping-method</key>
+	<string>Shipping Method</string>
+	<key>title-payment-method</key>
+	<string>Payment Method</string>
+	<key>title-orders</key>
+	<string>Orders</string>
+	<key>title-per-unit</key>
+	<string></string>
+	<key>title-zip</key>
+	<string>Zip Code</string>
+	<key>title-coupon</key>
+	<string>Coupon</string>
+	<key>title-submit</key>
+	<string>Submit</string>
+	<key>title-sign-up</key>
+	<string>Sign Up</string>
+	<key>title-review-order</key>
+	<string>Review Order</string>
+	<key>content-going-to-log-out</key>
+	<string>Going to log out</string>
+	<key>title-confirm</key>
+	<string>Confirm</string>
+	<key>title-add-to-cart</key>
+	<string>Add To Cart</string>
+	<key>title-email</key>
+	<string>Email</string>
+	<key>title-renewal</key>
+	<string>Renewal</string>
+	<key>title-pay-order</key>
+	<string>Pay Order</string>
+	<key>title-building</key>
+	<string>Building</string>
+	<key>title-select-date</key>
+	<string>Select Date</string>
+	<key>title-organization</key>
+	<string>Organization</string>
+	<key>title-downline</key>
+	<string>Downline</string>
+	<key>title-customers</key>
+	<string>Customers</string>
+	<key>title-customer-orders</key>
+	<string>Customer Orders</string>
+	<key>title-commission-monthly</key>
+	<string>Monthly</string>
+	<key>title-unilevel</key>
+	<string>Unilevel</string>
+	<key>title-dualteam</key>
+	<string>Dualteam</string>
+	<key>title-summary</key>
+	<string>Summary</string>
+	<key>title-unilevel-match</key>
+	<string>UL Match</string>
+	<key>title-generation</key>
+	<string>Generation</string>
+	<key>title-total-commission-amount</key>
+	<string>Total Commission Amount</string>
+	<key>title-country</key>
+	<string>Country</string>
+	<key>title-level</key>
+	<string>Level</string>
+	<key>title-paid-as-level</key>
+	<string>Paid as Level</string>
+	<key>title-distributor-name</key>
+	<string>Distributor Name</string>
+	<key>title-volume</key>
+	<string>Volume</string>
+	<key>title-percent-paid</key>
+	<string>%Paid</string>
+	<key>title-levels-sponsor</key>
+	<string>Levels Sponsor</string>
+	<key>title-levels-paid</key>
+	<string>Levels Paid</string>
+	<key>title-count</key>
+	<string>Count</string>
+	<key>title-earnings-global</key>
+	<string>Earnings(Global)</string>
+	<key>title-earnings-local</key>
+	<string>Earnings(Local)</string>
+	<key>title-active-until-date</key>
+	<string>Active Until Date</string>
+	<key>title-fast-track-volume</key>
+	<string>FastTrack Volume</string>
+	<key>title-level-minus</key>
+	<string>Level •</string>
+	<key>title-unilevel-volume</key>
+	<string>Unilevel Volume</string>
+	<key>title-dualteam-volume</key>
+	<string>Dualteam Volume</string>
+	<key>title-name</key>
+	<string>Name</string>
+	<key>title-news</key>
+	<string>Hot Topics</string>
+	<key>title-select-country</key>
+	<string>Select Country</string>
+	<key>lbl-number-of-active-distributors</key>
+	<string>Active Advisors</string>
+</dict>
+</plist>
