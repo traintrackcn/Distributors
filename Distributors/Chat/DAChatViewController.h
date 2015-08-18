@@ -8,7 +8,7 @@
 
 #import "AGViewController.h"
 
-@interface DARecentChatsViewController : AGViewController
+@interface DAChatViewController : AGViewController
 
 
 

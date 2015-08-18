@@ -6,5 +6,12 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#define TAB_IDX_OPPORTUNITY 0;
-#define TAB_IDX_CHAT 1;
+
+typedef NS_ENUM(NSInteger, RootTabIdx) {
+    RootTabIdxChat = 0,
+    RootTabIdxContacts,
+    RootTabIdxDiscover,
+    RootTabIdxOpportunity,
+    RootTabIdxSetting,
+    RootTabCount
+};

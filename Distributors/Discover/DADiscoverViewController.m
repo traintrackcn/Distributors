@@ -1,26 +1,34 @@
 //
-//  DARecentChatsViewController.m
+//  DADiscoverViewController.m
 //  Distributors
 //
-//  Created by Tao Yunfei on 7/31/15.
+//  Created by Tao Yunfei on 8/18/15.
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DARecentChatsViewController.h"
+#import "DADiscoverViewController.h"
+#import "AGTextCoordinator.h"
 #import "DADefine.h"
 #import "DATextKeyDefine.h"
-#import "AGTextCoordinator.h"
 
-@implementation DARecentChatsViewController
+@interface DADiscoverViewController ()
+
+@end
+
+@implementation DADiscoverViewController
+
 
 - (instancetype)init{
     self = [super init];
     if (self) {
-        //        [self setTitle:@""];
-//        [self.config setCellCls:[AGTextCell class] inSection:0];
         [self assembleTabBar];
     }
     return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -29,14 +37,17 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 - (void)assembleTabBar{
-    NSString *title = [AGTextCoordinator textForKey:KEY_LBL_CHAT];
+    NSString *title = [AGTextCoordinator textForKey:KEY_LBL_DISCOVER];
     UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = TAB_IDX_CHAT;
+    NSInteger tag = RootTabIdxDiscover;
     UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
     [self setTabBarItem:tabBarItem];
 }
-
 
 @end

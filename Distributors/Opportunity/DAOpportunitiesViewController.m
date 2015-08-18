@@ -18,9 +18,11 @@
 #import "RootViewController.h"
 #import "RootTabController.h"
 #import "DAOpportunityCell.h"
+#import "AGSearchCell.h"
 //#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, Section) {
+    SectionSearch,
     SectionItem,
     SectionCount
 };
@@ -40,6 +42,7 @@ typedef NS_ENUM(NSInteger, Section) {
     self = [super init];
     if (self) {
         
+        [self.config setCellCls:[AGSearchCell class] inSection:SectionSearch];
         [self.config setCellCls:[DAOpportunityCell class] inSection:SectionItem];
 //        [self.config setCellCls:[AGTextCell class] inSection:SectionLeader];
         [self assembleTabBar];
@@ -64,7 +67,7 @@ typedef NS_ENUM(NSInteger, Section) {
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY];
     UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = TAB_IDX_OPPORTUNITY;
+    NSInteger tag = RootTabIdxOpportunity;
     UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
     [self setTabBarItem:tabBarItem];
 }
@@ -107,7 +110,9 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    if (section == SectionSearch) return 1;
+    if (section == SectionItem) return 10;
+    return 0;
 }
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{

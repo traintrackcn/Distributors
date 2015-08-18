@@ -7,8 +7,12 @@
 //
 
 #import "RootTabController.h"
-#import "DAOpportunitiesViewController.h"
-#import "DARecentChatsViewController.h"
+//#import "DAOpportunitiesViewController.h"
+#import "DAOpportunityLoader.h"
+#import "DAChatViewController.h"
+#import "DAContactsViewController.h"
+#import "DASettingViewController.h"
+#import "DADiscoverViewController.h"
 
 @implementation RootTabController
 
@@ -17,8 +21,12 @@
     if (self) {
 //        [self setTitle:@"Hello"];
         [self setViewControllers:@[
-                                   [DAOpportunitiesViewController instance],
-                                   [DARecentChatsViewController instance]
+                                   [DAChatViewController instance],
+                                   [DAContactsViewController instance],
+                                   [DADiscoverViewController instance],
+                                   [DAOpportunityLoader instance],
+                                   [DASettingViewController instance]
+                                   
                                    ]];
         
     }
