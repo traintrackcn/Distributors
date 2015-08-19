@@ -10,7 +10,7 @@
 #import "DACurrency.h"
 
 @interface DACurrencyDataset(){
-    NSArray *_items;
+    NSArray *_sortedItems;
 }
 
 
@@ -23,6 +23,7 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
+        [self declareDatasetIsDictionary];
         [self.data setObject:[DACurrency instanceWithSymbol:@"$" code:@"US"] forKey:@"US"];
         [self.data setObject:[DACurrency instanceWithSymbol:@"C$" code:@"CA"] forKey:@"CA"];
         [self.data setObject:[DACurrency instanceWithSymbol:@"£" code:@"UK"] forKey:@"UK"];
@@ -31,7 +32,7 @@
     return self;
 }
 
-- (DACurrency *)current{
+- (DACurrency *)defaultItem{
     return [self itemForCode:@"US"];
 }
 
@@ -39,11 +40,11 @@
     return [self.data objectForKey:code.uppercaseString];
 }
 
-- (NSArray *)items{
-    if (!_items) {
-        _items = [self sortByKey:@"code" ascending:YES];
+- (NSArray *)sortedItems{
+    if (!_sortedItems) {
+        _sortedItems = [self sortByKey:@"code" ascending:YES];
     }
-    return _items;
+    return _sortedItems;
 }
 
 

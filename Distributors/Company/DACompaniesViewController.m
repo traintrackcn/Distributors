@@ -18,6 +18,8 @@
 #import "DACompanyCoordinator.h"
 #import "DACompany.h"
 #import "DANewCompanyViewController.h"
+#import "DAOpportunityTemplatePicker.h"
+#import "DAOpportunityTemplateCoordinator.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
@@ -97,7 +99,7 @@ typedef NS_ENUM(NSInteger, Section) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
-//    NSInteger idx = indexPath.row;
+    NSInteger idx = indexPath.row;
     
     if (section == SectionNewItem){
         DANewCompanyViewController *vc = [DANewCompanyViewController instance];
@@ -105,9 +107,17 @@ typedef NS_ENUM(NSInteger, Section) {
     }
     
     if (section == SectionItem) {
-//        DAOpportunitiesViewController *vc = [DAOpportunitiesViewController instance];
+        DAOpportunityTemplatePicker *vc = [DAOpportunityTemplatePicker instance];
 //        TLOG(@"self.naviC -> %@", self.navigationController);
-//        [self.parentViewController.navigationController pushViewController:vc animated:YES];
+        DACompany *item = [self.items objectAtIndex:idx];
+        [vc setCompany:item];
+        
+        [[DAOpportunityTemplateCoordinator singleton] requestTemplatesByCompany:item completion:^(NSArray *templates) {
+            [vc setTemplate:templates.firstObject];
+        }];
+        
+        
+        [self.parentViewController.navigationController pushViewController:vc animated:YES];
     }
     
 }

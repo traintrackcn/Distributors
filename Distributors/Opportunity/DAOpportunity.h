@@ -10,6 +10,7 @@
 
 @class DACompany;
 @class DAUser;
+@class DAEarningPotential;
 
 @interface DAOpportunity : AGModel
 
@@ -19,5 +20,7 @@
 
 @property (nonatomic, strong) DACompany *company;
 @property (nonatomic, strong) DAUser *owner;
+
+@property (nonatomic, strong) DAEarningPotential *earningPotential;
 
 @end

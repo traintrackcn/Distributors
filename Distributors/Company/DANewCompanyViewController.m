@@ -23,7 +23,6 @@
 }
 
 @property (nonatomic, strong) DACompany *company;
-@property (nonatomic, strong) NSArray *steps;
 
 @end
 
@@ -54,23 +53,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - table view stuff
-
-- (NSInteger)SectionSubject{
-    return 0;
-}
-
-- (NSInteger)SectionStepOne{
-    return self.SectionSubject + 1;
-}
-
-- (NSInteger)SectionEarningPotential{
-    return self.steps.count + 1;
-}
-
-- (NSInteger)SectionButton{
-    return self.SectionEarningPotential + 1;
-}
 
 #pragma mark - properties
 

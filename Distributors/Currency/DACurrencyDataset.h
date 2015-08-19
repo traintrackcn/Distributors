@@ -13,6 +13,6 @@
 @interface DACurrencyDataset : DADataset
 
 - (DACurrency *)itemForCode:(NSString *)code;
-- (DACurrency *)current;
+- (DACurrency *)defaultItem;
 
 @end

@@ -1,13 +1,13 @@
 //
-//  DAOpportunityLoader.h
+//  DAOpportunityCoordinator.m
 //  Distributors
 //
 //  Created by Tao Yunfei on 8/18/15.
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DAViewControllerLoader.h"
+#import "DAOpportunityCoordinator.h"
 
-@interface DAOpportunityLoader : DAViewControllerLoader
+@implementation DAOpportunityCoordinator
 
 @end

@@ -13,8 +13,6 @@
     
 }
 
-@property (nonatomic, strong) NSMutableArray *data;
-
 @end
 
 @implementation DACompanyCoordinator
@@ -22,6 +20,7 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
+        [self declareDatasetIsArray];
         [self.data addObject:[DACompany instanceWithName:@"BECOME"]];
         [self.data addObject:[DACompany instanceWithName:@"OG"]];
         [self.data addObject:[DACompany instanceWithName:@"WellnessPro"]];
@@ -29,17 +28,12 @@
     return self;
 }
 
-#pragma mark - properties
 
-- (NSMutableArray *)data{
-    if (!_data) {
-        _data = [NSMutableArray array];
-    }
-    return _data;
-}
+#pragma mark - remote ops
 
-- (NSArray *)items{
-    return self.data;
+- (void)requestSave:(DACompany *)company completion:(void (^)(id))completion{
+    [self.data addObject:company];
+    completion(nil);
 }
 
 @end

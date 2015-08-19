@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DADataset.h"
 
-@interface DACompanyCoordinator : NSObject
+@class DACompany;
+@interface DACompanyCoordinator : DADataset
 
-- (NSArray *)items;
+- (void)requestSave:(DACompany *)company completion:(void(^)(id callback))completion;
 
 @end

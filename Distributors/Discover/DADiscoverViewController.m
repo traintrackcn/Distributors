@@ -45,7 +45,7 @@
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_DISCOVER];
     UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = RootTabIdxDiscover;
+    NSInteger tag = DARootTabIdxDiscover;
     UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
     [self setTabBarItem:tabBarItem];
 }

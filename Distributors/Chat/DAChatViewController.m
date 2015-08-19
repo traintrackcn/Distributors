@@ -33,7 +33,7 @@
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_CHAT];
     UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = RootTabIdxChat;
+    NSInteger tag = DARootTabIdxChat;
     UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
     [self setTabBarItem:tabBarItem];
 }

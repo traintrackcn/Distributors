@@ -67,7 +67,7 @@ typedef NS_ENUM(NSInteger, Section) {
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY];
     UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = RootTabIdxOpportunity;
+    NSInteger tag = DARootTabIdxOpportunity;
     UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
     [self setTabBarItem:tabBarItem];
 }

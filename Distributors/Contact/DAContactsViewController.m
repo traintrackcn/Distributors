@@ -44,7 +44,7 @@
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_CONTACTS];
     UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = RootTabIdxContacts;
+    NSInteger tag = DARootTabIdxContacts;
     UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
     [self setTabBarItem:tabBarItem];
 }

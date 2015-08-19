@@ -7,12 +7,17 @@
 //
 
 #import "AGModel.h"
+#import "DADefine.h"
 
+@class DACurrency;
+@class DAPeriod;
 @interface DAEarningPotential : AGModel
 
-@property (nonatomic, assign) NSInteger period;
-@property (nonatomic, assign) CGFloat min;
-@property (nonatomic, assign) CGFloat max;
-@property (nonatomic, assign) NSInteger currency;
++ (instancetype)instanceWithMin:(float)min max:(float)max period:(DAPeriod *)period;
+
+@property (nonatomic, strong) DAPeriod *period;
+@property (nonatomic, assign) float min;
+@property (nonatomic, assign) float max;
+@property (nonatomic, assign) DACurrency *currency;
 
 @end

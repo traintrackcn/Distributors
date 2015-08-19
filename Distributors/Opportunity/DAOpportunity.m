@@ -7,7 +7,14 @@
 //
 
 #import "DAOpportunity.h"
+#import "DAEarningPotentialDataset.h"
+#import "NSObject+Singleton.h"
 
 @implementation DAOpportunity
+
+- (DAEarningPotential *)earningPotential{
+    if (_earningPotential) return _earningPotential;
+    return [DAEarningPotentialDataset singleton].defaultItem;
+}
 
 @end

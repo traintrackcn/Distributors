@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DAViewControllerLoader.h"
+#import "DAFunctionLoader.h"
 
-@interface DAViewControllerLoader ()
+@interface DAFunctionLoader ()
 
 @end
 
-@implementation DAViewControllerLoader
+@implementation DAFunctionLoader
 
 + (instancetype)instance{
-    DAViewControllerLoader *instance = [[self.class alloc] init];
+    DAFunctionLoader *instance = [[self.class alloc] init];
     return instance;
 }
 

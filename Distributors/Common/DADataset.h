@@ -10,11 +10,16 @@
 
 @interface DADataset : NSObject
 
+
+- (void)declareDatasetIsDictionary;
+- (void)declareDatasetIsArray;
+
 - (NSArray *)items;
+- (NSArray *)sortedItems;
 - (NSArray *)sortByKey:(NSString *)key ascending:(BOOL)ascending;
 
 
-@property (nonatomic, strong) NSMutableDictionary *data;
+@property (nonatomic, strong) id data;
 
 
 @end

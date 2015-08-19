@@ -16,3 +16,9 @@
 #define KEY_LBL_SETTING @"Setting"
 #define KEY_LBL_COMPANIES @"Companies"
 #define KEY_LBL_CREATE @"Create"
+#define KEY_LBL_EARNING_POTENTIAL @"Earning Potential"
+#define KEY_LBL_MONTH @"Month"
+#define KEY_LBL_WEEK @"Week"
+
+#define KEY_BTN_SELECT @"Select"
+#define KEY_BTN_SAVE @"Save"

@@ -11,15 +11,31 @@
 @implementation DADataset
 
 
-- (NSMutableDictionary *)data{
+- (void)declareDatasetIsDictionary{
     if (!_data) {
         _data = [NSMutableDictionary dictionary];
     }
-    return _data;
 }
 
+- (void)declareDatasetIsArray{
+    if (!_data) {
+        _data = [NSMutableArray array];
+    }
+}
+
+#pragma mark -
+
 - (NSArray *)items{
-    return self.data.allValues;
+    
+    if ([self.data isKindOfClass:[NSMutableArray class]]) {
+        return (NSMutableArray *)self.data;
+    }
+    
+    return [(NSMutableDictionary *)self.data allValues];
+}
+
+- (NSArray *)sortedItems{
+    return self.items;
 }
 
 #pragma mark - utils
@@ -27,7 +43,7 @@
 - (NSArray *)sortByKey:(NSString *)key ascending:(BOOL)ascending{
     NSSortDescriptor *sortDes = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
     NSArray *sortDesArr = [NSArray arrayWithObject:sortDes];
-    NSArray *tmpArr = self.data.allValues;
+    NSArray *tmpArr = self.items;
     //    LOG_DEBUG(@"items -> %@", items);
     //    items = [items sortedArrayUsingDescriptors:sortDesArr];
     tmpArr = [tmpArr sortedArrayUsingDescriptors:sortDesArr];

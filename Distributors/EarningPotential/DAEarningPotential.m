@@ -7,7 +7,20 @@
 //
 
 #import "DAEarningPotential.h"
+#import "DACurrencyDataset.h"
+#import "NSObject+Singleton.h"
+#import "DAPeriod.h"
+
 
 @implementation DAEarningPotential
+
++ (instancetype)instanceWithMin:(float)min max:(float)max period:(DAPeriod *)period{
+    DAEarningPotential *instance = [DAEarningPotential instance];
+    [instance setMax:max];
+    [instance setMin:min];
+    [instance setPeriod:period];
+    [instance setCurrency:[DACurrencyDataset singleton].defaultItem];
+    return instance;
+}
 
 @end

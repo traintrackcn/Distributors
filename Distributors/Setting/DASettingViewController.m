@@ -45,7 +45,7 @@
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_SETTING];
     UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = RootTabIdxSetting;
+    NSInteger tag = DARootTabIdxSetting;
     UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
     [self setTabBarItem:tabBarItem];
 }

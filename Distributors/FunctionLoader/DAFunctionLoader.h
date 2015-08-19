@@ -9,7 +9,7 @@
 #import "AGViewController.h"
 
 @class AGViewController;
-@interface DAViewControllerLoader : UINavigationController
+@interface DAFunctionLoader : UINavigationController
 
 + (instancetype)instance;
 
