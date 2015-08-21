@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) DAOpportunity *demoO;
 
+
 @end
 
 @implementation DAOpportunityTemplateCoordinator
@@ -32,6 +33,9 @@
     return self;
 }
 
+
+
+
 #pragma mark - remote ops
 
 - (void)requestTemplatesByCompany:(DACompany *)company completion:(void (^)(NSArray *))completion{
@@ -40,8 +44,21 @@
     }
 }
 
+#pragma mark - utils
+
+- (void)resetTemplateInstance{
+    _templateInstance = nil;
+}
 
 #pragma mark - properties
+
+- (DAOpportunity *)templateInstance{
+    if (!_templateInstance) {
+        _templateInstance = [DAOpportunity instance];
+    }
+    return _templateInstance;
+}
+
 
 - (DAOpportunity *)demoO{
     if (!_demoO) {

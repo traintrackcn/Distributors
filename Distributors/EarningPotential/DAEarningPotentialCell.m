@@ -80,11 +80,11 @@
 #pragma mark - styles
 
 - (CGFloat)paddingLR{
-    return DEFAULT_PADDING_LR;
+    return STYLE_PADDING_LR_DEFAULT;
 }
 
 - (UIColor *)borderColor{
-    return DEFAULT_BORDER_COLOR;
+    return STYLE_BORDER_COLOR_DEFAULT;
 }
 
 @end

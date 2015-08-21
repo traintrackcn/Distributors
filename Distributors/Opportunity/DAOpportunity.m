@@ -9,12 +9,23 @@
 #import "DAOpportunity.h"
 #import "DAEarningPotentialDataset.h"
 #import "NSObject+Singleton.h"
+#import "DACompany.h"
 
 @implementation DAOpportunity
 
 - (DAEarningPotential *)earningPotential{
     if (_earningPotential) return _earningPotential;
     return [DAEarningPotentialDataset singleton].defaultItem;
+}
+
+
+#pragma mark - properties
+
+- (DACompany *)company{
+    if (!_company) {
+        _company = [DACompany instance];
+    }
+    return _company;
 }
 
 @end

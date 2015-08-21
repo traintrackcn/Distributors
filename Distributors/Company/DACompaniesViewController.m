@@ -17,9 +17,10 @@
 #import "NSObject+Singleton.h"
 #import "DACompanyCoordinator.h"
 #import "DACompany.h"
-#import "DANewCompanyViewController.h"
-#import "DAOpportunityTemplatePicker.h"
+#import "DAOpportunityEditor.h"
 #import "DAOpportunityTemplateCoordinator.h"
+#import "DAOpportunityTemplateEditor.h"
+#import "DADefine.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
@@ -41,14 +42,28 @@ typedef NS_ENUM(NSInteger, Section) {
 - (instancetype)init{
     self = [super init];
     if (self) {
-        [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY]];
+//        [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY_TEMPLATE]];
         [self.config setCellCls:[AGSearchCell class] inSection:SectionSearch];
         [self.config setCellCls:[DACompanyCell class] inSection:SectionNewItem];
         [self.config setCellCls:[DACompanyCell class] inSection:SectionItem];
         
+        
     }
     return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    TLOG(@"self.navigationController -> %@", self.tabBarController);
+    
+//    [self.tabBarController setTabBarItem:[UITabBarItem alloc]]
+//    [self assembleTabBar];
+    //setting navigation bar only
+    [self.navigationItem setTitle:[AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY_TEMPLATE]];
+}
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -102,22 +117,23 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger idx = indexPath.row;
     
     if (section == SectionNewItem){
-        DANewCompanyViewController *vc = [DANewCompanyViewController instance];
+        DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
         [self.parentViewController.navigationController pushViewController:vc animated:YES];
     }
     
     if (section == SectionItem) {
-        DAOpportunityTemplatePicker *vc = [DAOpportunityTemplatePicker instance];
+        DAOpportunityEditor *vc = [DAOpportunityEditor instance];
 //        TLOG(@"self.naviC -> %@", self.navigationController);
         DACompany *item = [self.items objectAtIndex:idx];
         [vc setCompany:item];
         
         [[DAOpportunityTemplateCoordinator singleton] requestTemplatesByCompany:item completion:^(NSArray *templates) {
-            [vc setTemplate:templates.firstObject];
+            [vc setItem:templates.firstObject];
+            [self.parentViewController.navigationController pushViewController:vc animated:YES];
         }];
         
         
-        [self.parentViewController.navigationController pushViewController:vc animated:YES];
+        
     }
     
 }

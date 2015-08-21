@@ -25,7 +25,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
+        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
     return self;
 }
@@ -43,7 +43,7 @@
     [super setValue:value];
     
     DAOpportunityTask *item = (DAOpportunityTask *)value;
-    [self.titleLabel setText:[NSString stringWithFormat:@" - %@", item.sentence]];
+    [self.titleLabel setText:[NSString stringWithFormat:@"%@", item.sentence]];
 }
 
 #pragma mark - components
@@ -62,11 +62,11 @@
 #pragma mark - styles
 
 - (UIColor *)borderColor{
-    return DEFAULT_BORDER_COLOR;
+    return STYLE_BORDER_COLOR_DEFAULT;
 }
 
 - (CGFloat)paddingLR{
-    return DEFAULT_PADDING_LR;
+    return STYLE_PADDING_LR_DEFAULT;
 }
 
 @end

@@ -6,5 +6,11 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#define DEFAULT_PADDING_LR 15.0
-#define DEFAULT_BORDER_COLOR RGBA(242, 242, 242, 1)
+#import "AGStyleCoordinator.h"
+#import "NSObject+Singleton.h"
+
+#define STYLE_PADDING_LR_DEFAULT 15.0
+#define STYLE_BORDER_COLOR_DEFAULT RGBA(242, 242, 242, 1)
+#define STYLE_BACKGROUND_COLOR_DEFAULT [AGStyleCoordinator colorBackgroundNormal]
+#define STYLE_NAVIGATION_BAR_HEIGHT 44.0
+#define STYLE_STATUS_BAR_HEIGHT 20.0

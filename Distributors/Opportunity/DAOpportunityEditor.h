@@ -10,9 +10,9 @@
 
 @class DACompany;
 @class DAOpportunity;
-@interface DAOpportunityTemplatePicker : AGViewController
+@interface DAOpportunityEditor : AGViewController
 
 @property (nonatomic, weak) DACompany *company;
-@property (nonatomic, strong) DAOpportunity *template;
+@property (nonatomic, strong) DAOpportunity *item;
 
 @end

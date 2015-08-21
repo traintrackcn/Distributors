@@ -15,4 +15,8 @@
 
 - (void)requestTemplatesByCompany:(DACompany *)company completion:(void(^)(NSArray *templates))completion;
 
+
+- (void)resetTemplateInstance;
+@property (nonatomic, strong) DAOpportunity *templateInstance;
+
 @end
