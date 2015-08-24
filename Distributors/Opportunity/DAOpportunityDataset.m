@@ -6,29 +6,27 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DAOpportunityTemplateCoordinator.h"
+#import "DAOpportunityDataset.h"
 #import "DAOpportunityStep.h"
 #import "DAOpportunityTask.h"
 #import "DAOpportunity.h"
 #import "DACompany.h"
 
-@interface DAOpportunityTemplateCoordinator(){
+@interface DAOpportunityDataset(){
     
 }
-
-@property (nonatomic, strong) NSMutableDictionary *data;
 
 @property (nonatomic, strong) DAOpportunity *demoO;
 
 
 @end
 
-@implementation DAOpportunityTemplateCoordinator
+@implementation DAOpportunityDataset
 
 - (instancetype)init{
     self = [super init];
     if (self) {
-        
+        [self declareDatasetIsDictionary];
     }
     return self;
 }
@@ -44,23 +42,9 @@
     }
 }
 
-#pragma mark - utils
-
-- (void)resetTemplateInstance{
-    _templateInstance = nil;
-}
-
-#pragma mark - properties
-
-- (DAOpportunity *)templateInstance{
-    if (!_templateInstance) {
-        _templateInstance = [DAOpportunity instance];
-    }
-    return _templateInstance;
-}
 
 
-- (DAOpportunity *)demoO{
+- (DAOpportunity *)demoOpportunity{
     if (!_demoO) {
         _demoO = [DAOpportunity instance];
         
@@ -99,14 +83,6 @@
     DAOpportunityTask *task3 = [DAOpportunityTask instance];
     [task3 setSentence:@"Purchase 2 boxes of coffee (Black & Latte)"];
     return @[task1, task2, task3];
-}
-
-
-- (NSMutableDictionary *)data{
-    if (!_data) {
-        _data = [NSMutableDictionary dictionary];
-    }
-    return _data;
 }
 
 @end

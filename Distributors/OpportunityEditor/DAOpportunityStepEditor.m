@@ -20,6 +20,9 @@
 #import "DAStyleDefine.h"
 #import "AGTextCellStyleMore.h"
 #import "DAOpportunityTaskSection.h"
+#import "DAOpportunityTaskEditor.h"
+#import "DATextKeyDefine.h"
+#import "GlobalDefine.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionName,
@@ -43,8 +46,7 @@ typedef NS_ENUM(NSInteger, Section) {
 - (instancetype)init{
     self = [super init];
     if (self) {
-        
-        
+        [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_STEP_EDITOR]];
     }
     return self;
 }
@@ -56,6 +58,7 @@ typedef NS_ENUM(NSInteger, Section) {
     [self.config setCellCls:[AGTextfieldBoxCell class] inSection:SectionName];
     
     [self taskSection];
+    
     
     [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_TIME_TO_COMPLETE] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionTimeToComplete]];
     [self.config setCellCls:[AGTextfieldCellStyleOptions class] inSection:SectionTimeToComplete];
@@ -80,7 +83,7 @@ typedef NS_ENUM(NSInteger, Section) {
 
 - (void)setItem:(DAOpportunityStep *)item{
     _item = item;
-    [self setTitle:item.name];
+//    [self setTitle:item.name];
     [self configSections];
 }
 
@@ -133,14 +136,47 @@ typedef NS_ENUM(NSInteger, Section) {
     return value;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger section = indexPath.section;
+    NSInteger idx = indexPath.row;
+    
+    if (section == SectionTask) {
+        
+        if (idx != self.taskSection.lastIndex) {
+            DAOpportunityTaskEditor *vc = [DAOpportunityTaskEditor instance];
+            [vc setStep:self.item];
+            [vc setTask:[self.item.tasks objectAtIndex:idx]];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
+        
+    }
+    
+}
+
 #pragma mark - components
 
 - (DAOpportunityTaskSection *)taskSection{
     if (!_taskSection) {
         _taskSection = [DAOpportunityTaskSection instanceWithSection:SectionTask config:self.config];
         [_taskSection setItem:self.item];
+        [_taskSection setEditMode:YES];
     }
     return _taskSection;
+}
+
+#pragma mark - 
+
+- (id)cellRequestParameterAtIndexPath:(NSIndexPath *)indexPath{
+    NSInteger section = indexPath.section;
+    id value;
+    
+    if (section == SectionTask) {
+        TLOG(@"self.item -> %@", self.item);
+        value = @[self.item];
+    }
+    
+    return value;
 }
 
 @end

@@ -7,16 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DADataset.h"
 
-@class DAOpportunity;
 @class DACompany;
+@class DAOpportunity;
 
-@interface DAOpportunityTemplateCoordinator : NSObject
+@interface DAOpportunityDataset : DADataset
 
 - (void)requestTemplatesByCompany:(DACompany *)company completion:(void(^)(NSArray *templates))completion;
 
+- (DAOpportunity *)demoOpportunity;
 
-- (void)resetTemplateInstance;
-@property (nonatomic, strong) DAOpportunity *templateInstance;
 
 @end

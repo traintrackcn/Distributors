@@ -19,7 +19,7 @@
 #import "RootTabController.h"
 #import "DAOpportunityCell.h"
 #import "AGSearchCell.h"
-//#import <UIKit/UIKit.h>
+#import "DACompanyPicker.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, Section) {
 
 @property (nonatomic, strong) UIView *segmentControlContainer;
 @property (nonatomic, strong) UISegmentedControl *segmentControl;
+@property (nonatomic, strong) UIBarButtonItem *addButtonItem;
 
 @end
 
@@ -45,7 +46,8 @@ typedef NS_ENUM(NSInteger, Section) {
         [self.config setCellCls:[AGSearchCell class] inSection:SectionSearch];
         [self.config setCellCls:[DAOpportunityCell class] inSection:SectionItem];
 //        [self.config setCellCls:[AGTextCell class] inSection:SectionLeader];
-        [self assembleTabBar];
+//        [self assembleTabBar];
+        [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY]];
         
             }
     return self;
@@ -56,24 +58,43 @@ typedef NS_ENUM(NSInteger, Section) {
     
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
-    [self.segmentControlContainer addSubview:self.segmentControl];
-    [self.parentViewController.navigationItem setTitleView:self.segmentControlContainer];
+//    [self.segmentControlContainer addSubview:self.segmentControl];
+//    [self.parentViewController.navigationItem setTitleView:self.segmentControlContainer];
     
 //    TLOG(@"self.navigationItem -> %@", self.navigationItem);
 //    [self.parentViewController setTitle:[AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITIES]];
+    [self.navigationItem setRightBarButtonItem:self.addButtonItem];
 
 }
 
-- (void)assembleTabBar{
-    NSString *title = [AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY];
-    UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = DARootTabIdxOpportunity;
-    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
-    [self setTabBarItem:tabBarItem];
+//- (void)assembleTabBar{
+//    NSString *title = [AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY];
+//    UIImage *img = [[UIImage alloc] init];
+//    NSInteger tag = DARootTabIdxOpportunity;
+//    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
+//    [self setTabBarItem:tabBarItem];
+//}
+
+#pragma mark - interactive ops
+
+- (void)didTapAdd:(id)sender{
+    DACompanyPicker *vc = [DACompanyPicker instance];
+//    [self pushViewController:vc];
+    UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:vc];
+    [self presentViewController:naviC animated:YES completion:^{
+        
+    }];
 }
 
 
 #pragma mark - components
+
+- (UIBarButtonItem *)addButtonItem{
+    if (!_addButtonItem) {
+        _addButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"+" style:UIBarButtonItemStylePlain target:self action:@selector(didTapAdd:)];
+    }
+    return _addButtonItem;
+}
 
 - (UIView *)segmentControlContainer{
     if (!_segmentControlContainer) {
@@ -124,7 +145,7 @@ typedef NS_ENUM(NSInteger, Section) {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DAOpportunityViewController *vc = [DAOpportunityViewController instance];
     TLOG(@"self.naviC -> %@", self.navigationController);
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.parentViewController.navigationController pushViewController:vc animated:YES];
 }
 
 

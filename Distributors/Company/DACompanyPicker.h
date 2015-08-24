@@ -8,6 +8,6 @@
 
 #import "AGViewController.h"
 
-@interface DACompaniesViewController : AGViewController
+@interface DACompanyPicker : AGViewController
 
 @end

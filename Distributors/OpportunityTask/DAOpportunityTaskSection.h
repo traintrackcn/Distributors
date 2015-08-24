@@ -11,6 +11,11 @@
 @class DAOpportunityStep;
 @interface DAOpportunityTaskSection : AGSectionUnit
 
+
+- (NSInteger)lastIndex;
+
+@property (nonatomic, assign) BOOL editMode;
+
 @property (nonatomic, weak) DAOpportunityStep *item;
 
 @end

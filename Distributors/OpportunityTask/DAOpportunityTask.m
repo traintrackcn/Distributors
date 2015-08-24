@@ -7,7 +7,12 @@
 //
 
 #import "DAOpportunityTask.h"
+#import "NSObject+Singleton.h"
 
 @implementation DAOpportunityTask
+
+- (NSString *)textOfType{
+    return [[DAOpportunityCoordinator singleton] textForTaskType:self.type];
+}
 
 @end

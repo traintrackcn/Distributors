@@ -1,8 +1,8 @@
 //
-//  DAOpportunityViewController.h
+//  DAOpportunityProgressViewController.h
 //  Distributors
 //
-//  Created by Tao Yunfei on 7/31/15.
+//  Created by Tao Yunfei on 8/24/15.
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 @class DAOpportunity;
 
-@interface DAOpportunityViewController : AGViewController
+@interface DAOpportunityProgressViewController : AGViewController
 
 @property (nonatomic, weak) DAOpportunity *item;
 

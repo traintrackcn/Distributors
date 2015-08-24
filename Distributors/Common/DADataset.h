@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+Singleton.h"
 
 @interface DADataset : NSObject
 

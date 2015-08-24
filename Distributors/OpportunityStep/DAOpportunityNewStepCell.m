@@ -14,6 +14,8 @@
 #import "DAOpportunityStepEditor.h"
 #import "DAOpportunityStep.h"
 
+#import "DAOpportunityCoordinator.h"
+
 @interface DAOpportunityNewStepCell(){
     
 }
@@ -41,8 +43,11 @@
 #pragma mark - interactive ops
 
 - (void)didTapCell{
+    
+    [[DAOpportunityCoordinator singleton] resetStepInstance];
+    
     DAOpportunityStepEditor *vc = [DAOpportunityStepEditor instance];
-    [vc setItem:[DAOpportunityStep instance]];
+    [vc setItem:[DAOpportunityCoordinator singleton].stepInstance];
     [self pushViewController:vc];
 }
 

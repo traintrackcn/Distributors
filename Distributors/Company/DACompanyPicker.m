@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DACompaniesViewController.h"
+#import "DACompanyPicker.h"
 #import "AGSearchCell.h"
 #import "DACompanyCell.h"
 #import "AGViewController+Datasource.h"
@@ -17,9 +17,9 @@
 #import "NSObject+Singleton.h"
 #import "DACompanyCoordinator.h"
 #import "DACompany.h"
-#import "DAOpportunityEditor.h"
-#import "DAOpportunityTemplateCoordinator.h"
 #import "DAOpportunityTemplateEditor.h"
+#import "DAOpportunityDataset.h"
+#import "DAOpportunityBasicEditor.h"
 #import "DADefine.h"
 
 typedef NS_ENUM(NSInteger, Section) {
@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, Section) {
     SectionCount
 };
 
-@interface DACompaniesViewController (){
+@interface DACompanyPicker (){
     
 }
 
@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger, Section) {
 
 @end
 
-@implementation DACompaniesViewController
+@implementation DACompanyPicker
 
 - (instancetype)init{
     self = [super init];
@@ -117,19 +117,19 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger idx = indexPath.row;
     
     if (section == SectionNewItem){
-        DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
-        [self.parentViewController.navigationController pushViewController:vc animated:YES];
+        DAOpportunityBasicEditor *vc = [DAOpportunityBasicEditor instance];
+        [self pushViewController:vc];
     }
     
     if (section == SectionItem) {
-        DAOpportunityEditor *vc = [DAOpportunityEditor instance];
+        DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
 //        TLOG(@"self.naviC -> %@", self.navigationController);
         DACompany *item = [self.items objectAtIndex:idx];
         [vc setCompany:item];
         
-        [[DAOpportunityTemplateCoordinator singleton] requestTemplatesByCompany:item completion:^(NSArray *templates) {
+        [[DAOpportunityDataset singleton] requestTemplatesByCompany:item completion:^(NSArray *templates) {
             [vc setItem:templates.firstObject];
-            [self.parentViewController.navigationController pushViewController:vc animated:YES];
+            [self pushViewController:vc];
         }];
         
         

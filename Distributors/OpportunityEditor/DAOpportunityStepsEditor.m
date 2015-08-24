@@ -15,6 +15,10 @@
 #import "DAOpportunityTaskCell.h"
 #import "DAOpportunityStep.h"
 #import "DAStyleDefine.h"
+#import "AGButtonCell.h"
+#import "AGButtonItem.h"
+#import "AGTextCoordinator.h"
+#import "DATextKeyDefine.h"
 
 @implementation DAOpportunityStepsEditor
 
@@ -42,7 +46,17 @@
     }
     
     [self.config setCellCls:[DAOpportunityNewStepCell class] inSection:self.SectionExtra];
+    
+    [self.config setCellCls:[AGButtonCell class] inSection:self.SectionButton];
+    
     [self enableSeparators];
+}
+
+#pragma mark - interactive ops
+
+- (void)didTapSave:(id)sender{
+//    [self.defaultNavigationController popViewControllerAnimated:YES];
+    [self.defaultNavigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - datasource
@@ -62,6 +76,9 @@
         if ([self isSectionExtraAvailable]) return 1;
     }
     
+    if (section == self.SectionButton) {
+        return 1;
+    }
     
     return 0;
     
@@ -69,6 +86,14 @@
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
     id value = [super valueAtIndexPath:indexPath];
+    NSInteger section= indexPath.section;
+    
+    if(section == self.SectionButton){
+        value = @[
+                  [AGButtonItem instanceWithTitle:[AGTextCoordinator textForKey:KEY_BTN_SAVE] target:self action:@selector(didTapSave:)]
+                  ];
+    }
+    
     return value;
 }
 
@@ -101,8 +126,12 @@
     return self.SectionLastStep + 1;
 }
 
-- (NSInteger)SectionCount{
+- (NSInteger)SectionButton{
     return self.SectionExtra + 1;
+}
+
+- (NSInteger)SectionCount{
+    return self.SectionButton + 1;
 }
 
 

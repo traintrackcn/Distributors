@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DAOpportunityTemplateEditor.h"
+#import "DAOpportunityBasicEditor.h"
 #import "DATextKeyDefine.h"
 #import "AGTextCoordinator.h"
 #import "DAEarningPotentialSection.h"
-#import "DAOpportunityTemplateCoordinator.h"
-#import "NSObject+Singleton.h"
+#import "DAOpportunityDataset.h"
+#import "DAOpportunityCoordinator.h"
 #import "AGTextfieldCell.h"
 #import "AGTextfieldBoxCell.h"
 #import "AGButtonCell.h"
@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, Section) {
     SectionCount
 };
 
-@interface DAOpportunityTemplateEditor(){
+@interface DAOpportunityBasicEditor(){
     
 }
 
@@ -42,13 +42,13 @@ typedef NS_ENUM(NSInteger, Section) {
 
 @end
 
-@implementation DAOpportunityTemplateEditor
+@implementation DAOpportunityBasicEditor
 
 - (instancetype)init{
     self = [super init];
     if (self) {
         
-        [[DAOpportunityTemplateCoordinator singleton] resetTemplateInstance];
+        [[DAOpportunityCoordinator singleton] resetOpportunityInstance];
         
         [self generateDemoData];
         
@@ -142,7 +142,7 @@ typedef NS_ENUM(NSInteger, Section) {
 #pragma mark - properties
 
 - (DAOpportunity *)item{
-    return [DAOpportunityTemplateCoordinator singleton].templateInstance;
+    return [DAOpportunityCoordinator singleton].opportunityInstance;
 }
 
 @end

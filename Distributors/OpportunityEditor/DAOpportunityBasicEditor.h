@@ -8,6 +8,6 @@
 
 #import "AGViewController.h"
 
-@interface DAOpportunityTemplateEditor : AGViewController
+@interface DAOpportunityBasicEditor : AGViewController
 
 @end

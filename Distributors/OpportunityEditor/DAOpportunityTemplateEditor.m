@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DAOpportunityEditor.h"
+#import "DAOpportunityTemplateEditor.h"
 #import "DACompany.h"
 #import "DAOpportunity.h"
 #import "DAOpportunityStep.h"
@@ -14,7 +14,7 @@
 #import "AGViewController+Datasource.h"
 #import "AGViewController+Separator.h"
 #import "AGTextCellStyleTitleOnly.h"
-#import "DAOpportunityTemplateCoordinator.h"
+#import "DAOpportunityDataset.h"
 #import "NSObject+Singleton.h"
 #import "AGButtonCell.h"
 #import "AGButtonItem.h"
@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, Section) {
     SectionCount
 };
 
-@interface DAOpportunityEditor(){
+@interface DAOpportunityTemplateEditor(){
     
 }
 
@@ -50,7 +50,7 @@ typedef NS_ENUM(NSInteger, Section) {
 
 @end
 
-@implementation DAOpportunityEditor
+@implementation DAOpportunityTemplateEditor
 
 - (instancetype)init{
     self = [super init];
@@ -88,7 +88,7 @@ typedef NS_ENUM(NSInteger, Section) {
 #pragma mark - interactive ops
 
 - (void)didTapSave:(id)sender{
-    
+    [self.defaultNavigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - components

@@ -13,7 +13,7 @@
 		4A2839AE1B82AD0B007EA77E /* DADiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839AD1B82AD0B007EA77E /* DADiscoverViewController.m */; };
 		4A2839B21B82ADD1007EA77E /* DASettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839B11B82ADD1007EA77E /* DASettingViewController.m */; };
 		4A2839C31B82E132007EA77E /* DACompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839C21B82E132007EA77E /* DACompany.m */; };
-		4A2839C61B82E161007EA77E /* DACompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839C51B82E161007EA77E /* DACompaniesViewController.m */; };
+		4A2839C61B82E161007EA77E /* DACompanyPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839C51B82E161007EA77E /* DACompanyPicker.m */; };
 		4A2839C91B82E2B7007EA77E /* DACompanyCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839C81B82E2B7007EA77E /* DACompanyCoordinator.m */; };
 		4A2839CC1B82F3F2007EA77E /* DACompanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839CB1B82F3F1007EA77E /* DACompanyCell.m */; };
 		4A2839D21B83008E007EA77E /* DAOpportunity.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839D11B83008E007EA77E /* DAOpportunity.m */; };
@@ -27,7 +27,6 @@
 		4A2839FC1B83133E007EA77E /* DAOpportunityCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839FB1B83133E007EA77E /* DAOpportunityCoordinator.m */; };
 		4A2839FF1B83FACB007EA77E /* DAEarningPotentialDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839FE1B83FACB007EA77E /* DAEarningPotentialDataset.m */; };
 		4A283A021B8403BD007EA77E /* DAEarningPotentialPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A011B8403BD007EA77E /* DAEarningPotentialPicker.m */; };
-		4A283A061B842DB1007EA77E /* DAOpportunityTemplateCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A051B842DB1007EA77E /* DAOpportunityTemplateCoordinator.m */; };
 		4A283A0F1B842E40007EA77E /* DAOpportunityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A0C1B842E40007EA77E /* DAOpportunityLoader.m */; };
 		4A283A101B842E40007EA77E /* DAFunctionLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A0E1B842E40007EA77E /* DAFunctionLoader.m */; };
 		4A283A161B843BEE007EA77E /* DAOpportunityStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A151B843BEE007EA77E /* DAOpportunityStep.m */; };
@@ -38,11 +37,7 @@
 		4A283A2C1B846314007EA77E /* DSEarningPotentialPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A2B1B846314007EA77E /* DSEarningPotentialPickerCell.m */; };
 		4A283A301B846D44007EA77E /* DAPeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A2F1B846D44007EA77E /* DAPeriod.m */; };
 		4A283A331B846D6E007EA77E /* DAPeriodDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A321B846D6E007EA77E /* DAPeriodDataset.m */; };
-		4A283A361B847286007EA77E /* DAOpportunityEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A351B847286007EA77E /* DAOpportunityEditor.m */; };
-		4A283A391B85BDA3007EA77E /* DAOpportunityTemplateEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A381B85BDA3007EA77E /* DAOpportunityTemplateEditor.m */; };
 		4A283A3C1B869E20007EA77E /* DAEarningPotentialSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A3B1B869E20007EA77E /* DAEarningPotentialSection.m */; };
-		4A283A421B86A72B007EA77E /* DAOpportunityStepEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A411B86A72B007EA77E /* DAOpportunityStepEditor.m */; };
-		4A283A451B86A736007EA77E /* DAOpportunityStepsEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A441B86A736007EA77E /* DAOpportunityStepsEditor.m */; };
 		4A283A481B86DD11007EA77E /* DAOpportunityNewStepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A471B86DD11007EA77E /* DAOpportunityNewStepCell.m */; };
 		4A283A4B1B871463007EA77E /* DAOpportunityStepSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A4A1B871463007EA77E /* DAOpportunityStepSection.m */; };
 		4A283A4E1B87222B007EA77E /* DAOpportunityTaskSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A4D1B87222B007EA77E /* DAOpportunityTaskSection.m */; };
@@ -57,6 +52,18 @@
 		4A8E8E431B6B01CD00F48CDD /* DAOpportunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E421B6B01CD00F48CDD /* DAOpportunityViewController.m */; };
 		4A8E8E471B6B2C7B00F48CDD /* DAChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E461B6B2C7B00F48CDD /* DAChatViewController.m */; };
 		4A8E8E4C1B6B67A300F48CDD /* DAOpportunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E4B1B6B67A300F48CDD /* DAOpportunityCell.m */; };
+		4AB3F1E01B8AA7EB008DC70F /* DANewOpportunityTaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1DF1B8AA7EB008DC70F /* DANewOpportunityTaskCell.m */; };
+		4AB3F1E31B8AE29F008DC70F /* DAOpportunityTaskTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1E21B8AE29F008DC70F /* DAOpportunityTaskTitleCell.m */; };
+		4AB3F1E61B8AFD7C008DC70F /* DAOpportunityTaskContentSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1E51B8AFD7C008DC70F /* DAOpportunityTaskContentSection.m */; };
+		4AB3F1E81B8B04D3008DC70F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3F1E71B8B04D3008DC70F /* MapKit.framework */; };
+		4AB3F1EC1B8B050E008DC70F /* DAMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1EB1B8B050E008DC70F /* DAMapCell.m */; };
+		4AB3F1EF1B8B1CFD008DC70F /* DAOpportunityProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1EE1B8B1CFD008DC70F /* DAOpportunityProgressViewController.m */; };
+		4AB3F1F51B8B1D8C008DC70F /* DAOpportunityBasicEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1F21B8B1D8C008DC70F /* DAOpportunityBasicEditor.m */; };
+		4AB3F1F61B8B1D8C008DC70F /* DAOpportunityTemplateEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1F41B8B1D8C008DC70F /* DAOpportunityTemplateEditor.m */; };
+		4AB3F1F91B8B1DB7008DC70F /* DAOpportunityStepsEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1F81B8B1DB7008DC70F /* DAOpportunityStepsEditor.m */; };
+		4AB3F1FC1B8B1DC9008DC70F /* DAOpportunityStepEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1FB1B8B1DC9008DC70F /* DAOpportunityStepEditor.m */; };
+		4AB3F1FF1B8B1DDF008DC70F /* DAOpportunityTaskEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1FE1B8B1DDF008DC70F /* DAOpportunityTaskEditor.m */; };
+		4AB3F2021B8B2070008DC70F /* DAOpportunityDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F2011B8B2070008DC70F /* DAOpportunityDataset.m */; };
 		4AB8B6B81B66081F008073B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8B6B71B66081F008073B6 /* main.m */; };
 		4AB8B6BB1B66081F008073B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8B6BA1B66081F008073B6 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
@@ -74,8 +81,8 @@
 		4A2839B11B82ADD1007EA77E /* DASettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DASettingViewController.m; sourceTree = "<group>"; };
 		4A2839C11B82E132007EA77E /* DACompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACompany.h; sourceTree = "<group>"; };
 		4A2839C21B82E132007EA77E /* DACompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACompany.m; sourceTree = "<group>"; };
-		4A2839C41B82E161007EA77E /* DACompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACompaniesViewController.h; sourceTree = "<group>"; };
-		4A2839C51B82E161007EA77E /* DACompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACompaniesViewController.m; sourceTree = "<group>"; };
+		4A2839C41B82E161007EA77E /* DACompanyPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACompanyPicker.h; sourceTree = "<group>"; };
+		4A2839C51B82E161007EA77E /* DACompanyPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACompanyPicker.m; sourceTree = "<group>"; };
 		4A2839C71B82E2B7007EA77E /* DACompanyCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACompanyCoordinator.h; sourceTree = "<group>"; };
 		4A2839C81B82E2B7007EA77E /* DACompanyCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACompanyCoordinator.m; sourceTree = "<group>"; };
 		4A2839CA1B82F3F1007EA77E /* DACompanyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACompanyCell.h; sourceTree = "<group>"; };
@@ -102,8 +109,6 @@
 		4A2839FE1B83FACB007EA77E /* DAEarningPotentialDataset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAEarningPotentialDataset.m; sourceTree = "<group>"; };
 		4A283A001B8403BD007EA77E /* DAEarningPotentialPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAEarningPotentialPicker.h; sourceTree = "<group>"; };
 		4A283A011B8403BD007EA77E /* DAEarningPotentialPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAEarningPotentialPicker.m; sourceTree = "<group>"; };
-		4A283A041B842DB1007EA77E /* DAOpportunityTemplateCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityTemplateCoordinator.h; sourceTree = "<group>"; };
-		4A283A051B842DB1007EA77E /* DAOpportunityTemplateCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityTemplateCoordinator.m; sourceTree = "<group>"; };
 		4A283A0B1B842E40007EA77E /* DAOpportunityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityLoader.h; sourceTree = "<group>"; };
 		4A283A0C1B842E40007EA77E /* DAOpportunityLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityLoader.m; sourceTree = "<group>"; };
 		4A283A0D1B842E40007EA77E /* DAFunctionLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAFunctionLoader.h; sourceTree = "<group>"; };
@@ -119,7 +124,6 @@
 		4A283A211B8453C0007EA77E /* DAOpportunityTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityTaskCell.h; sourceTree = "<group>"; };
 		4A283A221B8453C0007EA77E /* DAOpportunityTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityTaskCell.m; sourceTree = "<group>"; };
 		4A283A261B8456E9007EA77E /* DADefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADefine.h; sourceTree = "<group>"; };
-		4A283A271B8456E9007EA77E /* DAOpportunityDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityDefine.h; sourceTree = "<group>"; };
 		4A283A281B8456E9007EA77E /* DAStyleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAStyleDefine.h; sourceTree = "<group>"; };
 		4A283A291B8456E9007EA77E /* DATextKeyDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATextKeyDefine.h; sourceTree = "<group>"; };
 		4A283A2A1B846314007EA77E /* DSEarningPotentialPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSEarningPotentialPickerCell.h; sourceTree = "<group>"; };
@@ -128,16 +132,8 @@
 		4A283A2F1B846D44007EA77E /* DAPeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPeriod.m; sourceTree = "<group>"; };
 		4A283A311B846D6E007EA77E /* DAPeriodDataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPeriodDataset.h; sourceTree = "<group>"; };
 		4A283A321B846D6E007EA77E /* DAPeriodDataset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPeriodDataset.m; sourceTree = "<group>"; };
-		4A283A341B847286007EA77E /* DAOpportunityEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityEditor.h; sourceTree = "<group>"; };
-		4A283A351B847286007EA77E /* DAOpportunityEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityEditor.m; sourceTree = "<group>"; };
-		4A283A371B85BDA3007EA77E /* DAOpportunityTemplateEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityTemplateEditor.h; sourceTree = "<group>"; };
-		4A283A381B85BDA3007EA77E /* DAOpportunityTemplateEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityTemplateEditor.m; sourceTree = "<group>"; };
 		4A283A3A1B869E20007EA77E /* DAEarningPotentialSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAEarningPotentialSection.h; sourceTree = "<group>"; };
 		4A283A3B1B869E20007EA77E /* DAEarningPotentialSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAEarningPotentialSection.m; sourceTree = "<group>"; };
-		4A283A401B86A72B007EA77E /* DAOpportunityStepEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityStepEditor.h; sourceTree = "<group>"; };
-		4A283A411B86A72B007EA77E /* DAOpportunityStepEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityStepEditor.m; sourceTree = "<group>"; };
-		4A283A431B86A736007EA77E /* DAOpportunityStepsEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityStepsEditor.h; sourceTree = "<group>"; };
-		4A283A441B86A736007EA77E /* DAOpportunityStepsEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityStepsEditor.m; sourceTree = "<group>"; };
 		4A283A461B86DD11007EA77E /* DAOpportunityNewStepCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityNewStepCell.h; sourceTree = "<group>"; };
 		4A283A471B86DD11007EA77E /* DAOpportunityNewStepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityNewStepCell.m; sourceTree = "<group>"; };
 		4A283A491B871463007EA77E /* DAOpportunityStepSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityStepSection.h; sourceTree = "<group>"; };
@@ -161,6 +157,29 @@
 		4A8E8E461B6B2C7B00F48CDD /* DAChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAChatViewController.m; sourceTree = "<group>"; };
 		4A8E8E4A1B6B67A300F48CDD /* DAOpportunityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityCell.h; sourceTree = "<group>"; };
 		4A8E8E4B1B6B67A300F48CDD /* DAOpportunityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityCell.m; sourceTree = "<group>"; };
+		4AB3F1DE1B8AA7EB008DC70F /* DANewOpportunityTaskCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DANewOpportunityTaskCell.h; sourceTree = "<group>"; };
+		4AB3F1DF1B8AA7EB008DC70F /* DANewOpportunityTaskCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DANewOpportunityTaskCell.m; sourceTree = "<group>"; };
+		4AB3F1E11B8AE29F008DC70F /* DAOpportunityTaskTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityTaskTitleCell.h; sourceTree = "<group>"; };
+		4AB3F1E21B8AE29F008DC70F /* DAOpportunityTaskTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityTaskTitleCell.m; sourceTree = "<group>"; };
+		4AB3F1E41B8AFD7C008DC70F /* DAOpportunityTaskContentSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityTaskContentSection.h; sourceTree = "<group>"; };
+		4AB3F1E51B8AFD7C008DC70F /* DAOpportunityTaskContentSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityTaskContentSection.m; sourceTree = "<group>"; };
+		4AB3F1E71B8B04D3008DC70F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4AB3F1EA1B8B050E008DC70F /* DAMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMapCell.h; sourceTree = "<group>"; };
+		4AB3F1EB1B8B050E008DC70F /* DAMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMapCell.m; sourceTree = "<group>"; };
+		4AB3F1ED1B8B1CFD008DC70F /* DAOpportunityProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityProgressViewController.h; sourceTree = "<group>"; };
+		4AB3F1EE1B8B1CFD008DC70F /* DAOpportunityProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityProgressViewController.m; sourceTree = "<group>"; };
+		4AB3F1F11B8B1D8C008DC70F /* DAOpportunityBasicEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityBasicEditor.h; sourceTree = "<group>"; };
+		4AB3F1F21B8B1D8C008DC70F /* DAOpportunityBasicEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityBasicEditor.m; sourceTree = "<group>"; };
+		4AB3F1F31B8B1D8C008DC70F /* DAOpportunityTemplateEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityTemplateEditor.h; sourceTree = "<group>"; };
+		4AB3F1F41B8B1D8C008DC70F /* DAOpportunityTemplateEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityTemplateEditor.m; sourceTree = "<group>"; };
+		4AB3F1F71B8B1DB7008DC70F /* DAOpportunityStepsEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityStepsEditor.h; sourceTree = "<group>"; };
+		4AB3F1F81B8B1DB7008DC70F /* DAOpportunityStepsEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityStepsEditor.m; sourceTree = "<group>"; };
+		4AB3F1FA1B8B1DC9008DC70F /* DAOpportunityStepEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityStepEditor.h; sourceTree = "<group>"; };
+		4AB3F1FB1B8B1DC9008DC70F /* DAOpportunityStepEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityStepEditor.m; sourceTree = "<group>"; };
+		4AB3F1FD1B8B1DDF008DC70F /* DAOpportunityTaskEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityTaskEditor.h; sourceTree = "<group>"; };
+		4AB3F1FE1B8B1DDF008DC70F /* DAOpportunityTaskEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityTaskEditor.m; sourceTree = "<group>"; };
+		4AB3F2001B8B2070008DC70F /* DAOpportunityDataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityDataset.h; sourceTree = "<group>"; };
+		4AB3F2011B8B2070008DC70F /* DAOpportunityDataset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityDataset.m; sourceTree = "<group>"; };
 		4AB8B6B21B66081F008073B6 /* Distributors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Distributors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AB8B6B61B66081F008073B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AB8B6B71B66081F008073B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -173,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB3F1E81B8B04D3008DC70F /* MapKit.framework in Frameworks */,
 				4A8E8E361B6AF8FB00F48CDD /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,8 +243,8 @@
 			children = (
 				4A2839C71B82E2B7007EA77E /* DACompanyCoordinator.h */,
 				4A2839C81B82E2B7007EA77E /* DACompanyCoordinator.m */,
-				4A2839C41B82E161007EA77E /* DACompaniesViewController.h */,
-				4A2839C51B82E161007EA77E /* DACompaniesViewController.m */,
+				4A2839C41B82E161007EA77E /* DACompanyPicker.h */,
+				4A2839C51B82E161007EA77E /* DACompanyPicker.m */,
 				4A2839C11B82E132007EA77E /* DACompany.h */,
 				4A2839C21B82E132007EA77E /* DACompany.m */,
 				4A2839CA1B82F3F1007EA77E /* DACompanyCell.h */,
@@ -292,17 +312,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		4A283A031B842D9A007EA77E /* OpportunityTemplate */ = {
-			isa = PBXGroup;
-			children = (
-				4A283A041B842DB1007EA77E /* DAOpportunityTemplateCoordinator.h */,
-				4A283A051B842DB1007EA77E /* DAOpportunityTemplateCoordinator.m */,
-				4A283A371B85BDA3007EA77E /* DAOpportunityTemplateEditor.h */,
-				4A283A381B85BDA3007EA77E /* DAOpportunityTemplateEditor.m */,
-			);
-			path = OpportunityTemplate;
-			sourceTree = "<group>";
-		};
 		4A283A0A1B842E1D007EA77E /* FunctionLoader */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,10 +330,6 @@
 				4A283A151B843BEE007EA77E /* DAOpportunityStep.m */,
 				4A283A181B843C2C007EA77E /* DAOpportunityStepCell.h */,
 				4A283A191B843C2C007EA77E /* DAOpportunityStepCell.m */,
-				4A283A401B86A72B007EA77E /* DAOpportunityStepEditor.h */,
-				4A283A411B86A72B007EA77E /* DAOpportunityStepEditor.m */,
-				4A283A431B86A736007EA77E /* DAOpportunityStepsEditor.h */,
-				4A283A441B86A736007EA77E /* DAOpportunityStepsEditor.m */,
 				4A283A461B86DD11007EA77E /* DAOpportunityNewStepCell.h */,
 				4A283A471B86DD11007EA77E /* DAOpportunityNewStepCell.m */,
 				4A283A491B871463007EA77E /* DAOpportunityStepSection.h */,
@@ -342,6 +347,12 @@
 				4A283A221B8453C0007EA77E /* DAOpportunityTaskCell.m */,
 				4A283A4C1B87222B007EA77E /* DAOpportunityTaskSection.h */,
 				4A283A4D1B87222B007EA77E /* DAOpportunityTaskSection.m */,
+				4AB3F1DE1B8AA7EB008DC70F /* DANewOpportunityTaskCell.h */,
+				4AB3F1DF1B8AA7EB008DC70F /* DANewOpportunityTaskCell.m */,
+				4AB3F1E11B8AE29F008DC70F /* DAOpportunityTaskTitleCell.h */,
+				4AB3F1E21B8AE29F008DC70F /* DAOpportunityTaskTitleCell.m */,
+				4AB3F1E41B8AFD7C008DC70F /* DAOpportunityTaskContentSection.h */,
+				4AB3F1E51B8AFD7C008DC70F /* DAOpportunityTaskContentSection.m */,
 			);
 			path = OpportunityTask;
 			sourceTree = "<group>";
@@ -350,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				4A283A261B8456E9007EA77E /* DADefine.h */,
-				4A283A271B8456E9007EA77E /* DAOpportunityDefine.h */,
 				4A283A281B8456E9007EA77E /* DAStyleDefine.h */,
 				4A283A291B8456E9007EA77E /* DATextKeyDefine.h */,
 			);
@@ -382,12 +392,14 @@
 		4A8E8E3D1B6AFFE400F48CDD /* Opportunity */ = {
 			isa = PBXGroup;
 			children = (
-				4A283A341B847286007EA77E /* DAOpportunityEditor.h */,
-				4A283A351B847286007EA77E /* DAOpportunityEditor.m */,
+				4AB3F2001B8B2070008DC70F /* DAOpportunityDataset.h */,
+				4AB3F2011B8B2070008DC70F /* DAOpportunityDataset.m */,
 				4A8E8E3E1B6AFFE400F48CDD /* DAOpportunitiesViewController.h */,
 				4A8E8E3F1B6AFFE400F48CDD /* DAOpportunitiesViewController.m */,
 				4A8E8E411B6B01CD00F48CDD /* DAOpportunityViewController.h */,
 				4A8E8E421B6B01CD00F48CDD /* DAOpportunityViewController.m */,
+				4AB3F1ED1B8B1CFD008DC70F /* DAOpportunityProgressViewController.h */,
+				4AB3F1EE1B8B1CFD008DC70F /* DAOpportunityProgressViewController.m */,
 				4A8E8E4A1B6B67A300F48CDD /* DAOpportunityCell.h */,
 				4A8E8E4B1B6B67A300F48CDD /* DAOpportunityCell.m */,
 				4A2839D01B83008E007EA77E /* DAOpportunity.h */,
@@ -407,9 +419,36 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
+		4AB3F1E91B8B04FD008DC70F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4AB3F1EA1B8B050E008DC70F /* DAMapCell.h */,
+				4AB3F1EB1B8B050E008DC70F /* DAMapCell.m */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		4AB3F1F01B8B1D61008DC70F /* OpportunityEditor */ = {
+			isa = PBXGroup;
+			children = (
+				4AB3F1FD1B8B1DDF008DC70F /* DAOpportunityTaskEditor.h */,
+				4AB3F1FE1B8B1DDF008DC70F /* DAOpportunityTaskEditor.m */,
+				4AB3F1FA1B8B1DC9008DC70F /* DAOpportunityStepEditor.h */,
+				4AB3F1FB1B8B1DC9008DC70F /* DAOpportunityStepEditor.m */,
+				4AB3F1F71B8B1DB7008DC70F /* DAOpportunityStepsEditor.h */,
+				4AB3F1F81B8B1DB7008DC70F /* DAOpportunityStepsEditor.m */,
+				4AB3F1F11B8B1D8C008DC70F /* DAOpportunityBasicEditor.h */,
+				4AB3F1F21B8B1D8C008DC70F /* DAOpportunityBasicEditor.m */,
+				4AB3F1F31B8B1D8C008DC70F /* DAOpportunityTemplateEditor.h */,
+				4AB3F1F41B8B1D8C008DC70F /* DAOpportunityTemplateEditor.m */,
+			);
+			path = OpportunityEditor;
+			sourceTree = "<group>";
+		};
 		4AB8B6A91B66081F008073B6 = {
 			isa = PBXGroup;
 			children = (
+				4AB3F1E71B8B04D3008DC70F /* MapKit.framework */,
 				4AB8B6B41B66081F008073B6 /* Distributors */,
 				4AB8B6B31B66081F008073B6 /* Products */,
 				4A8E8E351B6AF8FB00F48CDD /* libz.dylib */,
@@ -427,6 +466,7 @@
 		4AB8B6B41B66081F008073B6 /* Distributors */ = {
 			isa = PBXGroup;
 			children = (
+				4AB3F1E91B8B04FD008DC70F /* Map */,
 				4A283A2D1B846D31007EA77E /* Period */,
 				4A283A0A1B842E1D007EA77E /* FunctionLoader */,
 				4A2839F61B830D37007EA77E /* Common */,
@@ -442,7 +482,7 @@
 				4A8E8E441B6B0E0900F48CDD /* Chat */,
 				4A283A171B843C05007EA77E /* OpportunityTask */,
 				4A283A131B843BEE007EA77E /* OpportunityStep */,
-				4A283A031B842D9A007EA77E /* OpportunityTemplate */,
+				4AB3F1F01B8B1D61008DC70F /* OpportunityEditor */,
 				4A8E8E3D1B6AFFE400F48CDD /* Opportunity */,
 				4A283A251B8456CD007EA77E /* Defines */,
 				4A8E8E251B6AE95400F48CDD /* Resources */,
@@ -538,30 +578,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB3F1F61B8B1D8C008DC70F /* DAOpportunityTemplateEditor.m in Sources */,
 				4A2839B21B82ADD1007EA77E /* DASettingViewController.m in Sources */,
 				4A283A481B86DD11007EA77E /* DAOpportunityNewStepCell.m in Sources */,
 				4A2839AA1B82AC16007EA77E /* DAContactsViewController.m in Sources */,
 				4A283A331B846D6E007EA77E /* DAPeriodDataset.m in Sources */,
 				4A8E8E4C1B6B67A300F48CDD /* DAOpportunityCell.m in Sources */,
+				4AB3F1E61B8AFD7C008DC70F /* DAOpportunityTaskContentSection.m in Sources */,
 				4AB8B6BB1B66081F008073B6 /* AppDelegate.m in Sources */,
 				4A283A1D1B843C4E007EA77E /* DAEarningPotentialCell.m in Sources */,
+				4AB3F1F91B8B1DB7008DC70F /* DAOpportunityStepsEditor.m in Sources */,
 				4A2839EE1B830B96007EA77E /* DASession.m in Sources */,
 				4A2839E71B83098B007EA77E /* DACurrency.m in Sources */,
+				4AB3F1FF1B8B1DDF008DC70F /* DAOpportunityTaskEditor.m in Sources */,
 				4A0D23761B79B92600FF9D40 /* DALabViewController.m in Sources */,
 				4A2839D21B83008E007EA77E /* DAOpportunity.m in Sources */,
 				4A283A0F1B842E40007EA77E /* DAOpportunityLoader.m in Sources */,
 				4A2839C91B82E2B7007EA77E /* DACompanyCoordinator.m in Sources */,
 				4A0D23791B79BBAE00FF9D40 /* DALabConvertSpeechToTextViewController.m in Sources */,
-				4A2839C61B82E161007EA77E /* DACompaniesViewController.m in Sources */,
-				4A283A451B86A736007EA77E /* DAOpportunityStepsEditor.m in Sources */,
+				4A2839C61B82E161007EA77E /* DACompanyPicker.m in Sources */,
+				4AB3F2021B8B2070008DC70F /* DAOpportunityDataset.m in Sources */,
 				4A2839C31B82E132007EA77E /* DACompany.m in Sources */,
 				4A2839FF1B83FACB007EA77E /* DAEarningPotentialDataset.m in Sources */,
 				4A283A101B842E40007EA77E /* DAFunctionLoader.m in Sources */,
+				4AB3F1F51B8B1D8C008DC70F /* DAOpportunityBasicEditor.m in Sources */,
 				4A283A231B8453C0007EA77E /* DAOpportunityTaskCell.m in Sources */,
 				4A283A1A1B843C2C007EA77E /* DAOpportunityStepCell.m in Sources */,
 				4A2839EA1B8309C4007EA77E /* DACurrencyDataset.m in Sources */,
 				4A8E8E391B6AFA1500F48CDD /* RootTabController.m in Sources */,
 				4A8E8E401B6AFFE400F48CDD /* DAOpportunitiesViewController.m in Sources */,
+				4AB3F1EC1B8B050E008DC70F /* DAMapCell.m in Sources */,
 				4A283A4E1B87222B007EA77E /* DAOpportunityTaskSection.m in Sources */,
 				4A283A3C1B869E20007EA77E /* DAEarningPotentialSection.m in Sources */,
 				4A283A161B843BEE007EA77E /* DAOpportunityStep.m in Sources */,
@@ -569,22 +615,22 @@
 				4A8E8E431B6B01CD00F48CDD /* DAOpportunityViewController.m in Sources */,
 				4A2839AE1B82AD0B007EA77E /* DADiscoverViewController.m in Sources */,
 				4A2839F11B830BA7007EA77E /* DASessionCoordinator.m in Sources */,
+				4AB3F1FC1B8B1DC9008DC70F /* DAOpportunityStepEditor.m in Sources */,
 				4AB8B6B81B66081F008073B6 /* main.m in Sources */,
-				4A283A391B85BDA3007EA77E /* DAOpportunityTemplateEditor.m in Sources */,
 				4A2839E01B83083A007EA77E /* DAUser.m in Sources */,
 				4A8E8E241B6AE8D100F48CDD /* RootViewController.m in Sources */,
 				4A2839F91B830D71007EA77E /* DADataset.m in Sources */,
-				4A283A361B847286007EA77E /* DAOpportunityEditor.m in Sources */,
 				4A2839FC1B83133E007EA77E /* DAOpportunityCoordinator.m in Sources */,
 				4A283A2C1B846314007EA77E /* DSEarningPotentialPickerCell.m in Sources */,
+				4AB3F1E31B8AE29F008DC70F /* DAOpportunityTaskTitleCell.m in Sources */,
+				4AB3F1E01B8AA7EB008DC70F /* DANewOpportunityTaskCell.m in Sources */,
+				4AB3F1EF1B8B1CFD008DC70F /* DAOpportunityProgressViewController.m in Sources */,
 				4A2839F51B830D1A007EA77E /* DAEarningPotential.m in Sources */,
 				4A2839CC1B82F3F2007EA77E /* DACompanyCell.m in Sources */,
 				4A8E8E471B6B2C7B00F48CDD /* DAChatViewController.m in Sources */,
-				4A283A061B842DB1007EA77E /* DAOpportunityTemplateCoordinator.m in Sources */,
 				4A283A301B846D44007EA77E /* DAPeriod.m in Sources */,
 				4A283A201B843D38007EA77E /* DAOpportunityTask.m in Sources */,
 				4A283A021B8403BD007EA77E /* DAEarningPotentialPicker.m in Sources */,
-				4A283A421B86A72B007EA77E /* DAOpportunityStepEditor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

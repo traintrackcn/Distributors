@@ -7,11 +7,14 @@
 //
 
 #import "AGModel.h"
-#import "DAOpportunityDefine.h"
+#import "DAOpportunityCoordinator.h"
 #import "DADefine.h"
 
 @class DAPeriod;
 @interface DAOpportunityTask : AGModel
+
+
+- (NSString *)textOfType;
 
 @property (nonatomic, strong) NSString *identifier;
 
@@ -23,7 +26,13 @@
 @property (nonatomic, strong) NSString *targetName;
 @property (nonatomic, strong) NSString *sentence;
 
-@property (nonatomic, assign) NSInteger hours;
+
+
+@property (nonatomic, assign) CGFloat progress;
+
+@property (nonatomic, assign) NSInteger timeRequired; //hour
+@property (nonatomic, strong) NSDate *startDate;
+@property (nonatomic, strong) NSDate *endDate;
 
 
 
