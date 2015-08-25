@@ -8,6 +8,7 @@
 
 #import "DAChartCell+Styles.h"
 #import "GlobalDefine.h"
+#import "DAStyleDefine.h"
 
 @implementation DAChartCell (Styles)
 
@@ -34,16 +35,18 @@
 }
 
 - (UIColor *)borderColor{
-    return RGBA(221, 221, 221, 1);
+    return [UIColor whiteColor];
 }
 
 - (NSArray *)lineColors{
     return @[
-             RGBA(50, 155, 235, 1),
+             [UIColor whiteColor],
              RGBA(61, 177, 80, 1)
              ];
 }
 
-
+- (CGFloat)paddingLR{
+    return STYLE_PADDING_LR_DEFAULT;
+}
 
 @end

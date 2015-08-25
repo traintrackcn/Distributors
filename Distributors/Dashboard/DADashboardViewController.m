@@ -10,12 +10,16 @@
 #import "DADashboardChartCell.h"
 #import "AGViewController+Datasource.h"
 #import "DAStyleDefine.h"
+#import "AGStyleCoordinator.h"
+#import "AGTextCoordinator.h"
+#import "DATextKeyDefine.h"
 
 @implementation DADashboardViewController
 
 - (instancetype)init{
     self = [super init];
     if (self) {
+        [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_DASHBOARD]];
         [self.config setCellCls:[DADashboardChartCell class] inSection:0];
         [self setBackgroundColor:STYLE_BACKGROUND_COLOR_DEFAULT];
     }

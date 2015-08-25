@@ -28,7 +28,7 @@
 
 - (void)willMoveToSuperview:(UIView *)newSuperview{
     if (newSuperview) {
-        [self setBackgroundColor:[UIColor whiteColor]];
+//        [self setBackgroundColor:[UIColor whiteColor]];
 //        [self assemble];
     }
 }
@@ -84,8 +84,8 @@
             [self addSubview:l];
             [l setTextAlignment:NSTextAlignmentCenter];
             [l setAdjustsFontSizeToFitWidth:YES];
-            [l setTextColor:[AGStyleCoordinator colorChartCoordinatorLabel]];
-            [l setFont:[AGStyleCoordinator fontChartCoordinatorLabel]];
+            [l setTextColor:[UIColor whiteColor]];
+            [l setFont:[AGStyleCoordinator fontWithSize:10.0]];
             [tmpArr addObject:l];
         }else{
             [l setFrame:frame];
@@ -114,8 +114,8 @@
             [self addSubview:l];
             [l setTextAlignment:NSTextAlignmentCenter];
             [l setAdjustsFontSizeToFitWidth:YES];
-            [l setTextColor:[AGStyleCoordinator colorChartCoordinatorLabel]];
-            [l setFont:[AGStyleCoordinator fontChartCoordinatorLabel]];
+            [l setTextColor:[UIColor whiteColor]];
+            [l setFont:[AGStyleCoordinator fontWithSize:10]];
             [tmpArr addObject:l];
 //            [AGDebugUtil makeBorderForView:l];
         }else{
@@ -145,7 +145,7 @@
     for (NSInteger i = 0; i < num; i++) {
         CGPoint startP = CGPointMake(self.xZero, y);
         CGPoint endP = CGPointMake(self.xMax, y);
-        [DSDraw drawLine:ctx startPoint:startP endPoint:endP strokeColor:self.borderColor lineWidth:self.axisW];
+        [DSDraw drawLine:ctx startPoint:startP endPoint:endP strokeColor:[UIColor whiteColor] lineWidth:self.axisW];
         y -= self.unitH;
     }
 }
@@ -154,13 +154,13 @@
     CGFloat y = self.yZero;
     CGPoint startP = CGPointMake(self.xZero, y);
     CGPoint endP = CGPointMake(self.xMax, y);
-    [DSDraw drawLine:ctx startPoint:startP endPoint:endP strokeColor:self.borderColor lineWidth:self.axisW];
+    [DSDraw drawLine:ctx startPoint:startP endPoint:endP strokeColor:[UIColor whiteColor] lineWidth:self.axisW];
      
 }
 
 - (void)drawAxisY:(CGContextRef)ctx{
     CGPoint maxYP = CGPointMake(self.xZero, self.yMax);
-    [DSDraw drawLine:ctx startPoint:maxYP endPoint:self.ptZero strokeColor:self.borderColor lineWidth:self.axisW];
+    [DSDraw drawLine:ctx startPoint:maxYP endPoint:self.ptZero strokeColor:[UIColor whiteColor] lineWidth:self.axisW];
 }
 
 #pragma mark - properties
@@ -233,7 +233,7 @@
 }
 
 - (CGFloat)axisW{
-    return .5f;
+    return 1;
 }
 
 @end

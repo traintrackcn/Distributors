@@ -12,6 +12,7 @@
 #import "JBLineChartView.h"
 #import "DAChartCoordinatorView.h"
 //#import "AGChartTitleView.h"
+#import "GlobalDefine.h"
 #import "DAChartCell+RemoteOps.h"
 #import "DAChartCell+Styles.h"
 #import "DSDeviceUtil.h"
@@ -33,6 +34,8 @@
 //@property (nonatomic, strong) AGRemoteUnit *rUnit;
 @property (nonatomic, strong) NSArray *titleLabels;
 
+@property (nonatomic, strong) UILabel *titleLabel;
+
 @end
 
 @implementation DAChartCell
@@ -44,6 +47,7 @@
         [self.contentView addSubview:self.borderViewAboveTitle];
         [self.contentView addSubview:self.container];
         [self.contentView addSubview:self.borderViewUnderTitle];
+        [self.contentView addSubview:self.titleLabel];
         [self.container addSubview:self.chartView];
         [self.container insertSubview:self.coordinatorView atIndex:0];
         [self.contentView addSubview:self.borderBottomViewStyleSolid];
@@ -59,37 +63,6 @@
     [self request];
 }
 
-#pragma mark - assemblers
-
-//- (void)assembleTitleLabels{
-//    NSInteger num = self.numberOfLines;
-//    CGFloat w = self.frame.size.width/num;
-//    CGFloat h = self.titleH;
-//    CGFloat x = 0;
-//    NSMutableArray *tmpArr = [NSMutableArray array];
-//    for (NSInteger i = 0; i< num; i++) {
-//        AGChartTitleView *v = [self.titleLabels objectAtIndex:i];
-//        CGRect frame = CGRectMake(x, 0, w, h);
-//        if (!v) {
-//            v = [[AGChartTitleView alloc] initWithFrame:frame];
-//            [v setLineIndex:i];
-//            [v setDelegate:self];
-//            [self addSubview:v];
-//            //            [AGDebugUtil makeBorderForView:v];
-//            [tmpArr addObject:v];
-//        }else{
-//            [v setFrame:frame];
-//        }
-//        
-//        x += w;
-//        
-//    }
-//    
-//    if (tmpArr.count > 0 ) {
-//        [self setTitleLabels:tmpArr];
-//    }
-//    
-//}
 
 #pragma mark -
 
@@ -111,12 +84,28 @@
     return _container;
 }
 
+
+- (UILabel *)titleLabel{
+    if (!_titleLabel) {
+        CGFloat x = self.paddingLR;
+        CGFloat h = self.titleH;
+        CGFloat w = [DSDeviceUtil bounds].size.width - x*2;
+        CGFloat y = 0;
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, y, w, h)];
+        [_titleLabel setFont:[AGStyleCoordinator fontWithSize:13]];
+        //        _titleLabel.layer.borderWidth = 1;
+        [_titleLabel setText:@"Contact Created"];
+    }
+    return _titleLabel;
+}
+
 - (DAChartCoordinatorView *)coordinatorView{
     if (!_coordinatorView) {
         CGFloat w = self.container.frame.size.width;
         CGFloat h = self.container.frame.size.height;
         _coordinatorView = [[DAChartCoordinatorView alloc] initWithFrame:CGRectMake(0, 0, w, h)];
         [_coordinatorView setDelegate:self];
+        [_coordinatorView setBackgroundColor:RGBA(31, 185, 250, 1)];
         //        [_coordinatorView setChartView:self.chartView];
     }
     return _coordinatorView;
@@ -335,6 +324,12 @@
 - (JBLineChartViewLineStyle)lineChartView:(JBLineChartView *)lineChartView lineStyleForLineAtLineIndex:(NSUInteger)lineIndex
 {
     return JBLineChartViewLineStyleSolid;
+}
+
+#pragma mark - style
+
+- (void)applySelectedStyle{
+    
 }
 
 @end

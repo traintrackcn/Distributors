@@ -54,6 +54,7 @@
 #define KEY_LBL_VIDEOS @"Videos"
 #define KEY_LBL_COMMUNITY @"Community"
 #define KEY_LBL_TASK_LOG @"Task Log"
+#define KEY_LBL_DASHBOARD @"Dashboard"
 
 #define KEY_BTN_SELECT @"Select"
 #define KEY_BTN_SAVE @"Save"
