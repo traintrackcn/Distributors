@@ -10,7 +10,7 @@
 
 @class DAOpportunity;
 
-@interface DAOpportunityProgressViewController : AGViewController
+@interface DAOwnedOpportunityViewController : AGViewController
 
 @property (nonatomic, weak) DAOpportunity *item;
 

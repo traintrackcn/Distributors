@@ -141,13 +141,19 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger idx = indexPath.row;
     
     if (section == SectionTask) {
-        
-        if (idx != self.taskSection.lastIndex) {
-            DAOpportunityTaskEditor *vc = [DAOpportunityTaskEditor instance];
-            [vc setStep:self.item];
-            [vc setTask:[self.item.tasks objectAtIndex:idx]];
-            [self.navigationController pushViewController:vc animated:YES];
+        @try {
+            if (idx != self.taskSection.lastIndex) {
+                DAOpportunityTaskEditor *vc = [DAOpportunityTaskEditor instance];
+                [vc setStep:self.item];
+                [vc setTask:[self.item.tasks objectAtIndex:idx]];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
         }
+        @catch (NSException *exception) {
+            
+        }
+        
+        
         
         
     }

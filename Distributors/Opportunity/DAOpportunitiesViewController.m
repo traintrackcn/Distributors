@@ -20,6 +20,7 @@
 #import "DAOpportunityCell.h"
 #import "AGSearchCell.h"
 #import "DACompanyPicker.h"
+#import "DAOpportunityDataset.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
@@ -138,16 +139,21 @@ typedef NS_ENUM(NSInteger, Section) {
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger idx = indexPath.row;
-    id value = [NSString stringWithFormat:@"Opportunity-%d", idx];
+    id value = [NSString stringWithFormat:@"Opportunity-%ld", (long)idx];
     return value;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DAOpportunityViewController *vc = [DAOpportunityViewController instance];
     TLOG(@"self.naviC -> %@", self.navigationController);
-    [self.parentViewController.navigationController pushViewController:vc animated:YES];
+    [vc setItem:[DAOpportunityDataset singleton].demoOpportunity];
+    [self pushViewController:vc];
 }
 
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    return @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I"];
+}
 
 #pragma mark - styles
 

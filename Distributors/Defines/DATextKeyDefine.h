@@ -50,12 +50,16 @@
 #define KEY_LBL_AUTOSHIP @"Autoship"
 #define KEY_LBL_PRODUCTS @"Products"
 #define KEY_LBL_EVENTS @"Events"
-
+#define KEY_LBL_BIO @"Bio"
+#define KEY_LBL_VIDEOS @"Videos"
+#define KEY_LBL_COMMUNITY @"Community"
+#define KEY_LBL_TASK_LOG @"Task Log"
 
 #define KEY_BTN_SELECT @"Select"
 #define KEY_BTN_SAVE @"Save"
 #define KEY_BTN_NEXT @"Next"
 #define KEY_BTN_ADD_YOUR_FIRST_STEP @"Add Your First Step"
 #define KEY_BTN_CANCEL @"Cancel"
+#define KEY_BTN_START @"Start"
 
 #define KEY_MSG_UNDEFINED @"Undefined"

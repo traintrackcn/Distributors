@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 @property (nonatomic, strong) DACompany *dummyItem;
+@property (nonatomic, strong) UIBarButtonItem *closeBtnItem;
 
 @end
 
@@ -68,11 +69,18 @@ typedef NS_ENUM(NSInteger, Section) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.navigationItem setLeftBarButtonItem:self.closeBtnItem];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - interactive ops
+
+- (void)didTapClose:(id)sender{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - table view data
@@ -137,6 +145,20 @@ typedef NS_ENUM(NSInteger, Section) {
     }
     
 }
+
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+//    return @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I"];
+//}
+
+#pragma mark - components
+
+- (UIBarButtonItem *)closeBtnItem{
+    if (!_closeBtnItem) {
+        _closeBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(didTapClose:)];
+    }
+    return _closeBtnItem;
+}
+
 
 #pragma mark - properties
 

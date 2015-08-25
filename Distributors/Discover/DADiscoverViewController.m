@@ -102,7 +102,7 @@
 - (UITextField *)searchField{
     if (!_searchField) {
         CGFloat x = 15.0;
-        CGFloat y = 5;
+        CGFloat y = 15;
         CGFloat w = [DSDeviceUtil bounds].size.width - x*2;
         CGFloat h = 44.0;
         _searchField = [[UITextField alloc] initWithFrame:CGRectMake(x, y, w, h)];

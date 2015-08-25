@@ -80,13 +80,15 @@
 
 - (AGPortraitView *)creatorPortraitView{
     if (!_creatorPortraitView) {
-        CGFloat x = self.titleW + self.vSpaceW*3;
+        CGFloat x = self.titleW + self.vSpaceW*3+ (self.portraitW - self.portraitH)/2.0;
         CGFloat y = self.paddingTB;
-        CGFloat w = self.portraitW;
+        CGFloat w = self.portraitH;
         CGFloat h = self.portraitH;
-        _creatorPortraitView = [[AGPortraitView alloc] init];
-        [_creatorPortraitView setFrame:CGRectMake(x, y, w, h)];
-        _creatorPortraitView.layer.borderWidth = 1;
+        _creatorPortraitView = [[AGPortraitView alloc] initWithFrame:CGRectMake(x, y, w, h)];
+//        _creatorPortraitView.layer.borderWidth = 1;
+        
+//        _portraitView = [[AGPortraitView alloc] initWithFrame:CGRectMake(x, y, w, h)];
+        [_creatorPortraitView.imageView setImage:[UIImage imageNamed:@"nopic_mini.jpg"]];
     }
     return _creatorPortraitView;
 }
@@ -94,15 +96,15 @@
 - (UILabel *)creatorNameLabel{
     if (!_creatorNameLabel) {
         CGFloat x = self.titleW + self.vSpaceW*3;
-        CGFloat y = self.creatorPortraitView.frame.size.height + self.creatorPortraitView.frame.origin.y;
+        CGFloat y = self.creatorPortraitView.frame.size.height + self.creatorPortraitView.frame.origin.y + 5;
         CGFloat w = self.portraitW;
         CGFloat h = self.titleH - self.portraitH;
         _creatorNameLabel = [[UILabel alloc] init];
         [_creatorNameLabel setAdjustsFontSizeToFitWidth:YES];
         [_creatorNameLabel setFrame:CGRectMake(x, y, w, h)];
         [_creatorNameLabel setTextAlignment:NSTextAlignmentCenter];
-        _creatorNameLabel.layer.borderWidth = 1;
-        [_creatorNameLabel setText:@"Creator Name"];
+//        _creatorNameLabel.layer.borderWidth = 1;
+        [_creatorNameLabel setText:@"Creator"];
     }
     return _creatorNameLabel;
 }

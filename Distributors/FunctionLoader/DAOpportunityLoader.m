@@ -13,7 +13,7 @@
 #import "DADefine.h"
 #import "AGTextCoordinator.h"
 #import "DATextKeyDefine.h"
-#import "DAOpportunityProgressViewController.h"
+#import "DAOwnedOpportunityViewController.h"
 #import "AGStyleCoordinator.h"
 #import "DAOpportunityDataset.h"
 
@@ -22,6 +22,7 @@
 }
 
 @property (nonatomic, strong) UIBarButtonItem *progressBtnItem;
+//@property (nonatomic, strong) UIBarButtonItem *closeBtnItem;
 
 @end
 
@@ -56,10 +57,15 @@
 #pragma mark - interactive ops
 
 - (void)didTapProgress:(id)sender{
-    DAOpportunityProgressViewController *vc = [DAOpportunityProgressViewController instance];
+    DAOwnedOpportunityViewController *vc = [DAOwnedOpportunityViewController instance];
+    UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:vc];
     [vc setItem:[DAOpportunityDataset singleton].demoOpportunity];
-    [self pushViewController:vc animated:YES];
+    [self.navigationController presentViewController:naviC animated:YES completion:nil];
+    
+    
 }
+
+
 
 #pragma mark - components
 
@@ -92,5 +98,7 @@
     }
     return _progressBtnItem;
 }
+
+
 
 @end
