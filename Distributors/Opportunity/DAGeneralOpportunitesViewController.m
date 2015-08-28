@@ -20,6 +20,7 @@
 #import "DASearchCell.h"
 #import "DACompanyPicker.h"
 #import "DAOpportunityDataset.h"
+#import "DAStyleDefine.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
@@ -63,6 +64,9 @@ typedef NS_ENUM(NSInteger, Section) {
     //    [self.parentViewController setTitle:[AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITIES]];
     [self.navigationItem setRightBarButtonItem:self.addButtonItem];
     
+    
+    [self.tableView setSectionIndexBackgroundColor:RGBA(255, 255, 255, .2)];
+    [self.tableView setSectionIndexColor:STYLE_THEME_COLOR];
 }
 
 #pragma mark - interactive ops
@@ -101,25 +105,16 @@ typedef NS_ENUM(NSInteger, Section) {
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
     if (section == SectionSearch) return 1;
-    if (section == SectionItem) return 3;
+    if (section == SectionItem) return 6;
     return 0;
 }
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger idx = indexPath.row;
     id value;
-    switch (idx) {
-        case 0:
-            value = @"Medicus";
-            break;
-        case 1:
-            value = @"OG";
-            break;
-        case 2:
-            value = @"Become";
-            break;
-        
-    }
+//    NSArray *arr = @[@"Medicus",@"OG", @"Become"];
+    NSArray *arr = @[@"DemoBGOG.jpg",@"DemoBGMedicus.jpg", @"DemoBGOG.jpg",@"DemoBGMedicus.jpg", @"DemoBGOG.jpg",@"DemoBGMedicus.jpg"];
+    value = [arr objectAtIndex:idx];
     return value;
 }
 

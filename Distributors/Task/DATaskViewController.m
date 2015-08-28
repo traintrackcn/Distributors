@@ -178,11 +178,11 @@ typedef NS_ENUM(NSInteger, Section) {
     
     if (section == SectionReport && [self isSectionReportAvailable]) return 1;
     
-    if (section == SectionTimeRequired) return 2;
+    if (section == SectionTimeRequired && [self isSectionTimeRequiredAvailable]) return 2;
     
-    if (section == SectionRepeat) return 2;
+    if (section == SectionRepeat && [self isSectionRepeatAvailable]) return 2;
     
-    if (section == SectionNotification) return 1;
+    if (section == SectionNotification && [self isSectionNotificationAvailable]) return 1;
     
     if (section == SectionNote){
 //        if ([self isEditorAvailable]) return 2;
@@ -213,6 +213,13 @@ typedef NS_ENUM(NSInteger, Section) {
     if (section == SectionEventToAttend) return 3;
     if (section == SectionEventToHost) return 3;
 //    if (section == SectionButton && [self isSectionButtonAvailable]) return 1;
+    
+    if (section == SectionDefine) {
+        if (![self isSectionDefineAvailable]) {
+            return 0;
+        }
+    }
+    
     return [super numberOfRowsInSection:section];
 }
 
@@ -222,13 +229,11 @@ typedef NS_ENUM(NSInteger, Section) {
     id value = [super valueAtIndexPath:indexPath];
     
     if (section == SectionReport) {
-        value = [AGTextCoordinator textForKey:KEY_LBL_REPORT];
+        value = [AGTextCoordinator textForKey:KEY_LBL_DASHBOARD];
     }
     
     if (section == SectionImage) {
-        value = @[@"http://popchassid.com/wp-content/uploads/2013/05/Earth-the-universe-stars-435.jpg"
-                  ,@"http://popchassid.com/wp-content/uploads/2013/05/milky-way1.jpg"
-                  ,@"http://popchassid.com/wp-content/uploads/2013/05/Planet-earth.jpg"];
+        value = @[@"DemoPic.jpg"];
     }
     
     if (section == SectionNote) {
@@ -372,6 +377,24 @@ typedef NS_ENUM(NSInteger, Section) {
 
 
 #pragma mark - switches
+
+
+
+- (BOOL)isSectionDefineAvailable{
+    return NO;
+}
+
+- (BOOL)isSectionTimeRequiredAvailable{
+    return NO;
+}
+
+- (BOOL)isSectionRepeatAvailable{
+    return NO;
+}
+
+- (BOOL)isSectionNotificationAvailable{
+    return NO;
+}
 
 - (BOOL)isSectionReportAvailable{
     return YES;

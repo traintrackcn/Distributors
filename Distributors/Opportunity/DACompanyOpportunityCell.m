@@ -24,6 +24,8 @@
 @property (nonatomic, strong) UILabel *companyLabel;
 @property (nonatomic, strong) UIImageView *logoView;
 
+@property (nonatomic, strong) UIImageView *bgView;
+
 @end
 
 @implementation DACompanyOpportunityCell
@@ -36,6 +38,7 @@
         
         
 //        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+        [self setBackgroundColor:STYLE_BACKGROUND_COLOR_DEFAULT];
     }
     return self;
 }
@@ -44,9 +47,11 @@
 
 - (void)assemble{
     if (self.value) {
-        [self.contentView addSubview:self.companyLabel];
-        [self.contentView addSubview:self.titleLabel];
-        [self.contentView addSubview:self.logoView];
+//        [self.contentView addSubview:self.companyLabel];
+//        [self.contentView addSubview:self.titleLabel];
+//        [self.contentView addSubview:self.logoView];
+        
+        [self.contentView addSubview:self.bgView];
     }
 }
 
@@ -113,14 +118,30 @@
 - (UIImage *)logoImage{
 //    NSInteger idx = self.indexPath.row;
     NSString *logoName = [NSString stringWithFormat:@"Logo%@", self.value];
-    TLOG(@"logoName -> %@", logoName);
+//    TLOG(@"logoName -> %@", logoName);
     return [UIImage imageNamed:logoName];
+}
+
+- (UIImageView *)bgView{
+    if (!_bgView) {
+        _bgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, STYLE_DEVICE_WIDTH, self.height-10)];
+        
+//        TLOG(@"self.heigt -> %f",self.height);
+        [_bgView setImage:self.bgImage];
+//        _bgView.layer.borderWidth = 1;
+    }
+    return _bgView;
+}
+
+- (UIImage *)bgImage{
+    return [UIImage imageNamed:self.value];
 }
 
 #pragma mark - styles
 
 + (CGFloat)height{
-    return 100;
+//    return 100;
+    return ((153.0/320.0)*STYLE_DEVICE_WIDTH) + 10;
 }
 
 - (void)applySelectedStyle{
@@ -145,6 +166,10 @@
 
 - (CGFloat)logoH{
     return 65.0;
+}
+
+- (void)applyUnselectedStyle{
+    
 }
 
 @end

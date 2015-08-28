@@ -39,7 +39,7 @@
         [self.contentView addSubview:self.targetView];
         [self.contentView addSubview:self.borderBottomViewStyleSolid];
         
-        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+//        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
     return self;
 }

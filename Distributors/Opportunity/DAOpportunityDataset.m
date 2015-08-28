@@ -11,12 +11,13 @@
 #import "DATask.h"
 #import "DAOpportunity.h"
 #import "DACompany.h"
+#import "GlobalDefine.h"
 
 @interface DAOpportunityDataset(){
     
 }
 
-@property (nonatomic, strong) DAOpportunity *demoO;
+
 
 
 @end
@@ -37,24 +38,28 @@
 #pragma mark - remote ops
 
 - (void)requestTemplatesByCompany:(DACompany *)company completion:(void (^)(NSArray *))completion{
+//    TLOG(@"demoOpportunity -> %@", self.demoOpportunity);
     if (completion) {
-        completion (@[self.demoO]);
+        completion (@[self.demoOpportunity]);
     }
 }
 
 
 
 - (DAOpportunity *)demoOpportunity{
-    if (!_demoO) {
-        _demoO = [DAOpportunity instance];
+    if (!_demoOpportunity) {
+        _demoOpportunity = [DAOpportunity instance];
         
-        [_demoO setName:@"4 Steps to success with OG"];
+        [_demoOpportunity setName:@"4 Steps to success with OG"];
+        
+//        TLOG(@"before step1");
         
         //step1
         DAStep *step1 = [DAStep instance];
         [step1 setName:@"Become a Product of the Product"];
         [step1 setTasks:self.demoTasks];
         
+//        TLOG(@"after step1");
         
         DAStep *step2 = [DAStep instance];
         [step2 setName:@"Build a List of Contacts"];
@@ -68,15 +73,18 @@
         [step4 setName:@"Plug into a Proven Success System"];
         [step4 setTasks:self.demoTasks];
         
-        [_demoO setSteps:@[step1, step2, step3, step4]];
+        [_demoOpportunity setSteps:@[step1, step2, step3, step4]];
     }
-    return _demoO;
+    return _demoOpportunity;
 }
 
 - (NSArray *)demoTasks{
+//    return @[];
     DATask *task1 = [DATask instance];
     [task1 setSentence:@"Submit your testimonial within 48 hours"];
     [task1 setType:DAOpportunityTaskTypeTestimonial];
+    
+//    TLOG(@"after task1");
     
     DATask *task2 = [DATask instance];
     [task2 setSentence:@"Set yourself on the proper auto-ship"];

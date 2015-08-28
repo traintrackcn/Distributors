@@ -30,6 +30,7 @@
 #import "DATaskCellStyleTemplateEditor.h"
 #import "DAStepHeaderView.h"
 #import "DATaskEditor.h"
+#import "RootViewController.h"
 
 @interface DAOpportunityTemplateEditor(){
     
@@ -83,7 +84,9 @@
 #pragma mark - interactive ops
 
 - (void)didTapSave:(id)sender{
-    [self.defaultNavigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.defaultNavigationController dismissViewControllerAnimated:YES completion:^{
+        [[RootViewController singleton] popToOpportunityList];
+    }];
 }
 
 #pragma mark - components

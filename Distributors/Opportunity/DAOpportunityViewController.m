@@ -146,17 +146,17 @@ typedef NS_ENUM(NSInteger, SectionInfoCell) {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     
-    NSInteger section = indexPath.section;
-    NSInteger idx = indexPath.row;
-    
-    
-    if ([self isStepSection:section]) {
-        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-        DATask *item = [step.tasks objectAtIndex:idx];
-        DATaskViewController *vc = [DATaskViewController instance];
-        [vc setItem:item];
-        [self pushViewController:vc];
-    }
+//    NSInteger section = indexPath.section;
+//    NSInteger idx = indexPath.row;
+//    
+//    
+//    if ([self isStepSection:section]) {
+//        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+//        DATask *item = [step.tasks objectAtIndex:idx];
+//        DATaskViewController *vc = [DATaskViewController instance];
+//        [vc setItem:item];
+//        [self pushViewController:vc];
+//    }
 }
 
 - (NSInteger)isStepSection:(NSInteger)section{

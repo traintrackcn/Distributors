@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) DACircleNoteView *numberView;
 @property (nonatomic, strong) UILabel *titleView;
-@property (nonatomic, strong) DAButton *countdownView;
+@property (nonatomic, strong) DAButton *timeRequiredView;
 
 @end
 
@@ -31,7 +31,7 @@
         [self addSubview:self.borderBottomView];
         [self addSubview:self.numberView];
         [self addSubview:self.titleView];
-        [self addSubview:self.countdownView];
+        [self addSubview:self.timeRequiredView];
     }
     return self;
 }
@@ -51,16 +51,16 @@
 
 #pragma mark - components
 
-- (DAButton *)countdownView{
-    if (!_countdownView) {
+- (DAButton *)timeRequiredView{
+    if (!_timeRequiredView) {
         CGFloat x = self.titleView.frame.origin.x;
         CGFloat y = self.titleView.frame.origin.y + self.titleView.frame.size.height;
         CGFloat w = self.titleView.frame.size.width;
         CGFloat h = 20.0;
-        _countdownView = [[DAButton alloc] initWithFrame:CGRectMake(x, y, w, h) title:@"3 days" iconName:@"IconClock"];
-        [_countdownView setAlignLeft:YES];
+        _timeRequiredView = [[DAButton alloc] initWithFrame:CGRectMake(x, y, w, h) title:@"3 days" iconName:@"IconClock"];
+        [_timeRequiredView setAlignLeft:YES];
     }
-    return _countdownView;
+    return _timeRequiredView;
 }
 
 - (UILabel *)titleView{

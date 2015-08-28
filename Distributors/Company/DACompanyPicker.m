@@ -130,13 +130,15 @@ typedef NS_ENUM(NSInteger, Section) {
     }
     
     if (section == SectionItem) {
-        DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
+        
+        
 //        TLOG(@"self.naviC -> %@", self.navigationController);
         DACompany *item = [self.items objectAtIndex:idx];
-        [vc setCompany:item];
-        
+//        TLOG(@"item -> %@ ", item);
         [[DAOpportunityDataset singleton] requestTemplatesByCompany:item completion:^(NSArray *templates) {
             TLOG(@"templates -> %@", templates);
+            DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
+            [vc setCompany:item];
             [vc setItem:templates.firstObject];
             [self pushViewController:vc];
         }];

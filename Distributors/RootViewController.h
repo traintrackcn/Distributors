@@ -13,4 +13,6 @@
 
 //- (void)hello:(NSError * __autoreleasing *)error;
 
+- (void)popToOpportunityList;
+
 @end

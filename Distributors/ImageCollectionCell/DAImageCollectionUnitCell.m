@@ -46,7 +46,17 @@
 - (void)setValue:(id)value{
     
     if ([value isKindOfClass:[NSString class]]) {
+        
+        if ([[(NSString *)value uppercaseString] rangeOfString:@"http"].location == NSNotFound) {
+            UIImage *img = [UIImage imageNamed:value];
+            [imageV setImage:img];
+            return;
+        }
+        
+        
         value = [NSURL URLWithString:value];
+        
+        
     }else if([value isKindOfClass:[NSURL class]]){
         
     }else{

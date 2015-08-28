@@ -19,6 +19,7 @@
 #import "AGButtonItem.h"
 #import "AGTextCoordinator.h"
 #import "DATextDefine.h"
+#import "RootViewController.h"
 
 @implementation DAStepsEditor
 
@@ -56,7 +57,9 @@
 
 - (void)didTapSave:(id)sender{
 //    [self.defaultNavigationController popViewControllerAnimated:YES];
-    [self.defaultNavigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.defaultNavigationController dismissViewControllerAnimated:YES completion:^{
+        [[RootViewController singleton] popToOpportunityList];
+    }];
 }
 
 #pragma mark - datasource

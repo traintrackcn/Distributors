@@ -30,7 +30,8 @@
     
         RootTabController *rootTabC = [RootTabController singleton];
     //    [rootTabC setViewControllers:@[]];
-    RootViewController *rootVC = [[RootViewController alloc] initWithRootViewController:rootTabC];
+    RootViewController *rootVC = [RootViewController singleton];
+    [rootVC addChildViewController:rootTabC];
     
     [[self window] setRootViewController:rootVC];
     

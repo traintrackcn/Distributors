@@ -12,6 +12,10 @@
 
 @interface DATaskViewController : AGViewController
 
+- (BOOL)isSectionDefineAvailable;
+- (BOOL)isSectionTimeRequiredAvailable;
+- (BOOL)isSectionRepeatAvailable;
+- (BOOL)isSectionNotificationAvailable;
 
 - (BOOL)isSectionReportAvailable;
 - (BOOL)isSectionButtonAvailable;

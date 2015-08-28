@@ -61,4 +61,21 @@
     return YES;
 }
 
+
+- (BOOL)isSectionDefineAvailable{
+    return YES;
+}
+
+- (BOOL)isSectionTimeRequiredAvailable{
+    return YES;
+}
+
+- (BOOL)isSectionRepeatAvailable{
+    return YES;
+}
+
+- (BOOL)isSectionNotificationAvailable{
+    return YES;
+}
+
 @end

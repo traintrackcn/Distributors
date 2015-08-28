@@ -16,7 +16,7 @@
 
 - (void)requestTemplatesByCompany:(DACompany *)company completion:(void(^)(NSArray *templates))completion;
 
-- (DAOpportunity *)demoOpportunity;
+@property (nonatomic, strong) DAOpportunity *demoOpportunity;
 
 
 @end
