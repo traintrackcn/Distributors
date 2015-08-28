@@ -7,9 +7,10 @@
 //
 
 #import "DASettingViewController.h"
-#import "AGTextCoordinator.h"
 #import "DADefine.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
+#import "DAStyleDefine.h"
+#import "DSImage.h"
 
 @interface DASettingViewController ()
 
@@ -44,9 +45,10 @@
 
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_SETTING];
-    UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = DARootTabIdxSetting;
-    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
+    UIImage *img = [UIImage imageNamed:@"IconSetting"];
+    UIImage *imgSolid = [UIImage imageNamed:@"IconSettingSolid"];
+    imgSolid = [DSImage image:imgSolid withMaskColor:STYLE_THEME_COLOR];
+    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img selectedImage:imgSolid];
     [self setTabBarItem:tabBarItem];
 }
 

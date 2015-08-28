@@ -9,7 +9,7 @@
 #import "DSEarningPotentialPickerCell.h"
 #import "DAEarningPotential.h"
 #import "DSDeviceUtil.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 #import "DAStyleDefine.h"
 #import "GlobalDefine.h"
 

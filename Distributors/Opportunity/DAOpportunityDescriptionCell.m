@@ -40,11 +40,16 @@
         [_contentLabel setNumberOfLines:0];
         [_contentLabel setAdjustsFontSizeToFitWidth:YES];
         [_contentLabel setText:@"Description Description Description Description Description Description Description Description"];
+        [_contentLabel setFont:[AGStyleCoordinator fontWithSize:15.0]];
     }
     return _contentLabel;
 }
 
 #pragma mark - styles
+
++ (CGFloat)height{
+    return 60.0;
+}
 
 - (CGFloat)paddingLR{
     return STYLE_PADDING_LR_DEFAULT;

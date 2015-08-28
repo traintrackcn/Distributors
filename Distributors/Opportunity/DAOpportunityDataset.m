@@ -7,8 +7,8 @@
 //
 
 #import "DAOpportunityDataset.h"
-#import "DAOpportunityStep.h"
-#import "DAOpportunityTask.h"
+#import "DAStep.h"
+#import "DATask.h"
 #import "DAOpportunity.h"
 #import "DACompany.h"
 
@@ -51,20 +51,20 @@
         [_demoO setName:@"4 Steps to success with OG"];
         
         //step1
-        DAOpportunityStep *step1 = [DAOpportunityStep instance];
+        DAStep *step1 = [DAStep instance];
         [step1 setName:@"Become a Product of the Product"];
         [step1 setTasks:self.demoTasks];
         
         
-        DAOpportunityStep *step2 = [DAOpportunityStep instance];
+        DAStep *step2 = [DAStep instance];
         [step2 setName:@"Build a List of Contacts"];
         [step2 setTasks:self.demoTasks];
         
-        DAOpportunityStep *step3 = [DAOpportunityStep instance];
+        DAStep *step3 = [DAStep instance];
         [step3 setName:@"Book Four Coffee Jazz Mixers"];
         [step3 setTasks:self.demoTasks];
         
-        DAOpportunityStep *step4 = [DAOpportunityStep instance];
+        DAStep *step4 = [DAStep instance];
         [step4 setName:@"Plug into a Proven Success System"];
         [step4 setTasks:self.demoTasks];
         
@@ -74,15 +74,31 @@
 }
 
 - (NSArray *)demoTasks{
-    DAOpportunityTask *task1 = [DAOpportunityTask instance];
+    DATask *task1 = [DATask instance];
     [task1 setSentence:@"Submit your testimonial within 48 hours"];
+    [task1 setType:DAOpportunityTaskTypeOthers];
     
-    DAOpportunityTask *task2 = [DAOpportunityTask instance];
+    DATask *task2 = [DATask instance];
     [task2 setSentence:@"Set yourself on the proper auto-ship"];
+    [task2 setType:DAOpportunityTaskTypeAutoship];
     
-    DAOpportunityTask *task3 = [DAOpportunityTask instance];
+    DATask *task3 = [DATask instance];
     [task3 setSentence:@"Purchase 2 boxes of coffee (Black & Latte)"];
-    return @[task1, task2, task3];
+    [task3 setType:DAOpportunityTaskTypeProducts];
+    
+    DATask *task4 = [DATask instance];
+    [task4 setSentence:@"Attend 3 events"];
+    [task4 setType:DAOpportunityTaskTypeEvents];
+    
+    DATask *task5 = [DATask instance];
+    [task5 setSentence:@"Read documents and make 10 calls"];
+    [task5 setType:DAOpportunityTaskTypeTraining];
+    
+    DATask *task6 = [DATask instance];
+    [task6 setSentence:@"Contact 20 persons"];
+    [task6 setType:DAOpportunityTaskTypeContacts];
+    
+    return @[task1, task2, task3, task4, task5, task6];
 }
 
 @end

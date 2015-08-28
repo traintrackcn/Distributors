@@ -7,7 +7,8 @@
 //
 
 #import "AGCell.h"
+#import "DAOpportunityTitleCell.h"
 
-@interface DAOpportunityLeaderCell : AGCell
+@interface DAOpportunityLeaderCell : DAOpportunityTitleCell
 
 @end

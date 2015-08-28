@@ -7,12 +7,12 @@
 //
 
 #import "DACompanyPicker.h"
-#import "AGSearchCell.h"
+#import "DASearchCell.h"
 #import "DACompanyCell.h"
 #import "AGViewController+Datasource.h"
 #import "AGTextCoordinator.h"
-#import "DATextKeyDefine.h"
-#import "AGStyleCoordinator.h"
+#import "DATextDefine.h"
+#import "DAStyleDefine.h"
 #import "GlobalDefine.h"
 #import "NSObject+Singleton.h"
 #import "DACompanyCoordinator.h"
@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger, Section) {
     self = [super init];
     if (self) {
 //        [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY_TEMPLATE]];
-        [self.config setCellCls:[AGSearchCell class] inSection:SectionSearch];
+        [self.config setCellCls:[DASearchCell class] inSection:SectionSearch];
         [self.config setCellCls:[DACompanyCell class] inSection:SectionNewItem];
         [self.config setCellCls:[DACompanyCell class] inSection:SectionItem];
         
@@ -136,6 +136,7 @@ typedef NS_ENUM(NSInteger, Section) {
         [vc setCompany:item];
         
         [[DAOpportunityDataset singleton] requestTemplatesByCompany:item completion:^(NSArray *templates) {
+            TLOG(@"templates -> %@", templates);
             [vc setItem:templates.firstObject];
             [self pushViewController:vc];
         }];

@@ -8,7 +8,7 @@
 
 #import "DALabViewController.h"
 #import "AGTextCoordinator.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 #import "DADefine.h"
 #import "AGTextCellStyleMore.h"
 #import "AGViewController+Datasource.h"

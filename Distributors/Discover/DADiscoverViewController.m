@@ -7,15 +7,15 @@
 //
 
 #import "DADiscoverViewController.h"
-#import "AGTextCoordinator.h"
 #import "DADefine.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 #import "AGViewController+Datasource.h"
 #import "AGVCConfiguration.h"
 #import "DAMapCell.h"
-#import "DSDeviceUtil.h"
 #import "DAStyleDefine.h"
 #import "GlobalDefine.h"
+#import "DSImage.h"
+
 
 @interface DADiscoverViewController (){
     
@@ -43,6 +43,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, STYLE_DEVICE_WIDTH, STYLE_DEVICE_HEIGHT)];
+    [imgV setImage:[UIImage imageNamed:@"DemoDiscover"]];
+    [imgV setContentMode:UIViewContentModeScaleAspectFill];
+    [self.view addSubview:imgV];
 }
 
 - (void)layoutViews{
@@ -53,14 +58,14 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 //    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
     TLOG(@"self.view -> %@ children -> %@", self.view, self.view.subviews);
     
 //    if (![self.view.subviews containsObject:self.searchField]) {
-        [self.view addSubview:self.searchField];
-        [self.view bringSubviewToFront:self.searchField];
+//        [self.view addSubview:self.searchField];
+//        [self.view bringSubviewToFront:self.searchField];
 //    }
     
 }
@@ -77,16 +82,18 @@
 
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_DISCOVER];
-    UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = DARootTabIdxDiscover;
-    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
+    UIImage *img = [UIImage imageNamed:@"IconDiscover"];
+    UIImage *imgSolid = [UIImage imageNamed:@"IconDiscoverSolid"];
+    imgSolid = [DSImage image:imgSolid withMaskColor:STYLE_THEME_COLOR];
+    
+    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img selectedImage:imgSolid];
     [self setTabBarItem:tabBarItem];
 }
 
 #pragma mark - 
 
 - (NSInteger)numberOfSections{
-    return 1;
+    return 0;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{

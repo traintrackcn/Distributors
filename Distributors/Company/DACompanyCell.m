@@ -7,7 +7,7 @@
 //
 
 #import "DACompanyCell.h"
-#import "AGStyleCoordinator.h"
+#import "DAStyleDefine.h"
 #import "DSDeviceUtil.h"
 #import "DACompany.h"
 

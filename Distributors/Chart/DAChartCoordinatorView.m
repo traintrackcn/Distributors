@@ -8,7 +8,7 @@
 
 #import "DAChartCoordinatorView.h"
 #import "JBLineChartView.h"
-#import "AGStyleCoordinator.h"
+#import "DAStyleDefine.h"
 #import "DSDraw.h"
 #import "GlobalDefine.h"
 

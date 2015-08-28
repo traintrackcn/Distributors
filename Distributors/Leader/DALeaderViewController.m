@@ -12,10 +12,10 @@
 #import "AGViewController+Separator.h"
 #import "AGTextBoxCell.h"
 #import "AGTextfieldCellStyleOptions.h"
-#import "DAOpportunityCell.h"
+#import "DALeaderOpportunityCell.h"
 #import "DAStyleDefine.h"
 #import "AGTextCoordinator.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionBasic,
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, SectionBasicCell) {
         [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_COMMUNITY] atIndexPath:[NSIndexPath indexPathForRow:SectionBasicCellCommunity inSection:SectionBasic]];
         [self.config setCellCls:[AGTextfieldCellStyleOptions class] atIndexPath:[NSIndexPath indexPathForRow:SectionBasicCellCommunity inSection:SectionBasic]];
         
-        [self.config setCellCls:[DAOpportunityCell class] inSection:SectionOpportunity];
+        [self.config setCellCls:[DALeaderOpportunityCell class] inSection:SectionOpportunity];
         
         [self setBackgroundColor:STYLE_BACKGROUND_COLOR_DEFAULT];
         [self enableSeparators];

@@ -15,7 +15,7 @@
 }
 
 
-- (NSArray *)titles;
+//- (NSArray *)titles;
 - (void)reloadData;
 
 
@@ -24,7 +24,7 @@
 
 @property (nonatomic, strong) NSArray *data;
 @property (nonatomic, strong) AGRemoteUnit *rUnit;
-
+@property (nonatomic, strong) UILabel *titleLabel;
 
 @property (nonatomic, assign) NSInteger numberOfAxisXDots;
 @property (nonatomic, assign) NSInteger numberOfAxisYDots;

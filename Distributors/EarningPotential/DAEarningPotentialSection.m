@@ -11,7 +11,7 @@
 #import "DAEarningPotentialCell.h"
 #import "DAOpportunity.h"
 #import "AGTextCoordinator.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 
 @implementation DAEarningPotentialSection
 

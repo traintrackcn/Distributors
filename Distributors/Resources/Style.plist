@@ -152,9 +152,9 @@
 		<key>1</key>
 		<string>255,255,255</string>
 		<key>2</key>
-		<string>154,24,48</string>
+		<string>3,136,203</string>
 		<key>d-2</key>
-		<string>154,24,48</string>
+		<string>3,136,203</string>
 		<key>3</key>
 		<string>#4EACDB</string>
 		<key>4</key>
@@ -230,11 +230,11 @@
 		<key>cell-border</key>
 		<string>4</string>
 		<key>navigation-bar-background</key>
-		<string>1</string>
+		<string>2</string>
 		<key>navigation-bar-title</key>
-		<string>2</string>
+		<string>14</string>
 		<key>navigation-bar-button-title</key>
-		<string>2</string>
+		<string>14</string>
 		<key>navigation-bar-button-background-normal</key>
 		<string>2</string>
 		<key>button-title-normal</key>

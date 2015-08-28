@@ -32,9 +32,9 @@
 //@property (nonatomic, strong) UIView *borderViewBottom;
 
 //@property (nonatomic, strong) AGRemoteUnit *rUnit;
-@property (nonatomic, strong) NSArray *titleLabels;
+//@property (nonatomic, strong) NSArray *titleLabels;
 
-@property (nonatomic, strong) UILabel *titleLabel;
+
 
 @end
 
@@ -77,7 +77,7 @@
 - (UIView *)container{
     if (!_container) {
         CGFloat y = self.titleH;
-        CGFloat w = self.frame.size.width;
+        CGFloat w = [DSDeviceUtil bounds].size.width;
         CGFloat h = self.height - y;
         _container = [[UIView alloc] initWithFrame:CGRectMake(0, y, w, h)];
     }
@@ -94,7 +94,7 @@
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, y, w, h)];
         [_titleLabel setFont:[AGStyleCoordinator fontWithSize:13]];
         //        _titleLabel.layer.borderWidth = 1;
-        [_titleLabel setText:@"Contact Created"];
+//        [_titleLabel setText:@"Contact Created"];
     }
     return _titleLabel;
 }
@@ -159,13 +159,6 @@
     return _data;
 }
 
-- (NSArray *)titles{
-    return @[
-             @"Line1",
-             @"Line2"
-             ];
-}
-
 
 #pragma mark - AGChartCoordinatorDelegate
 
@@ -187,15 +180,15 @@
     }
 }
 
-#pragma mark - AGChartTitleViewDelegate
-
-- (UIColor *)chartTitleIndicatorColorAtLineIndex:(NSInteger)lineIndex{
-    return [self colorOfLine:lineIndex];
-}
-
-- (NSString *)chartTitleAtLineIndex:(NSInteger)lineIndex{
-    return [self titleOfLine:lineIndex];
-}
+//#pragma mark - AGChartTitleViewDelegate
+//
+//- (UIColor *)chartTitleIndicatorColorAtLineIndex:(NSInteger)lineIndex{
+//    return [self colorOfLine:lineIndex];
+//}
+//
+//- (NSString *)chartTitleAtLineIndex:(NSInteger)lineIndex{
+//    return [self titleOfLine:lineIndex];
+//}
 
 #pragma mark - AGDashboardChartDataSource
 
@@ -221,9 +214,9 @@
     return [self.lineColors objectAtIndex:lineIndex];
 }
 
-- (NSString *)titleOfLine:(NSInteger)lineIndex{
-    return [self.titles objectAtIndex:lineIndex];
-}
+//- (NSString *)titleOfLine:(NSInteger)lineIndex{
+//    return [self.titles objectAtIndex:lineIndex];
+//}
 
 
 

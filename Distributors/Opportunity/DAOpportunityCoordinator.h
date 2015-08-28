@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "NSObject+Singleton.h"
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, DAOpportunityTaskType) {
+    DAOpportunityTaskTypeTestimonial,
     DAOpportunityTaskTypeEvents,
     DAOpportunityTaskTypeProducts,
     DAOpportunityTaskTypeAutoship,
@@ -20,22 +22,25 @@ typedef NS_ENUM(NSInteger, DAOpportunityTaskType) {
 };
 
 @class DAOpportunity;
-@class DAOpportunityStep;
-@class DAOpportunityTask;
+@class DAStep;
+@class DATask;
 
 @interface DAOpportunityCoordinator : NSObject
 
-@property (nonatomic, strong) NSArray *taskTexts;
+
 
 - (NSString *)textForTaskType:(DAOpportunityTaskType)type;
+- (Class)taskDefineSectionClsForTaskType:(DAOpportunityTaskType)type;
+- (Class)taskEditorClsForTaskType:(DAOpportunityTaskType)type;
+- (UIImage *)taskIconImageForTaskType:(DAOpportunityTaskType)type;
 
 - (void)resetOpportunityInstance;
 - (void)resetStepInstance;
 - (void)resetTaskInstance;
 
-
+@property (nonatomic, strong) NSArray *taskTexts;
 @property (nonatomic, strong) DAOpportunity *opportunityInstance;
-@property (nonatomic, strong) DAOpportunityStep *stepInstance;
-@property (nonatomic, strong) DAOpportunityTask *taskInstance;
+@property (nonatomic, strong) DAStep *stepInstance;
+@property (nonatomic, strong) DATask *taskInstance;
 
 @end

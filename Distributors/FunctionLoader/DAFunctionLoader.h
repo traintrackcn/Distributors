@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "AGViewController.h"
+#import "DANavigationController.h"
 
 @class AGViewController;
-@interface DAFunctionLoader : UINavigationController
+@interface DAFunctionLoader : DANavigationController
 
 + (instancetype)instance;
 

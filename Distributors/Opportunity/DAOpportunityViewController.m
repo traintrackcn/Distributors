@@ -11,7 +11,8 @@
 #import "NSObject+Singleton.h"
 #import "AGTextCell.h"
 #import "GlobalDefine.h"
-#import "DAOpportunityStepSection.h"
+#import "DAStepHeaderView.h"
+#import "DATaskCellStyleProgress.h"
 #import "AGTextCellStyleTitleOnly.h"
 #import "DAOpportunityLeaderCell.h"
 #import "DAOpportunityDescriptionCell.h"
@@ -19,23 +20,16 @@
 #import "DAStyleDefine.h"
 #import "AGViewController+Datasource.h"
 #import "AGViewController+Separator.h"
-#import "AGTextCoordinator.h"
 #import "DAOpportunity.h"
 #import "AGButtonItem.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 #import "UIActionSheet+Blocks.h"
-
-typedef NS_ENUM(NSInteger, Section){
-    SectionSeparator,
-    SectionInfo,
-    SectionStep,
-    SectionButton,
-    SectionCount
-};
+#import "DAStep.h"
+#import "DATaskViewController.h"
+#import "DATaskCellStyleReadonly.h"
 
 typedef NS_ENUM(NSInteger, SectionInfoCell) {
-    SectionInfoCellTitle,
-    SectionInfoCellLeader,
+    SectionInfoCellTitleWithLeaderInfo,
     SectionInfoCellDescription,
     SectionInfoCellCount
 };
@@ -43,8 +37,6 @@ typedef NS_ENUM(NSInteger, SectionInfoCell) {
 @interface DAOpportunityViewController(){
     
 }
-
-@property (nonatomic, strong) DAOpportunityStepSection *stepSection;
 
 @end
 
@@ -60,17 +52,21 @@ typedef NS_ENUM(NSInteger, SectionInfoCell) {
 }
 
 - (void)configSections{
-    [self.config setCellHeight:0 atFirstIndexPathInSection:SectionSeparator];
-    [self.config setCellCls:[AGCell class] inSection:SectionSeparator];
+    [self.config setCellHeight:0 atFirstIndexPathInSection:self.SectionSeparator];
+    [self.config setCellCls:[AGCell class] inSection:self.SectionSeparator];
     
-    [self.config setCellCls:[AGTextCellStyleTitleOnly class] atIndexPath:[NSIndexPath indexPathForItem:SectionInfoCellTitle inSection:SectionInfo]];
-    [self.config setCellCls:[DAOpportunityLeaderCell class] atIndexPath:[NSIndexPath indexPathForItem:SectionInfoCellLeader inSection:SectionInfo]];
-    [self.config setCellCls:[DAOpportunityDescriptionCell class] atIndexPath:[NSIndexPath indexPathForItem:SectionInfoCellDescription inSection:SectionInfo]];
+    
+    [self.config setCellCls:[DAOpportunityLeaderCell class] atIndexPath:[NSIndexPath indexPathForItem:SectionInfoCellTitleWithLeaderInfo inSection:self.SectionInfo]];
+    [self.config setCellCls:[DAOpportunityDescriptionCell class] atIndexPath:[NSIndexPath indexPathForItem:SectionInfoCellDescription inSection:self.SectionInfo]];
     //        [self.config setCellCls:[AGTextCell class] inSection:SectionStep];
-    [self stepSection];
+    
+    for (NSInteger section = self.SectionFirstStep; section <= self.SectionLastStep; section ++) {
+        [self.config setHeaderCls:[DAStepHeaderView class] forSection:section];
+        [self.config setCellCls:[DATaskCellStyleReadonly class] inSection:section];
+    }
     
     
-    [self.config setCellCls:[AGButtonCell class] inSection:SectionButton];
+    [self.config setCellCls:[AGButtonCell class] inSection:self.SectionButton];
     
     [self setBackgroundColor:STYLE_BACKGROUND_COLOR_DEFAULT];
     [self enableSeparators];
@@ -97,14 +93,19 @@ typedef NS_ENUM(NSInteger, SectionInfoCell) {
 #pragma mark -
 
 - (NSInteger)numberOfSections{
-    return SectionCount;
+    return self.SectionCount;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
-    if (section == SectionSeparator) return 1;
-    if (section == SectionInfo) return SectionInfoCellCount;
-    if (section == SectionButton) return 1;
-    return [super numberOfRowsInSection:section];
+    if (section == self.SectionSeparator) return 1;
+    if (section == self.SectionInfo) return SectionInfoCellCount;
+    if (section == self.SectionButton) return 1;
+    if ([self isStepSection:section]) {
+        NSInteger stepIdx = [self stepIndexOfSection:section];
+        DAStep *step = [self.item.steps objectAtIndex:stepIdx];
+        return step.tasks.count;
+    }
+    return 0;
 }
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
@@ -112,13 +113,13 @@ typedef NS_ENUM(NSInteger, SectionInfoCell) {
     NSInteger idx = indexPath.row;
     id value = [super valueAtIndexPath:indexPath];
     
-    if (section == SectionInfo) {
-        if (idx == SectionInfoCellTitle) {
-            value = self.item.name;
-        }
+    if ([self isStepSection:section]) {
+        NSInteger stepIdx = [self stepIndexOfSection:section];
+        DAStep *step = [self.item.steps objectAtIndex:stepIdx];
+        return [step.tasks objectAtIndex:idx];
     }
     
-    if (section == SectionButton) {
+    if (section == self.SectionButton) {
         value = @[
                   [AGButtonItem instanceWithTitle:[AGTextCoordinator textForKey:KEY_BTN_START] target:self action:@selector(didTapStart:)]
                   ];
@@ -127,15 +128,73 @@ typedef NS_ENUM(NSInteger, SectionInfoCell) {
     return value;
 }
 
-#pragma mark - components
-
-- (DAOpportunityStepSection *)stepSection{
-    if (!_stepSection) {
-        _stepSection = [DAOpportunityStepSection instanceWithSection:SectionStep config:self.config];
-        [_stepSection setItem:self.item];
+- (id)valueForHeaderOfSection:(NSInteger)section{
+    
+    id value;
+    
+    if ([self isStepSection:section]) {
+        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+        value = @[
+                  [NSString stringWithFormat:@"%ld", ([self stepIndexOfSection:section] + 1)],
+                  [NSString stringWithFormat:@"%@", step.name]
+                  ];
     }
-    return _stepSection;
+    return value;
 }
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    NSInteger section = indexPath.section;
+    NSInteger idx = indexPath.row;
+    
+    
+    if ([self isStepSection:section]) {
+        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+        DATask *item = [step.tasks objectAtIndex:idx];
+        DATaskViewController *vc = [DATaskViewController instance];
+        [vc setItem:item];
+        [self pushViewController:vc];
+    }
+}
+
+- (NSInteger)isStepSection:(NSInteger)section{
+    if (section >= self.SectionFirstStep && section <= self.SectionLastStep) {
+        return YES;
+    }
+    return NO;
+}
+
+- (NSInteger)SectionSeparator{
+    return 0;
+}
+
+- (NSInteger)SectionInfo{
+    return self.SectionSeparator + 1;
+}
+
+- (NSInteger)SectionFirstStep{
+    return self.SectionInfo + 1;
+}
+
+- (NSInteger)SectionLastStep{
+    return self.SectionFirstStep + self.item.steps.count - 1;
+}
+
+- (NSInteger)SectionButton{
+    return self.SectionLastStep + 1;
+}
+
+- (NSInteger)SectionCount{
+    return self.SectionButton + 1;
+}
+
+- (NSInteger)stepIndexOfSection:(NSInteger)section{
+    return section - self.SectionFirstStep;
+}
+
+
 
 
 @end

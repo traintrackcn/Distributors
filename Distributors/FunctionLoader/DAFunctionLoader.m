@@ -7,8 +7,12 @@
 //
 
 #import "DAFunctionLoader.h"
+#import "AGViewController.h"
 
-@interface DAFunctionLoader ()
+@interface DAFunctionLoader (){
+    
+}
+
 
 @end
 
@@ -19,14 +23,9 @@
     return instance;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 //    TLOG(@"self.navigationController -> %@", self.navigationController);
 }
 
@@ -57,5 +56,6 @@
         [vc removeFromParentViewController];
     }
 }
+
 
 @end

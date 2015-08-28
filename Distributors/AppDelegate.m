@@ -12,6 +12,7 @@
 #import "AGUIDefine.h"
 #import "NSObject+Singleton.h"
 #import "AGNetworkDefine.h"
+#import "DAStyleDefine.h"
 
 @interface AppDelegate ()
 

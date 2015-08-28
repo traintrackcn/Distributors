@@ -8,7 +8,7 @@
 
 #import "DAPeriodDataset.h"
 #import "DAPeriod.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 #import "AGTextCoordinator.h"
 
 @implementation DAPeriodDataset

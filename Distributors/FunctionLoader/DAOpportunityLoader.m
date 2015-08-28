@@ -8,14 +8,17 @@
 
 #import "DAOpportunityLoader.h"
 #import "GlobalDefine.h"
-#import "DAOpportunitiesViewController.h"
+#import "DACompanyOpportunitiesViewController.h"
+#import "DAGeneralOpportunitesViewController.h"
 #import "DACompanyPicker.h"
 #import "DADefine.h"
 #import "AGTextCoordinator.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 #import "DAOwnedOpportunityViewController.h"
-#import "AGStyleCoordinator.h"
+#import "DAStyleDefine.h"
 #import "DAOpportunityDataset.h"
+#import "DANavigationController.h"
+#import "DSImage.h"
 
 @interface DAOpportunityLoader (){
 
@@ -38,9 +41,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    DAOpportunitiesViewController *vc = [DAOpportunitiesViewController instance];
+
+    DAGeneralOpportunitesViewController *vc = [DAGeneralOpportunitesViewController instance];
     [self setViewController:vc];
+    
+//    DACompanyOpportunitiesViewController *vc = [DACompanyOpportunitiesViewController instance];
+//    [self setViewController:vc];
     
 //    DACompaniesViewController *vc = [DACompaniesViewController instance];
 //    [self setViewController:vc];
@@ -58,7 +64,7 @@
 
 - (void)didTapProgress:(id)sender{
     DAOwnedOpportunityViewController *vc = [DAOwnedOpportunityViewController instance];
-    UINavigationController *naviC = [[UINavigationController alloc] initWithRootViewController:vc];
+    DANavigationController *naviC = [[DANavigationController alloc] initWithRootViewController:vc];
     [vc setItem:[DAOpportunityDataset singleton].demoOpportunity];
     [self.navigationController presentViewController:naviC animated:YES completion:nil];
     
@@ -71,10 +77,10 @@
 
 - (void)assembleTabBar{
     NSString *title = [AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY];
-    UIImage *img = [[UIImage alloc] init];
-    NSInteger tag = DARootTabIdxOpportunity;
-//    title = @"";
-    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
+    UIImage *img = [UIImage imageNamed:@"IconOpportunity"];
+    UIImage *imgSolid = [UIImage imageNamed:@"IconOpportunitySolid"];
+    imgSolid = [DSImage image:imgSolid withMaskColor:STYLE_THEME_COLOR];
+    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img selectedImage:imgSolid];
     [self setTabBarItem:tabBarItem];
 }
 
@@ -82,19 +88,19 @@
 
 - (UIBarButtonItem *)progressBtnItem{
     if (!_progressBtnItem) {
-        UIImage *img = [UIImage imageNamed:@"nopic_mini.jpg"];
-        UIImageView *v = [[UIImageView alloc] initWithImage:img];
-        UITapGestureRecognizer *gc = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapProgress:)];
-        
-        [AGStyleCoordinator decorateCircleMaskForView:v radius:20];
-        
-        [v setFrame:CGRectMake(0, 0, 40, 40)];
-        [v setUserInteractionEnabled:YES];
-        [v addGestureRecognizer:gc];
-        [v setContentMode:UIViewContentModeScaleAspectFit];
+//        UIImage *img = [UIImage imageNamed:@"nopic_mini.jpg"];
+//        UIImageView *v = [[UIImageView alloc] initWithImage:img];
+//        UITapGestureRecognizer *gc = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapProgress:)];
+//        
+//        [AGStyleCoordinator decorateCircleMaskForView:v radius:20];
+//        
+//        [v setFrame:CGRectMake(0, 0, 40, 40)];
+//        [v setUserInteractionEnabled:YES];
+//        [v addGestureRecognizer:gc];
+//        [v setContentMode:UIViewContentModeScaleAspectFit];
         
 //        _progressBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Progress" style:UIBarButtonItemStylePlain target:self action:@selector(didTapProgress:)];
-        _progressBtnItem = [[UIBarButtonItem alloc] initWithCustomView:v];
+        _progressBtnItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"IconUser"] style:UIBarButtonItemStylePlain target:self action:@selector(didTapProgress:)];
     }
     return _progressBtnItem;
 }

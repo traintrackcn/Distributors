@@ -13,21 +13,15 @@
 
 @implementation DADashboardChartCell
 
-//- (NSString *)requestType{
-//    return nil;
-//}
-
-- (NSArray *)titles{
-    return @[
-             [AGTextCoordinator titleDistributor],
-             [AGTextCoordinator titleGroupEnrollment]
-             ];
+- (void)setValue:(id)value{
+    [super setValue:value];
+    [self.titleLabel setText:[NSString stringWithFormat:@"%@", value]];
 }
 
 #pragma mark - remote ops
 
 - (void)didRequest:(id)data{
-    TLOG(@"data -> %@", data);
+//    TLOG(@"data -> %@", data);
     NSMutableArray *tmpArr;
     NSArray *numberLog = @[@(1), @(3), @(2)];
 //    NSArray *group = [data objectForKey:@"group"];
@@ -40,7 +34,7 @@
     tmpArr = [NSMutableArray array];
     for (NSInteger i = 0; i<self.numberOfAxisXDots; i++) {
 //        id item = [numberLog objectAtIndex:i];
-        NSString *title = [NSString stringWithFormat:@"%ld/09/015", (i+1)];
+        NSString *title = [NSString stringWithFormat:@"%ld/09/2015", (i+1)];
         [tmpArr addObject:title];
     }
     

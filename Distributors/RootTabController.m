@@ -10,9 +10,11 @@
 //#import "DAOpportunitiesViewController.h"
 #import "DAOpportunityLoader.h"
 #import "DAChatViewController.h"
-#import "DAContactsViewController.h"
+#import "DAContactViewController.h"
 #import "DASettingViewController.h"
 #import "DADiscoverViewController.h"
+#import "DAStyleDefine.h"
+#import "DSImage.h"
 
 @implementation RootTabController
 
@@ -22,16 +24,25 @@
 //        [self setTitle:@"Hello"];
         [self setViewControllers:@[
                                    [DAChatViewController instance],
-                                   [DAContactsViewController instance],
-                                   [DADiscoverViewController instance],
+                                   [DAContactViewController instance],
                                    [DAOpportunityLoader instance],
+                                   [DADiscoverViewController instance],
                                    [DASettingViewController instance]
                                    
                                    ]];
         
+        
+        UIImage *img = [DSImage rectangleWithSize:CGSizeMake(STYLE_DEVICE_WIDTH, STYLE_TAB_BAR_HEIGHT) fillColor:[UIColor whiteColor]];
+        
+        [self.tabBar setTintColor:STYLE_THEME_COLOR];
+        [self.tabBar setBackgroundImage:img];
+        
+        [self setSelectedIndex:2];
+        
     }
     return self;
 }
+
 
 
 

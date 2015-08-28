@@ -8,16 +8,21 @@
 
 #import "DAOpportunityCoordinator.h"
 #import "AGTextCoordinator.h"
-#import "DATextKeyDefine.h"
+#import "DATextDefine.h"
 #import "DAOpportunity.h"
-#import "DAOpportunityStep.h"
-#import "DAOpportunityTask.h"
+#import "DAStep.h"
+#import "DATask.h"
+
+
 
 @interface DAOpportunityCoordinator(){
     
 }
 
 
+@property (nonatomic, strong) NSArray *taskDefineSectionClsNames;
+@property (nonatomic, strong) NSArray *taskEditorClsNames;
+@property (nonatomic, strong) NSArray *taskIconImages;
 
 @end
 
@@ -32,11 +37,41 @@
     return [AGTextCoordinator textForKey:KEY_MSG_UNDEFINED];
 }
 
+- (Class)taskDefineSectionClsForTaskType:(DAOpportunityTaskType)type{
+    NSString *str = [self.taskDefineSectionClsNames objectAtIndex:type];
+    return NSClassFromString(str);
+}
+
+- (Class)taskEditorClsForTaskType:(DAOpportunityTaskType)type{
+    NSString *str = [self.taskEditorClsNames objectAtIndex:type];
+    return NSClassFromString(str);
+}
+
+- (UIImage *)taskIconImageForTaskType:(DAOpportunityTaskType)type{
+    return [self.taskIconImages objectAtIndex:type];
+}
+
 #pragma mark - properties
+
+- (NSArray *)taskIconImages{
+    if (!_taskIconImages) {
+        _taskIconImages = @[
+                           [UIImage imageNamed:@"IconTaskTestimonial"],
+                           [UIImage imageNamed:@"IconTaskEvents"],
+                           [UIImage imageNamed:@"IconTaskProducts"],
+                           [UIImage imageNamed:@"IconTaskAutoship"],
+                           [UIImage imageNamed:@"IconTaskContacts"],
+                           [UIImage imageNamed:@"IconTaskTraining"],
+                           [UIImage imageNamed:@"IconTaskOthers"]
+                           ];
+    }
+    return _taskIconImages;
+}
 
 - (NSArray *)taskTexts{
     if (!_taskTexts) {
         _taskTexts = @[
+                       [AGTextCoordinator textForKey:KEY_LBL_TESTIMONIAL],
                        [AGTextCoordinator textForKey:KEY_LBL_EVENTS],
                        [AGTextCoordinator textForKey:KEY_LBL_PRODUCTS],
                        [AGTextCoordinator textForKey:KEY_LBL_AUTOSHIP],
@@ -48,6 +83,37 @@
     return _taskTexts;
 }
 
+- (NSArray *)taskDefineSectionClsNames{
+    if (!_taskDefineSectionClsNames) {
+        _taskDefineSectionClsNames = @[
+                                    @"DATestimonialTaskDefineSection",
+                                    @"DAEventsTaskDefineSection",
+                                    @"DAProductsTaskDefineSection",
+                                    @"DAAutoshipTaskDefineSection",
+                                    @"DAContactsTaskDefineSection",
+                                    @"DATrainingTaskDefineSection",
+                                    @"DAOthersTaskDefineSection",
+                            
+                                    ];
+    }
+    return _taskDefineSectionClsNames;
+}
+
+
+- (NSArray *)taskEditorClsNames{
+    if (!_taskEditorClsNames) {
+        _taskEditorClsNames = @[
+                                @"DATestimonialTaskEditor",
+                                @"DAEventsTaskEditor",
+                                @"DAProductsTaskEditor",
+                                @"DAAutoshipTaskEditor",
+                                @"DAContactsTaskEditor",
+                                @"DATrainingTaskEditor",
+                                @"DAOthersTaskEditor",
+                                ];
+    }
+    return _taskEditorClsNames;
+}
 
 #pragma mark - utils
 
@@ -72,16 +138,16 @@
     return _opportunityInstance;
 }
 
-- (DAOpportunityStep *)stepInstance{
+- (DAStep *)stepInstance{
     if (!_stepInstance) {
-        _stepInstance = [DAOpportunityStep instance];
+        _stepInstance = [DAStep instance];
     }
     return _stepInstance;
 }
 
-- (DAOpportunityTask *)taskInstance{
+- (DATask *)taskInstance{
     if (!_taskInstance) {
-        _taskInstance = [DAOpportunityTask instance];
+        _taskInstance = [DATask instance];
     }
     return _taskInstance;
 }
