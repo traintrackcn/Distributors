@@ -47,6 +47,7 @@
 #define KEY_LBL_LINK @"Link"
 #define KEY_LBL_LINKS @"Links"
 #define KEY_LBL_REPEAT @"Repeat"
+#define KEY_LBL_END @"End"
 #define KEY_LBL_REMINDER @"Reminder"
 #define KEY_LBL_TIME_REQUIRED @"Time Required"
 #define KEY_LBL_TRAINING @"Training"

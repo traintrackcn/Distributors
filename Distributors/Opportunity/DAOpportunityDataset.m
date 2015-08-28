@@ -76,7 +76,7 @@
 - (NSArray *)demoTasks{
     DATask *task1 = [DATask instance];
     [task1 setSentence:@"Submit your testimonial within 48 hours"];
-    [task1 setType:DAOpportunityTaskTypeOthers];
+    [task1 setType:DAOpportunityTaskTypeTestimonial];
     
     DATask *task2 = [DATask instance];
     [task2 setSentence:@"Set yourself on the proper auto-ship"];

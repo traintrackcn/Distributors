@@ -7,8 +7,22 @@
 //
 
 #import "DAContactsTaskDefineSection.h"
+#import "AGTextfieldCell.h"
+#import "AGVCConfiguration.h"
+
+typedef NS_ENUM(NSInteger, AutoshipSectionCell) {
+    SectionCellTarget = 2,
+    SectionCellCount
+};
 
 @implementation DAContactsTaskDefineSection
+
+- (void)setItem:(DATask *)item{
+    [super setItem:item];
+    
+    [self.config setCellTitle:@"Target" atIndexPath:[NSIndexPath indexPathForItem:SectionCellTarget inSection:self.section]];
+    [self.config setCellCls:[AGTextfieldCell class] atIndexPath:[NSIndexPath indexPathForItem:SectionCellTarget inSection:self.section]];
+}
 
 - (id)valueAtIndex:(NSInteger)index{
     id value = [super valueAtIndex:index];
@@ -17,11 +31,15 @@
         value = @"Create/approach/enroll contacts";
     }
     
+    if (index == SectionCellTarget) {
+        value = @"20";
+    }
+    
     return value;
 }
 
 - (NSInteger)numberOfRows{
-    return 2;
+    return SectionCellCount;
 }
 
 

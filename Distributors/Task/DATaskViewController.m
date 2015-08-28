@@ -31,16 +31,20 @@
 #import "DAToolboxUnitView.h"
 
 #import "DATaskDefineSection.h"
+#import "AGTextfieldCellStyleOptions.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionDefine,
+    SectionTimeRequired,
+    SectionRepeat,
+    SectionNotification,
     SectionImage,
     SectionReport,
     SectionNote,
     SectionLocation,
     SectionAudioNote,
-    SectionDueTime,
     SectionReminder,
+    SectionDueTime,
     SectionVideo,
     SectionLink,
     
@@ -100,6 +104,19 @@ typedef NS_ENUM(NSInteger, Section) {
     [self.config setCellCls:[DATaskImageCollectionCell class] inSection:SectionImage];
     
     [self.config setCellCls:[AGTextCellStyleMore class] inSection:SectionReport];
+    
+    [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_TIME_REQUIRED] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionTimeRequired]];
+    [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_REMINDER] atIndexPath:[NSIndexPath indexPathForRow:1 inSection:SectionTimeRequired]];
+    [self.config setCellCls:[AGTextfieldCellStyleOptions class] inSection:SectionTimeRequired];
+    
+    
+    [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_REPEAT] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionRepeat]];
+    [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_END] atIndexPath:[NSIndexPath indexPathForRow:1 inSection:SectionRepeat]];
+    [self.config setCellCls:[AGTextfieldCellStyleOptions class] inSection:SectionRepeat];
+    
+    
+    [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_NOTIFY_WHEN_COMPLETE] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionNotification]];
+    [self.config setCellCls:[AGTextfieldCellStyleOptions class] inSection:SectionNotification];
     
     [self.config setCellCls:[DATaskNoteCell class] inSection:SectionNote];
     
@@ -161,6 +178,12 @@ typedef NS_ENUM(NSInteger, Section) {
     
     if (section == SectionReport && [self isSectionReportAvailable]) return 1;
     
+    if (section == SectionTimeRequired) return 2;
+    
+    if (section == SectionRepeat) return 2;
+    
+    if (section == SectionNotification) return 1;
+    
     if (section == SectionNote){
 //        if ([self isEditorAvailable]) return 2;
         return 1;
@@ -211,6 +234,23 @@ typedef NS_ENUM(NSInteger, Section) {
     if (section == SectionNote) {
         value = @"Set yourself up for success. Your goal should work up to at least a case of product per month to supply your new distributors ...";
     }
+    
+    if (section == SectionTimeRequired) {
+        if (idx == 0) value = @"6 days";
+        if (idx == 1) value = @"Every day at 8:00 am";
+    }
+    
+    if (section == SectionRepeat) {
+        if (idx == 0) {
+            value = @"Weekly | Monthly";
+        }
+        
+        if (idx == 1) {
+            value = @"30 days";
+        }
+    }
+    
+    if (section == SectionNotification) value = @"YES | NO";
     
     if (section == SectionReminder) {
         value = @"1 active alert";
