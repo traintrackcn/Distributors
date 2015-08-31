@@ -9,11 +9,11 @@
 #import "DATaskSection.h"
 #import "AGVCConfiguration.h"
 #import "DATaskCell.h"
-#import "DAStep.h"
 #import "AGTextCoordinator.h"
 #import "DATextDefine.h"
 //#import "DANewOpportunityTaskHeaderView.h"
 #import "DANewTaskCell.h"
+#import "DAOpportunity.h"
 
 @implementation DATaskSection
 
@@ -25,7 +25,7 @@
     return self;
 }
 
-- (void)setItem:(DAStep *)item{
+- (void)setItem:(DAOpportunity *)item{
     _item = item;
     [self checkEditMode];
 }
@@ -62,8 +62,8 @@
     return self.numberOfRows - 1;
 }
 
-- (id)headerValue{
-    return [AGTextCoordinator textForKey:KEY_LBL_TASKS];
-}
+//- (id)headerValue{
+//    return [AGTextCoordinator textForKey:KEY_LBL_TASKS];
+//}
 
 @end

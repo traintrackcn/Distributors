@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *desc;
-@property (nonatomic, strong) NSArray *steps;
+@property (nonatomic, strong) NSArray *tasks;
 
 @property (nonatomic, strong) DACompany *company;
 @property (nonatomic, strong) DAUser *owner;

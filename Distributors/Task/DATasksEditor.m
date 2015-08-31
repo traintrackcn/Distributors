@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DAStepEditor.h"
-#import "DAStep.h"
+#import "DATasksEditor.h"
+//#import "DAStep.h"
 #import "AGButtonCell.h"
 #import "AGButtonItem.h"
 #import "AGTextfieldBoxCell.h"
@@ -24,9 +24,10 @@
 #import "DATextDefine.h"
 #import "GlobalDefine.h"
 #import "DAOpportunityCoordinator.h"
+#import "DAOpportunity.h"
 
 typedef NS_ENUM(NSInteger, Section) {
-    SectionName,
+//    SectionName,
     SectionTask,
     SectionTimeToComplete,
     SectionNotification,
@@ -34,7 +35,7 @@ typedef NS_ENUM(NSInteger, Section) {
     SectionCount
 };
 
-@interface DAStepEditor(){
+@interface DATasksEditor(){
     
 }
 
@@ -42,21 +43,22 @@ typedef NS_ENUM(NSInteger, Section) {
 
 @end
 
-@implementation DAStepEditor
+@implementation DATasksEditor
 
 - (instancetype)init{
     self = [super init];
     if (self) {
-        [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_STEP_EDITOR]];
+        NSString *title = [AGTextCoordinator textForKey:KEY_LBL_GOALS];
+        [self setTitle:title];
     }
     return self;
 }
 
 - (void)configSections{
-    NSString *title = [NSString stringWithFormat:@"%@", [AGTextCoordinator textForKey:KEY_LBL_STEP_NAME]];
+//    NSString *title = [NSString stringWithFormat:@"%@", [AGTextCoordinator textForKey:KEY_LBL_STEP_NAME]];
     
-    [self.config setCellTitle:title atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionName]];
-    [self.config setCellCls:[AGTextfieldBoxCell class] inSection:SectionName];
+//    [self.config setCellTitle:title atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionName]];
+//    [self.config setCellCls:[AGTextfieldBoxCell class] inSection:SectionName];
     
     [self taskSection];
     
@@ -95,7 +97,7 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
-    if (section == SectionName) return 1;
+//    if (section == SectionName) return 1;
     if (section == SectionNotification) return 1;
     if (section == SectionButton) return 1;
     if (section == SectionTimeToComplete) return 1;
@@ -106,9 +108,9 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger section = indexPath.section;
     id value = [super valueAtIndexPath:indexPath];
     
-    if (section == SectionName){
-        value = @"Become a Product of the Product";
-    }
+//    if (section == SectionName){
+//        value = @"Become a Product of the Product";
+//    }
     
     if (section == SectionTimeToComplete) {
         value = @"21Days";
@@ -147,7 +149,7 @@ typedef NS_ENUM(NSInteger, Section) {
                 DAOpportunityTaskType type = idx;
                 Class cls = [[DAOpportunityCoordinator singleton] taskEditorClsForTaskType:type];
                 DATaskEditor *vc = [cls instance];
-                [vc setStep:self.item];
+//                [vc setItem:self.item];
                 [vc setItem:[self.item.tasks objectAtIndex:idx]];
                 [self.navigationController pushViewController:vc animated:YES];
             }

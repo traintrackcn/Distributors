@@ -1,5 +1,5 @@
 //
-//  DANewStepsViewController.h
+//  DANewOpportunityStepViewController.h
 //  Distributors
 //
 //  Created by Tao Yunfei on 8/21/15.
@@ -9,7 +9,7 @@
 #import "AGViewController.h"
 
 @class DAOpportunity;
-@interface DAStepsEditor : AGViewController
+@interface DATasksEditor : AGViewController
 
 @property (nonatomic, weak) DAOpportunity *item;
 

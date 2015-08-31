@@ -19,8 +19,10 @@
 #import "RootTabController.h"
 #import "DALeaderOpportunityCell.h"
 #import "AGSearchCell.h"
-#import "DACompanyPicker.h"
+//#import "DACompanyPicker.h"
+#import "DAOpportunityTemplateEditor.h"
 #import "DAOpportunityDataset.h"
+#import "DACompany.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
@@ -48,7 +50,7 @@ typedef NS_ENUM(NSInteger, Section) {
         [self.config setCellCls:[DALeaderOpportunityCell class] inSection:SectionItem];
 //        [self.config setCellCls:[AGTextCell class] inSection:SectionLeader];
 //        [self assembleTabBar];
-        [self setTitle:@"Company Name"];
+        [self setTitle:@"OG"];
         
             }
     return self;
@@ -79,12 +81,20 @@ typedef NS_ENUM(NSInteger, Section) {
 #pragma mark - interactive ops
 
 - (void)didTapAdd:(id)sender{
-    DACompanyPicker *vc = [DACompanyPicker instance];
-//    [self pushViewController:vc];
-    DANavigationController *naviC = [[DANavigationController alloc] initWithRootViewController:vc];
-    [self presentViewController:naviC animated:YES completion:^{
-        
+//    DACompany *item = [DACompany instance];
+    //        TLOG(@"item -> %@ ", item);
+    [[DAOpportunityDataset singleton] requestTemplatesByCompany:self.item completion:^(NSArray *templates) {
+        TLOG(@"templates -> %@", templates);
+        DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
+        [vc setCompany:self.item];
+        [vc setItem:templates.firstObject];
+        DANavigationController *naviC = [[DANavigationController alloc] initWithRootViewController:vc];
+        [self presentViewController:naviC animated:YES completion:^{
+            
+        }];
     }];
+//    [self pushViewController:vc];
+    
 }
 
 
@@ -138,8 +148,16 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
+    id value = [super valueAtIndexPath:indexPath];
+    NSInteger section = indexPath.section;
     NSInteger idx = indexPath.row;
-    id value = [NSString stringWithFormat:@"Opportunity-%ld", (long)idx];
+    NSArray *letters = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"O", @"P", @"Q", @"R", @"S", @"T"];
+    NSString *letter = [letters objectAtIndex:idx];
+    
+    if (section == SectionItem) {
+        value = [NSString stringWithFormat:@"Opportunity %@", letter];
+    }
+    
     return value;
 }
 

@@ -18,9 +18,10 @@
 #import "DACompanyOpportunityCell.h"
 #import "DACompanyOpportunitiesViewController.h"
 #import "DASearchCell.h"
-#import "DACompanyPicker.h"
+//#import "DACompanyPicker.h"
 #import "DAOpportunityDataset.h"
 #import "DAStyleDefine.h"
+#import "DAOpportunityBasicEditor.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
@@ -72,7 +73,11 @@ typedef NS_ENUM(NSInteger, Section) {
 #pragma mark - interactive ops
 
 - (void)didTapAdd:(id)sender{
-    DACompanyPicker *vc = [DACompanyPicker instance];
+    
+    DAOpportunityBasicEditor *vc = [DAOpportunityBasicEditor instance];
+    
+    
+//    DACompanyPicker *vc = [DACompanyPicker instance];
     //    [self pushViewController:vc];
     DANavigationController *naviC = [[DANavigationController alloc] initWithRootViewController:vc];
     [self presentViewController:naviC animated:YES completion:^{

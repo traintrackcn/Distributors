@@ -8,7 +8,7 @@
 
 #import "AGSectionUnit.h"
 
-@class DAStep;
+@class DAOpportunity;
 @interface DATaskSection : AGSectionUnit
 
 
@@ -16,6 +16,6 @@
 
 @property (nonatomic, assign) BOOL editMode;
 
-@property (nonatomic, weak) DAStep *item;
+@property (nonatomic, weak) DAOpportunity *item;
 
 @end

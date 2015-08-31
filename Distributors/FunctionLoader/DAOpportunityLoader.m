@@ -10,7 +10,7 @@
 #import "GlobalDefine.h"
 #import "DACompanyOpportunitiesViewController.h"
 #import "DAGeneralOpportunitesViewController.h"
-#import "DACompanyPicker.h"
+//#import "DACompanyPicker.h"
 #import "DADefine.h"
 #import "AGTextCoordinator.h"
 #import "DATextDefine.h"

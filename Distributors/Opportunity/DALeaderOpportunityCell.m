@@ -50,6 +50,11 @@
     return self;
 }
 
+- (void)setValue:(id)value{
+    [super setValue:value];
+    
+    [self.titleLabel setText:[NSString stringWithFormat:@"%@", value]];
+}
 
 
 #pragma mark - components

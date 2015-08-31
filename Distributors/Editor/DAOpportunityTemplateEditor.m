@@ -9,7 +9,6 @@
 #import "DAOpportunityTemplateEditor.h"
 #import "DACompany.h"
 #import "DAOpportunity.h"
-#import "DAStep.h"
 #import "DATask.h"
 #import "AGViewController+Datasource.h"
 #import "AGViewController+Separator.h"
@@ -18,7 +17,6 @@
 #import "NSObject+Singleton.h"
 #import "AGButtonCell.h"
 #import "AGButtonItem.h"
-#import "DAStepCell.h"
 #import "DATaskCell.h"
 #import "DAStyleDefine.h"
 #import "AGTextCoordinator.h"
@@ -28,14 +26,15 @@
 #import "AGTextfieldCellStyleOptions.h"
 #import "DAOpportunityTitleCell.h"
 #import "DATaskCellStyleTemplateEditor.h"
-#import "DAStepHeaderView.h"
 #import "DATaskEditor.h"
 #import "RootViewController.h"
+
 
 @interface DAOpportunityTemplateEditor(){
     
 }
 
+@property (nonatomic, strong) UIBarButtonItem *closeBtnItem;
 //@property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) DAEarningPotentialSection *earningPotentialSection;
 
@@ -51,9 +50,17 @@
     return self;
 }
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    [self.navigationItem setLeftBarButtonItem:self.closeBtnItem];
+}
+
+#pragma mark -
+
 - (void)setCompany:(DACompany *)company{
     _company = company;
-    NSString *text = [NSString stringWithFormat:@"%@ %@", _company.name, [AGTextCoordinator textForKey:KEY_LBL_TEMPLATE]];
+    NSString *cName = _company.name?_company.name:@"OG";
+    NSString *text = [NSString stringWithFormat:@"%@ %@", cName, [AGTextCoordinator textForKey:KEY_LBL_TEMPLATE]];
     [self setTitle:text];
 }
 
@@ -63,10 +70,11 @@
     [self.config setCellCls:[DAOpportunityTitleCell class] inSection:self.SectionTitle];
     
     
-    for (NSInteger section = self.SectionFirstStep; section <= self.SectionLastStep; section ++) {
-        [self.config setHeaderCls:[DAStepHeaderView class] forSection:section];
-        [self.config setCellCls:[DATaskCellStyleTemplateEditor class] inSection:section];
-    }
+//    for (NSInteger section = self.SectionFirstStep; section <= self.SectionLastStep; section ++) {
+////        [self.config setHeaderCls:[DAStepHeaderView class] forSection:section];
+//        [self.config setCellCls:[DATaskCellStyleTemplateEditor class] inSection:section];
+//    }
+    [self.config setCellCls:[DATaskCellStyleTemplateEditor class] inSection:self.SectionTask];
     
     [self earningPotentialSection];
     
@@ -89,6 +97,11 @@
     }];
 }
 
+
+- (void)didTapClose:(id)sender{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - components
 
 - (DAEarningPotentialSection *)earningPotentialSection{
@@ -107,10 +120,11 @@
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
     if (section == self.SectionButton) return 1;
-    if ([self isStepSection:section]) {
-        NSInteger stepIdx = [self stepIndexOfSection:section];
-        DAStep *step = [self.item.steps objectAtIndex:stepIdx];
-        return step.tasks.count;
+//    if ([self isStepSection:section]) {
+    if (section == self.SectionTask){
+//        NSInteger stepIdx = [self stepIndexOfSection:section];
+//        DAStep *step = [self.item.steps objectAtIndex:stepIdx];
+        return self.item.tasks.count;
     }
     return 1;
 }
@@ -120,10 +134,11 @@
     NSInteger idx = indexPath.row;
     id value = [super valueAtIndexPath:indexPath];
     
-    if ([self isStepSection:section]) {
-        NSInteger stepIdx = [self stepIndexOfSection:section];
-        DAStep *step = [self.item.steps objectAtIndex:stepIdx];
-        return [step.tasks objectAtIndex:idx];
+//    if ([self isStepSection:section]) {
+    if (section == self.SectionTask){
+//        NSInteger stepIdx = [self stepIndexOfSection:section];
+//        DAStep *step = [self.item.steps objectAtIndex:stepIdx];
+        return [self.item.tasks objectAtIndex:idx];
     }
     
     if ( section == self.SectionButton) {
@@ -144,19 +159,20 @@
 }
 
 
-- (id)valueForHeaderOfSection:(NSInteger)section{
-    
-    id value;
-    
-    if ([self isStepSection:section]) {
-        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-        value = @[
-                  [NSString stringWithFormat:@"%ld", ([self stepIndexOfSection:section] + 1)],
-                  [NSString stringWithFormat:@"%@", step.name]
-                  ];
-    }
-    return value;
-}
+//- (id)valueForHeaderOfSection:(NSInteger)section{
+//    
+//    id value;
+//    
+////    if ([self isStepSection:section]) {
+//    if (section == self.SectionTask){
+//        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+//        value = @[
+//                  [NSString stringWithFormat:@"%ld", ([self stepIndexOfSection:section] + 1)],
+//                  [NSString stringWithFormat:@"%@", step.name]
+//                  ];
+//    }
+//    return value;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -165,36 +181,33 @@
     NSInteger idx = indexPath.row;
     
     
-    if ([self isStepSection:section]) {
-        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-        DATask *item = [step.tasks objectAtIndex:idx];
+//    if ([self isStepSection:section]) {
+    if (section == self.SectionTask){
+//        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+        DATask *item = [self.item.tasks objectAtIndex:idx];
         DATaskEditor *vc = [DATaskEditor instance];
         [vc setItem:item];
         [self pushViewController:vc];
     }
 }
 
-- (NSInteger)isStepSection:(NSInteger)section{
-    if (section >= self.SectionFirstStep && section <= self.SectionLastStep) {
-        return YES;
-    }
-    return NO;
-}
+//- (NSInteger)isStepSection:(NSInteger)section{
+//    if (section >= self.SectionFirstStep && section <= self.SectionLastStep) {
+//        return YES;
+//    }
+//    return NO;
+//}
 
 - (NSInteger)SectionTitle{
     return 0;
 }
 
-- (NSInteger)SectionFirstStep{
+- (NSInteger)SectionTask{
     return self.SectionTitle + 1;
 }
 
-- (NSInteger)SectionLastStep{
-    return self.SectionFirstStep + self.item.steps.count - 1;
-}
-
 - (NSInteger)SectionTimeOffer{
-    return self.SectionLastStep + 1;
+    return self.SectionTask + 1;
 }
 
 - (NSInteger)SectionCommitmentPeriod{
@@ -214,11 +227,18 @@
     return self.SectionButton + 1;
 }
 
-- (NSInteger)stepIndexOfSection:(NSInteger)section{
-    return section - self.SectionFirstStep;
+//- (NSInteger)stepIndexOfSection:(NSInteger)section{
+//    return section - self.SectionFirstStep;
+//}
+
+
+#pragma mark - components
+
+- (UIBarButtonItem *)closeBtnItem{
+    if (!_closeBtnItem) {
+        _closeBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(didTapClose:)];
+    }
+    return _closeBtnItem;
 }
-
-
-
 
 @end

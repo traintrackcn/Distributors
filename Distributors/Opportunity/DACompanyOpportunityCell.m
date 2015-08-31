@@ -60,6 +60,9 @@
 //    TLOG(@"value -> %@ self.value -> %@", value, self.value);
     [self assemble];
     [self.companyLabel setText:[NSString stringWithFormat:@"%@", value]];
+    [self.logoView setImage:self.logoImage];
+    
+    [self.bgView setImage:self.bgImage];
 }
 
 #pragma mark - components
@@ -106,7 +109,7 @@
         _logoView = [[UIImageView alloc] init];
         [_logoView setFrame:CGRectMake(x, y, w, h)];
         [_logoView setContentMode:UIViewContentModeScaleAspectFit];
-        [_logoView setImage:self.logoImage];
+        
         [_logoView.layer setCornerRadius:w/2];
         [_logoView.layer setBorderColor:RGBA(242, 242, 242, 1).CGColor];
         [_logoView.layer setBorderWidth:1];

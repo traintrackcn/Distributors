@@ -16,7 +16,7 @@
 #import "AGTextCellStyleMore.h"
 #import "DATextDefine.h"
 #import "AGTextCoordinator.h"
-#import "DATaskReportViewController.h"
+//#import "DATaskReportViewController.h"
 #import "DATaskNoteCell.h"
 #import "DATaskAudioNoteCell.h"
 #import "DATaskDueTimeCell.h"
@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, Section) {
     SectionRepeat,
     SectionNotification,
     SectionImage,
-    SectionReport,
+//    SectionReport,
     SectionNote,
     SectionLocation,
     SectionAudioNote,
@@ -103,7 +103,7 @@ typedef NS_ENUM(NSInteger, Section) {
     
     [self.config setCellCls:[DATaskImageCollectionCell class] inSection:SectionImage];
     
-    [self.config setCellCls:[AGTextCellStyleMore class] inSection:SectionReport];
+//    [self.config setCellCls:[AGTextCellStyleMore class] inSection:SectionReport];
     
     [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_TIME_REQUIRED] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionTimeRequired]];
     [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_REMINDER] atIndexPath:[NSIndexPath indexPathForRow:1 inSection:SectionTimeRequired]];
@@ -176,7 +176,7 @@ typedef NS_ENUM(NSInteger, Section) {
         return 1;
     }
     
-    if (section == SectionReport && [self isSectionReportAvailable]) return 1;
+//    if (section == SectionReport && [self isSectionReportAvailable]) return 1;
     
     if (section == SectionTimeRequired && [self isSectionTimeRequiredAvailable]) return 2;
     
@@ -228,9 +228,9 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger idx = indexPath.row;
     id value = [super valueAtIndexPath:indexPath];
     
-    if (section == SectionReport) {
-        value = [AGTextCoordinator textForKey:KEY_LBL_DASHBOARD];
-    }
+//    if (section == SectionReport) {
+//        value = [AGTextCoordinator textForKey:KEY_LBL_DASHBOARD];
+//    }
     
     if (section == SectionImage) {
         value = @[@"DemoPic.jpg"];
@@ -308,10 +308,10 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger section = indexPath.section;
     NSInteger idx = indexPath.row;
     
-    if (section == SectionReport) {
-        DATaskReportViewController *vc = [DATaskReportViewController instance];
-        [self pushViewController:vc];
-    }
+//    if (section == SectionReport) {
+//        DATaskReportViewController *vc = [DATaskReportViewController instance];
+//        [self pushViewController:vc];
+//    }
     
     if (section == SectionEventToHost || section == SectionEventToAttend) {
         DATaskViewController *vc = [DATaskViewController instance];

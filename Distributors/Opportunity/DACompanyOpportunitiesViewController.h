@@ -8,6 +8,10 @@
 
 #import "AGViewController.h"
 
+@class DACompany;
+
 @interface DACompanyOpportunitiesViewController : AGViewController
+
+@property (nonatomic,strong) DACompany *item;
 
 @end

@@ -10,7 +10,7 @@
 #import "AGTextCoordinator.h"
 #import "DATextDefine.h"
 #import "DAOpportunity.h"
-#import "DAStep.h"
+//#import "DAStep.h"
 #import "DATask.h"
 
 
@@ -138,12 +138,12 @@
     return _opportunityInstance;
 }
 
-- (DAStep *)stepInstance{
-    if (!_stepInstance) {
-        _stepInstance = [DAStep instance];
-    }
-    return _stepInstance;
-}
+//- (DAStep *)stepInstance{
+//    if (!_stepInstance) {
+//        _stepInstance = [DAStep instance];
+//    }
+//    return _stepInstance;
+//}
 
 - (DATask *)taskInstance{
     if (!_taskInstance) {

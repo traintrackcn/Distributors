@@ -21,10 +21,10 @@
 #import "DATextDefine.h"
 #import "DADashboardViewController.h"
 #import "DATaskCellStyleProgress.h"
-#import "DAStep.h"
+//#import "DAStep.h"
 //#import "DATaskProgressEditor.h"
-#import "DAStepHeaderView.h"
-#import "DATaskViewController.h"
+//#import "DAStepHeaderView.h"
+#import "DATaskReportViewController.h"
 #import "DAOpportunityTitleCell.h"
 
 @interface DAOwnedOpportunityViewController(){
@@ -60,7 +60,7 @@
     [self.config setCellCls:[DAOpportunityTitleCell class] inSection:self.SectionTitle];
     
     for (NSInteger section = 1; section < self.SectionCount; section ++) {
-        [self.config setHeaderCls:[DAStepHeaderView class] forSection:section];
+//        [self.config setHeaderCls:[DAStepHeaderView class] forSection:section];
         [self.config setCellCls:[DATaskCellStyleProgress class] inSection:section];
     }
     
@@ -95,21 +95,17 @@
     return 0;
 }
 
-- (NSInteger)SectionFirstStep{
+- (NSInteger)SectionTask{
     return 1;
 }
 
-- (NSInteger)SectionLastStep{
-    return self.item.steps.count;
-}
-
 - (NSInteger)SectionCount{
-    return self.SectionLastStep + 1;
+    return self.SectionTask + 1;
 }
 
-- (NSInteger)stepIndexOfSection:(NSInteger)section{
-    return section - 1;
-}
+//- (NSInteger)stepIndexOfSection:(NSInteger)section{
+//    return section - 1;
+//}
 
 - (NSInteger)numberOfSections{
     return self.SectionCount;
@@ -118,8 +114,8 @@
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
     
     if (section == self.SectionTitle) return 1;
-    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-    return step.tasks.count;
+//    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+    return self.item.tasks.count;
 //    return [super numberOfRowsInSection:section];
 }
 
@@ -130,32 +126,34 @@
     
     if (section == self.SectionTitle) return value;
     
-    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-    value = [step.tasks objectAtIndex:idx];
+//    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+    value = [self.item.tasks objectAtIndex:idx];
     
     return value;
 }
 
-- (id)valueForHeaderOfSection:(NSInteger)section{
-    
-    id value;
-    
-    if (section != self.SectionTitle) {
-        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-        value = @[
-                  [NSString stringWithFormat:@"%ld", ([self stepIndexOfSection:section] + 1)],
-                    [NSString stringWithFormat:@"%@", step.name]
-                  ];
-    }
-    return value;
-}
+//- (id)valueForHeaderOfSection:(NSInteger)section{
+//    
+//    id value;
+//    
+//    if (section != self.SectionTitle) {
+//        DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+//        value = @[
+//                  [NSString stringWithFormat:@"%ld", ([self stepIndexOfSection:section] + 1)],
+//                    [NSString stringWithFormat:@"%@", step.name]
+//                  ];
+//    }
+//    return value;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger section = indexPath.section;
+//    NSInteger section = indexPath.section;
     NSInteger idx = indexPath.row;
-    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-    DATask *item = [step.tasks objectAtIndex:idx];
-    DATaskViewController *vc = [DATaskViewController instance];
+//    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
+    DATask *item = [self.item.tasks objectAtIndex:idx];
+//    DATaskViewController *vc = [DATaskViewController instance];
+//    [vc setItem:item];
+    DATaskReportViewController *vc = [DATaskReportViewController instance];
     [vc setItem:item];
     [self pushViewController:vc];
 }

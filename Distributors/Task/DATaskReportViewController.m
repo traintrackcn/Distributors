@@ -15,6 +15,7 @@
 #import "AGViewController+Separator.h"
 #import "AGCircleProgressCell.h"
 #import "DATaskCircleChartCell.h"
+#import "DATaskViewController.h"
 //#import "AGTextCell.h"
 
 typedef NS_ENUM(NSInteger, Section) {
@@ -23,6 +24,14 @@ typedef NS_ENUM(NSInteger, Section) {
     SectionProgress,
     SectionCount
 };
+
+@interface DATaskReportViewController(){
+    
+}
+
+@property (nonatomic, strong) UIBarButtonItem *detailButtonItem;
+
+@end
 
 @implementation DATaskReportViewController
 
@@ -42,6 +51,19 @@ typedef NS_ENUM(NSInteger, Section) {
     return self;
 }
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    
+    [self.navigationItem setRightBarButtonItem:self.detailButtonItem];
+}
+
+#pragma mark - interactive ops
+
+- (void)didTapDetail:(id)sender{
+    DATaskViewController *vc = [DATaskViewController instance];
+    [vc setItem:self.item];
+    [self pushViewController:vc];
+}
 
 
 #pragma mark - datasource
@@ -74,6 +96,16 @@ typedef NS_ENUM(NSInteger, Section) {
     
     
     return value;
+}
+
+
+#pragma mark - components
+
+- (UIBarButtonItem *)detailButtonItem{
+    if (!_detailButtonItem) {
+        _detailButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Detail" style:UIBarButtonItemStylePlain target:self action:@selector(didTapDetail:)];
+    }
+    return _detailButtonItem;
 }
 
 

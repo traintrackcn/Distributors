@@ -7,7 +7,6 @@
 //
 
 #import "DAOpportunityDataset.h"
-#import "DAStep.h"
 #import "DATask.h"
 #import "DAOpportunity.h"
 #import "DACompany.h"
@@ -55,25 +54,25 @@
 //        TLOG(@"before step1");
         
         //step1
-        DAStep *step1 = [DAStep instance];
-        [step1 setName:@"Become a Product of the Product"];
-        [step1 setTasks:self.demoTasks];
+//        DAStep *step1 = [DAStep instance];
+//        [step1 setName:@"Become a Product of the Product"];
+//        [step1 setTasks:self.demoTasks];
+//        
+////        TLOG(@"after step1");
+//        
+//        DAStep *step2 = [DAStep instance];
+//        [step2 setName:@"Build a List of Contacts"];
+//        [step2 setTasks:self.demoTasks];
+//        
+//        DAStep *step3 = [DAStep instance];
+//        [step3 setName:@"Book Four Coffee Jazz Mixers"];
+//        [step3 setTasks:self.demoTasks];
+//        
+//        DAStep *step4 = [DAStep instance];
+//        [step4 setName:@"Plug into a Proven Success System"];
+//        [step4 setTasks:self.demoTasks];
         
-//        TLOG(@"after step1");
-        
-        DAStep *step2 = [DAStep instance];
-        [step2 setName:@"Build a List of Contacts"];
-        [step2 setTasks:self.demoTasks];
-        
-        DAStep *step3 = [DAStep instance];
-        [step3 setName:@"Book Four Coffee Jazz Mixers"];
-        [step3 setTasks:self.demoTasks];
-        
-        DAStep *step4 = [DAStep instance];
-        [step4 setName:@"Plug into a Proven Success System"];
-        [step4 setTasks:self.demoTasks];
-        
-        [_demoOpportunity setSteps:@[step1, step2, step3, step4]];
+        [_demoOpportunity setTasks:self.demoTasks];
     }
     return _demoOpportunity;
 }

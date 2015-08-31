@@ -19,11 +19,10 @@
 #import "AGViewController+Datasource.h"
 #import "AGViewController+Separator.h"
 #import "DAStyleDefine.h"
-#import "DAStepsEditor.h"
 #import "DAOpportunity.h"
 #import "DACompany.h"
 #import "GlobalDefine.h"
-
+#import "DATasksEditor.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSubject,
@@ -39,6 +38,8 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 @property (nonatomic, strong) DAEarningPotentialSection *earningPotentialSection;
+
+@property (nonatomic, strong) UIBarButtonItem *closeBtnItem;
 
 @end
 
@@ -77,6 +78,12 @@ typedef NS_ENUM(NSInteger, Section) {
     return self;
 }
 
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    [self.navigationItem setLeftBarButtonItem:self.closeBtnItem];
+}
+
 - (void)generateDemoData{
     [self.item setCompany:[DACompany instanceWithName:@"Medicus"]];
     [self.item setName:@"5 steps to become top stylist"];
@@ -86,12 +93,14 @@ typedef NS_ENUM(NSInteger, Section) {
 #pragma mark - interactive ops
 
 - (void)didTapNext:(id)sender{
-    
-    DAStepsEditor *vc = [DAStepsEditor instance];
+    DATasksEditor *vc = [DATasksEditor instance];
     [vc setItem:self.item];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)didTapClose:(id)sender{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - datasource
 
@@ -137,6 +146,13 @@ typedef NS_ENUM(NSInteger, Section) {
         [_earningPotentialSection setItem:self.item];
     }
     return _earningPotentialSection;
+}
+
+- (UIBarButtonItem *)closeBtnItem{
+    if (!_closeBtnItem) {
+        _closeBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(didTapClose:)];
+    }
+    return _closeBtnItem;
 }
 
 #pragma mark - properties

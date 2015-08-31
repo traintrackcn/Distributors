@@ -8,6 +8,9 @@
 
 #import "AGViewController.h"
 
+@class DATask;
 @interface DATaskReportViewController : AGViewController
+
+@property (nonatomic, weak) DATask *item;
 
 @end
