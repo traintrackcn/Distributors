@@ -56,7 +56,7 @@
 
 - (void)setValueForIconView{
     DATask *item = (DATask *)self.value;
-    UIImage *img = [[DAOpportunityCoordinator singleton] taskIconImageForTaskType:item.type];
+    UIImage *img = [[DATaskDefine singleton] iconImageForTaskType:item.type];
 //    TLOG(@"img -> %@", img);
     img = [DSImage image:img withMaskColor:STYLE_THEME_COLOR_2];
     [self.iconView setImage:img];

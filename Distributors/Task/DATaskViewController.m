@@ -367,7 +367,7 @@ typedef NS_ENUM(NSInteger, Section) {
 
 - (DATaskDefineSection *)defineSection{
     if (!_defineSection) {
-        Class cls = [[DAOpportunityCoordinator singleton] taskDefineSectionClsForTaskType:self.item.type];
+        Class cls = [[DATaskDefine singleton] taskDefineSectionClsForTaskType:self.item.type];
         _defineSection = [cls instanceWithSection:SectionDefine config:self.config];
         [_defineSection setItem:self.item];
     }

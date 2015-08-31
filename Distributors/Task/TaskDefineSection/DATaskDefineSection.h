@@ -7,7 +7,7 @@
 //
 
 #import "AGSectionUnit.h"
-#import "DAOpportunityCoordinator.h"
+#import "DATaskDefine.h"
 
 typedef NS_ENUM(NSInteger, SectionCell) {
     SectionCellType,
@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, SectionCell) {
 
 @interface DATaskDefineSection : AGSectionUnit
 
-- (DAOpportunityTaskType)type;
+- (DATaskType)type;
 
 @property (nonatomic, strong) DATask *item;
 

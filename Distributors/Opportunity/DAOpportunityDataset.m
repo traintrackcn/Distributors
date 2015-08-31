@@ -79,33 +79,53 @@
 
 - (NSArray *)demoTasks{
 //    return @[];
-    DATask *task1 = [DATask instance];
-    [task1 setSentence:@"Submit your testimonial within 48 hours"];
-    [task1 setType:DAOpportunityTaskTypeTestimonial];
+//    DATask *task1 = [DATask instance];
+//    [task1 setSentence:@"Submit your testimonial within 48 hours"];
+//    [task1 setType:DAOpportunityTaskTypeTestimonial];
     
 //    TLOG(@"after task1");
     
     DATask *task2 = [DATask instance];
-    [task2 setSentence:@"Set yourself on the proper auto-ship"];
-    [task2 setType:DAOpportunityTaskTypeAutoship];
+    [task2 setSentence:@"Build a List of Contacts of 50 Coffee Drinkers"];
+    [task2 setType:DATaskTypeContacts];
     
     DATask *task3 = [DATask instance];
-    [task3 setSentence:@"Purchase 2 boxes of coffee (Black & Latte)"];
-    [task3 setType:DAOpportunityTaskTypeProducts];
+    [task3 setSentence:@"Build a List of Contacts of 50 Opportunity Seekers"];
+    [task3 setType:DATaskTypeContacts];
     
     DATask *task4 = [DATask instance];
-    [task4 setSentence:@"Attend 3 events"];
-    [task4 setType:DAOpportunityTaskTypeEvents];
+    [task4 setSentence:@"Learn and use the 4 Questions"];
+    [task4 setType:DATaskTypeOthers];
     
     DATask *task5 = [DATask instance];
-    [task5 setSentence:@"Read documents and make 10 calls"];
-    [task5 setType:DAOpportunityTaskTypeTraining];
+    [task5 setSentence:@"Get Customers now with the Script "];
+    [task5 setType:DATaskTypeOthers];
     
     DATask *task6 = [DATask instance];
-    [task6 setSentence:@"Contact 20 persons"];
-    [task6 setType:DAOpportunityTaskTypeContacts];
+    [task6 setSentence:@"Book Four Coffee Jazz Mixers"];
+    [task6 setType:DATaskTypeEvents];
     
-    return @[task1, task2, task3, task4, task5, task6];
+    DATask *task7 = [DATask instance];
+    [task7 setSentence:@"18 Month commitment to a proven system"];
+    [task7 setType:DATaskTypeTestimonial];
+    
+    DATask *task8 = [DATask instance];
+    [task8 setSentence:@"Register for FREE at www.OGUniversity.com"];
+    [task8 setType:DATaskTypeOthers];
+    
+    DATask *task9 = [DATask instance];
+    [task9 setSentence:@"Attend 3 weekly CJM's"];
+    [task9 setType:DATaskTypeEvents];
+    
+    DATask *task10 = [DATask instance];
+    [task10 setSentence:@"Attend 2 Business and leadership events"];
+    [task10 setType:DATaskTypeEvents];
+    
+    DATask *task11 = [DATask instance];
+    [task11 setSentence:@"Join 5 Opportunity and training calls"];
+    [task11 setType:DATaskTypeTraining];
+    
+    return @[task2, task3, task4, task5, task6,task7, task8, task9, task10, task11];
 }
 
 @end

@@ -7,11 +7,3 @@
 //
 
 
-typedef NS_ENUM(NSInteger, DARootTabIdx) {
-    DARootTabIdxChat = 0,
-    DARootTabIdxContacts,
-    DARootTabIdxDiscover,
-    DARootTabIdxOpportunity,
-    DARootTabIdxSetting,
-    DARootTabCount
-};

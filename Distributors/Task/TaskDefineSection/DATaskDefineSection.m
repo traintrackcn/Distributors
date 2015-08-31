@@ -59,7 +59,7 @@
     return 0;
 }
 
-- (DAOpportunityTaskType)type{
+- (DATaskType)type{
     return self.item.type;
 }
 

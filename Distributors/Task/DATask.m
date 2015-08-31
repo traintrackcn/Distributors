@@ -12,7 +12,7 @@
 @implementation DATask
 
 - (NSString *)textOfType{
-    return [[DAOpportunityCoordinator singleton] textForTaskType:self.type];
+    return [[DATaskDefine singleton] textForTaskType:self.type];
 }
 
 @end

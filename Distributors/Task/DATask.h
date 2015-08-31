@@ -7,7 +7,7 @@
 //
 
 #import "AGModel.h"
-#import "DAOpportunityCoordinator.h"
+#import "DATaskDefine.h"
 #import "DADefine.h"
 
 @class DAPeriod;
@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSString *identifier;
 
 @property (nonatomic, strong) DAPeriod *period;
-@property (nonatomic, assign) DAOpportunityTaskType type;
+@property (nonatomic, assign) DATaskType type;
 @property (nonatomic, strong) NSString *action;
 @property (nonatomic, assign) NSInteger quanity;
 @property (nonatomic, strong) NSString *unit;

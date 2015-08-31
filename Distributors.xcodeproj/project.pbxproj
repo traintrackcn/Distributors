@@ -33,6 +33,7 @@
 		4A283A331B846D6E007EA77E /* DAPeriodDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A321B846D6E007EA77E /* DAPeriodDataset.m */; };
 		4A283A3C1B869E20007EA77E /* DAEarningPotentialSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A3B1B869E20007EA77E /* DAEarningPotentialSection.m */; };
 		4A64972A1B943A41005A56CD /* DATasksEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6497291B943A41005A56CD /* DATasksEditor.m */; };
+		4A6497301B944DE1005A56CD /* DATaskDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64972F1B944DE1005A56CD /* DATaskDefine.m */; };
 		4A7111E31B8F0696003FD26D /* DADownlineProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111E21B8F0696003FD26D /* DADownlineProgressViewController.m */; };
 		4A7111E61B8F073B003FD26D /* DADownlineProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111E51B8F073B003FD26D /* DADownlineProgressCell.m */; };
 		4A7111E91B8F1048003FD26D /* DATaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111E81B8F1048003FD26D /* DATaskViewController.m */; };
@@ -174,6 +175,8 @@
 		4A283A3B1B869E20007EA77E /* DAEarningPotentialSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAEarningPotentialSection.m; sourceTree = "<group>"; };
 		4A6497281B943A41005A56CD /* DATasksEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATasksEditor.h; sourceTree = "<group>"; };
 		4A6497291B943A41005A56CD /* DATasksEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATasksEditor.m; sourceTree = "<group>"; };
+		4A64972E1B944DE1005A56CD /* DATaskDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskDefine.h; sourceTree = "<group>"; };
+		4A64972F1B944DE1005A56CD /* DATaskDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskDefine.m; sourceTree = "<group>"; };
 		4A7111E11B8F0696003FD26D /* DADownlineProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADownlineProgressViewController.h; sourceTree = "<group>"; };
 		4A7111E21B8F0696003FD26D /* DADownlineProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADownlineProgressViewController.m; sourceTree = "<group>"; };
 		4A7111E41B8F073B003FD26D /* DADownlineProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADownlineProgressCell.h; sourceTree = "<group>"; };
@@ -478,6 +481,8 @@
 		4A283A251B8456CD007EA77E /* Defines */ = {
 			isa = PBXGroup;
 			children = (
+				4A64972E1B944DE1005A56CD /* DATaskDefine.h */,
+				4A64972F1B944DE1005A56CD /* DATaskDefine.m */,
 				4A283A261B8456E9007EA77E /* DADefine.h */,
 				4A283A281B8456E9007EA77E /* DAStyleDefine.h */,
 				4A283A291B8456E9007EA77E /* DATextDefine.h */,
@@ -954,6 +959,7 @@
 				4A7112861B900BFC003FD26D /* DAOthersTaskDefineSection.m in Sources */,
 				4AB3F2131B8C6384008DC70F /* DALeaderViewController.m in Sources */,
 				4AB3F27F1B8D2ED3008DC70F /* DATaskProgressEditor.m in Sources */,
+				4A6497301B944DE1005A56CD /* DATaskDefine.m in Sources */,
 				4A71129D1B900CAA003FD26D /* DAProductsTaskEditor.m in Sources */,
 				4AB3F2051B8C18E7008DC70F /* DAOpportunityDescriptionCell.m in Sources */,
 				4A8E8E431B6B01CD00F48CDD /* DAOpportunityViewController.m in Sources */,

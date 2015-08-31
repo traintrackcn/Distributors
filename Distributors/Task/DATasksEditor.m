@@ -24,6 +24,7 @@
 #import "DATextDefine.h"
 #import "GlobalDefine.h"
 #import "DAOpportunityCoordinator.h"
+#import "DATaskDefine.h"
 #import "DAOpportunity.h"
 
 typedef NS_ENUM(NSInteger, Section) {
@@ -146,8 +147,8 @@ typedef NS_ENUM(NSInteger, Section) {
     if (section == SectionTask) {
         @try {
             if (idx != self.taskSection.lastIndex) {
-                DAOpportunityTaskType type = idx;
-                Class cls = [[DAOpportunityCoordinator singleton] taskEditorClsForTaskType:type];
+                DATaskType type = idx;
+                Class cls = [[DATaskDefine singleton] taskEditorClsForTaskType:type];
                 DATaskEditor *vc = [cls instance];
 //                [vc setItem:self.item];
                 [vc setItem:[self.item.tasks objectAtIndex:idx]];

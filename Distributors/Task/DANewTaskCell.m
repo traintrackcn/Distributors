@@ -44,7 +44,7 @@
 - (void)didTapCell{
     UIView *v = [self.associatedViewController view];
     
-    NSArray *taskTypes = [DAOpportunityCoordinator singleton].taskTexts;
+    NSArray *taskTypes = [DATaskDefine singleton].taskTexts;
    
     DAStep *step = self.parameters.firstObject;
     [UIActionSheet showInView:v withTitle:@"Choose a template" cancelButtonTitle:[AGTextCoordinator textForKey:KEY_BTN_CANCEL] destructiveButtonTitle:nil otherButtonTitles:taskTypes tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {

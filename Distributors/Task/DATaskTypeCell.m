@@ -62,7 +62,7 @@
 
 - (UIImage *)typeIconImage{
     DATask *item = (DATask *)self.value;
-    UIImage *img = [[DAOpportunityCoordinator singleton] taskIconImageForTaskType:item.type];
+    UIImage *img = [[DATaskDefine singleton] iconImageForTaskType:item.type];
     img = [DSImage image:img withMaskColor:STYLE_THEME_COLOR_2];
     return img;
 }

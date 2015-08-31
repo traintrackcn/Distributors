@@ -40,7 +40,7 @@
         [_contentLabel setNumberOfLines:0];
         [_contentLabel setAdjustsFontSizeToFitWidth:YES];
         [_contentLabel setText:@"Description Description Description Description Description Description Description Description"];
-        [_contentLabel setFont:[AGStyleCoordinator fontWithSize:15.0]];
+        [_contentLabel setFont:[AGStyleCoordinator fontWithSize:13.0]];
     }
     return _contentLabel;
 }
@@ -53,6 +53,10 @@
 
 - (CGFloat)paddingLR{
     return STYLE_PADDING_LR_DEFAULT;
+}
+
+- (void)applySelectedStyle{
+    
 }
 
 @end
