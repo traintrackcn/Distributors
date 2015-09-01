@@ -26,6 +26,7 @@
 #import "DAOpportunityCoordinator.h"
 #import "DATaskDefine.h"
 #import "DAOpportunity.h"
+#import "RootViewController.h"
 
 typedef NS_ENUM(NSInteger, Section) {
 //    SectionName,
@@ -80,12 +81,18 @@ typedef NS_ENUM(NSInteger, Section) {
 #pragma mark - interactive ops
 
 - (void)didTapSave:(id)sender{
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        [[RootViewController singleton] popToOpportunityList];
+    }];
+    
+    
 }
 
 #pragma mark - setter
 
-- (void)setItem:(DAStep *)item{
+- (void)setItem:(DAOpportunity *)item{
     _item = item;
 //    [self setTitle:item.name];
     [self configSections];

@@ -18,6 +18,8 @@
 - (instancetype)initWithSection:(NSInteger)section config:(AGVCConfiguration *)config{
     self = [super initWithSection:section config:config];
     if (self) {
+        
+        [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_EARNING_POTENTIAL] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.section]];
         [self.config setCellCls:[DAEarningPotentialCell class] inSection:self.section];
 //        [self.config setCellCls:[] inSection:section];
     }
@@ -28,8 +30,8 @@
     return self.item.earningPotential;
 }
 
-- (id)headerValue{
-    return [AGTextCoordinator textForKey:KEY_LBL_EARNING_POTENTIAL];
-}
+//- (id)headerValue{
+//    return [AGTextCoordinator textForKey:KEY_LBL_EARNING_POTENTIAL];
+//}
 
 @end

@@ -86,7 +86,10 @@
     [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_COMMITMENT_PERIOD] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:self.SectionCommitmentPeriod]];
     
     [self.config setCellCls:[AGButtonCell class] inSection:self.SectionButton];
-    [self enableSeparators];
+//    [self enableSeparators];
+    
+    [self.config setSeparatorForSection:self.SectionTask];
+    [self.config setSeparatorForSection:self.SectionEarningPotential];
 }
 
 #pragma mark - interactive ops

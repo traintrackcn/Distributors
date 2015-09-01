@@ -110,7 +110,7 @@ typedef NS_ENUM(NSInteger, Section) {
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
     if (section == SectionSearch) return 1;
-    if (section == SectionItem) return 6;
+    if (section == SectionItem) return 3;
     return 0;
 }
 
@@ -118,7 +118,7 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger idx = indexPath.row;
     id value;
 //    NSArray *arr = @[@"Medicus",@"OG", @"Become"];
-    NSArray *arr = @[@"DemoBGOG.jpg",@"DemoBGMedicus.jpg", @"DemoBGOG.jpg",@"DemoBGMedicus.jpg", @"DemoBGOG.jpg",@"DemoBGMedicus.jpg"];
+    NSArray *arr = @[@"DemoBGOG.jpg",@"DemoBGMedicus.jpg", @"DemoBGLimv.jpg"];
     value = [arr objectAtIndex:idx];
     return value;
 }

@@ -70,13 +70,15 @@
 #define KEY_LBL_PIC_AND_VCR @"Pic & Vcr"
 #define KEY_LBL_NAME @"Name"
 #define KEY_LBL_ADD_GOAL @"Add Goal"
+#define KEY_LBL_COUNTDOWN @"Countdown"
 
 #define KEY_BTN_SELECT @"Select"
 #define KEY_BTN_SAVE @"Save"
 #define KEY_BTN_NEXT @"Next"
 #define KEY_BTN_CANCEL @"Cancel"
 #define KEY_BTN_START @"Start"
+#define KEY_BTN_FOLLOW @"Follow"
 
 
 #define KEY_MSG_UNDEFINED @"Undefined"
-#define KEY_MSG_ADD_YOUR_FIRST_STEP @"Add Your First Step"
+#define KEY_MSG_ADD_OPPORTUNITY @"Add opportunity"

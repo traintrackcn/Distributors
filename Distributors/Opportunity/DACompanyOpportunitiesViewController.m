@@ -23,10 +23,13 @@
 #import "DAOpportunityTemplateEditor.h"
 #import "DAOpportunityDataset.h"
 #import "DACompany.h"
+#import "DANewOpportunityCell.h"
+#import "DAStyleDefine.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
     SectionItem,
+    SectionNewOpportunity,
     SectionCount
 };
 
@@ -46,13 +49,16 @@ typedef NS_ENUM(NSInteger, Section) {
     self = [super init];
     if (self) {
         
+        [self.config setCellCls:[DANewOpportunityCell class] inSection:SectionNewOpportunity];
         [self.config setCellCls:[AGSearchCell class] inSection:SectionSearch];
         [self.config setCellCls:[DALeaderOpportunityCell class] inSection:SectionItem];
 //        [self.config setCellCls:[AGTextCell class] inSection:SectionLeader];
 //        [self assembleTabBar];
         [self setTitle:@"OG"];
         
-            }
+        [self setBackgroundColor:STYLE_BACKGROUND_COLOR_DEFAULT];
+        
+    }
     return self;
 }
 
@@ -142,8 +148,9 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
-    if (section == SectionSearch) return 1;
-    if (section == SectionItem) return 10;
+    if (section == SectionSearch && [self isSectionSearchAvailable]) return 1;
+    if (section == SectionItem && [self isSectionItemAvailable]) return self.itemCount;
+    if (section == SectionNewOpportunity && [self isSectionNewOpportunityAvailable]) return 1;
     return 0;
 }
 
@@ -172,6 +179,31 @@ typedef NS_ENUM(NSInteger, Section) {
 //- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
 //    return @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I"];
 //}
+
+#pragma mark - section
+
+- (BOOL)isSectionNewOpportunityAvailable{
+    return self.itemCount == 0?YES:NO;
+}
+
+- (BOOL)isSectionSearchAvailable{
+    return ![self isSectionNewOpportunityAvailable];
+}
+
+- (BOOL)isSectionItemAvailable{
+    return ![self isSectionNewOpportunityAvailable];
+}
+
+#pragma mark - cell delegate
+
+- (void)cellRequestAction:(id)action atIndexPath:(NSIndexPath *)indexPath{
+    NSInteger section = indexPath.section;
+    
+    if (section == SectionNewOpportunity) {
+        self.itemCount = 10;
+        [self reloadVisibleIndexPaths];
+    }
+}
 
 #pragma mark - styles
 

@@ -25,6 +25,8 @@
 #import "UIActionSheet+Blocks.h"
 #import "DATaskViewController.h"
 #import "DATaskCellStyleReadonly.h"
+#import "DAOpportunityDataset.h"
+#import "DAOwnedOpportunityViewController.h"
 
 typedef NS_ENUM(NSInteger, SectionInfoCell) {
     SectionInfoCellTitleWithLeaderInfo,
@@ -85,7 +87,13 @@ typedef NS_ENUM(NSInteger, SectionInfoCell) {
     UIView *v = self.view;
     [UIActionSheet showInView:v withTitle:[AGTextCoordinator textForKey:KEY_BTN_START] cancelButtonTitle:[AGTextCoordinator textForKey:KEY_BTN_CANCEL] destructiveButtonTitle:nil otherButtonTitles:@[@"In 1 Day", @"In 2 Days", @"In 3 Days", @"In a Week"] tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
         if (buttonIndex != actionSheet.cancelButtonIndex) {
-            [self.navigationController popViewControllerAnimated:YES];
+//            [self.navigationController popViewControllerAnimated:YES];
+            
+            DAOwnedOpportunityViewController *vc = [DAOwnedOpportunityViewController instance];
+            DANavigationController *naviC = [[DANavigationController alloc] initWithRootViewController:vc];
+            [vc setItem:[DAOpportunityDataset singleton].demoOpportunity];
+            [self.navigationController presentViewController:naviC animated:YES completion:nil];
+            
         }
     }];
 }
@@ -123,7 +131,7 @@ typedef NS_ENUM(NSInteger, SectionInfoCell) {
     
     if (section == self.SectionButton) {
         value = @[
-                  [AGButtonItem instanceWithTitle:[AGTextCoordinator textForKey:KEY_BTN_START] target:self action:@selector(didTapStart:)]
+                  [AGButtonItem instanceWithTitle:[AGTextCoordinator textForKey:KEY_BTN_FOLLOW] target:self action:@selector(didTapStart:)]
                   ];
     }
     

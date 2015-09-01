@@ -9,11 +9,24 @@
 #import "RootViewController.h"
 #import "DACompanyOpportunitiesViewController.h"
 
+
 @implementation RootViewController
 
 - (void)popToOpportunityList{
+    
+    
+    DACompanyOpportunitiesViewController *vc;
+    
+    if ([self.viewControllers.lastObject isKindOfClass:[DACompanyOpportunitiesViewController class]]) {
+        vc = self.viewControllers.lastObject;
+        [vc setItemCount:10];
+        [vc reloadVisibleIndexPaths];
+        return;
+    }
+    
     [self popToRootViewControllerAnimated:NO];
-    DACompanyOpportunitiesViewController *vc = [DACompanyOpportunitiesViewController instance];
+    vc = [DACompanyOpportunitiesViewController instance];
+    [vc setItemCount:10];
 //    TLOG(@"self.naviC -> %@", self.navigationController);
     //    [vc setItem:[DAOpportunityDataset singleton].demoOpportunity];
     [self pushViewController:vc animated:YES];

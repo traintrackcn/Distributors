@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "AGCell.h"
+#import "AGTextfieldCellStyleOptions.h"
 
-@interface DAEarningPotentialCell : AGCell
+@interface DAEarningPotentialCell : AGTextfieldCellStyleOptions
 
 @end

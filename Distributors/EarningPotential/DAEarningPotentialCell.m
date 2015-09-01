@@ -20,7 +20,7 @@
     
 }
 
-@property (nonatomic, strong) UILabel *titleLabel;
+//@property (nonatomic, strong) UILabel *titleLabel;
 
 @end
 
@@ -30,18 +30,19 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+//        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+//        [self.contentView addSubview:self.titleLabel];
         [self assembleGC];
     }
     return self;
 }
 
-- (void)willMoveToSuperview:(UIView *)newSuperview{
-    if (newSuperview && self.isContentViewBlank) {
-        
-        [self.contentView addSubview:self.titleLabel];
-    }
-}
+//- (void)willMoveToSuperview:(UIView *)newSuperview{
+//    if (newSuperview && self.isContentViewBlank) {
+//        
+//        
+//    }
+//}
 
 - (void)didTapCell{
     DAEarningPotentialPicker *vc = [DAEarningPotentialPicker instance];
@@ -58,30 +59,30 @@
     DAEarningPotential *item = (DAEarningPotential *)value;
     
     if (item) {
-        NSString *text = [NSString stringWithFormat:@"%.2f~%.2f per %@", item.min, item.max, item.period.name];
-        [self.titleLabel setText:text];
+        NSString *text = [NSString stringWithFormat:@"$%.2f~$%.2f/%@", item.min, item.max, item.period.name];
+        [contentLabel setText:text];
     }
 }
 
 #pragma mark - components
 
-- (UILabel *)titleLabel{
-    if (!_titleLabel) {
-        CGFloat x = self.paddingLR;
-        CGFloat w = [DSDeviceUtil bounds].size.width - x*2;
-        _titleLabel = [[UILabel alloc] init];
-        [_titleLabel setFrame:CGRectMake(x, 0, w, self.height)];
-        [_titleLabel setAdjustsFontSizeToFitWidth:YES];
-        [_titleLabel setText:[AGTextCoordinator textForKey:KEY_LBL_EARNING_POTENTIAL]];
-    }
-    return _titleLabel;
-}
+//- (UILabel *)titleLabel{
+//    if (!_titleLabel) {
+//        CGFloat x = self.paddingLR;
+//        CGFloat w = [DSDeviceUtil bounds].size.width - x*2;
+//        _titleLabel = [[UILabel alloc] init];
+//        [_titleLabel setFrame:CGRectMake(x, 0, w, self.height)];
+//        [_titleLabel setAdjustsFontSizeToFitWidth:YES];
+//        [_titleLabel setText:[AGTextCoordinator textForKey:KEY_LBL_EARNING_POTENTIAL]];
+//    }
+//    return _titleLabel;
+//}
 
 #pragma mark - styles
 
-- (CGFloat)paddingLR{
-    return STYLE_PADDING_LR_DEFAULT;
-}
+//- (CGFloat)paddingLR{
+//    return STYLE_PADDING_LR_DEFAULT;
+//}
 
 - (UIColor *)borderColor{
     return STYLE_BORDER_COLOR_DEFAULT;

@@ -55,10 +55,23 @@
 }
 
 - (void)setValueForIconView{
+    
     DATask *item = (DATask *)self.value;
     UIImage *img = [[DATaskDefine singleton] iconImageForTaskType:item.type];
+//    TLOG(@"section -> %d", self.indexPath.section);
+     img = [DSImage image:img withMaskColor:STYLE_THEME_COLOR_2];
+    
+    
+    //for demo only
+    NSInteger section = self.indexPath.section;
+    if (section == 3) { //SectionCompleted
+        img = [UIImage imageNamed:@"IconCheckMark"];
+        img = [DSImage image:img withMaskColor:STYLE_COLOR_COMPLETED];
+    }
+    
+    
 //    TLOG(@"img -> %@", img);
-    img = [DSImage image:img withMaskColor:STYLE_THEME_COLOR_2];
+   
     [self.iconView setImage:img];
 }
 
@@ -72,8 +85,6 @@
         CGFloat x = y;
         _iconView = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, w, h)];
         [_iconView setContentMode:UIViewContentModeScaleAspectFit];
-//        [_iconView setImage:img];
-//        _iconView.layer.borderWidth = 1;
     }
     return _iconView;
 }
@@ -99,8 +110,8 @@
         CGFloat y = self.titleView.frame.size.height + self.vSpace*2;
         CGFloat h = self.height - self.titleView.frame.size.height - self.vSpace*3;
         _progressView = [[AGLineProgressView alloc] initWithFrame:CGRectMake(x, y, w, h)];
-        [_progressView setInnerViewBackgroundColor:RGBA(112, 214, 104, 1)];
-        [_progressView setTextColorOuter:RGBA(112, 214, 104, 1)];
+        [_progressView setInnerViewBackgroundColor:STYLE_COLOR_COMPLETED];
+        [_progressView setTextColorOuter:STYLE_COLOR_COMPLETED];
 //        _progressView set
         [_progressView assemble];
         [_progressView setProgress:[NSNumber numberWithFloat:.3f]];

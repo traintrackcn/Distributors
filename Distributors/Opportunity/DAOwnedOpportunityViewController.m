@@ -27,6 +27,15 @@
 #import "DATaskReportViewController.h"
 #import "DAOpportunityTitleCell.h"
 
+
+typedef NS_ENUM(NSInteger, Section) {
+    SectionSeparator,
+    SectionCountdown,
+    SectionTaskOngoing,
+    SectionTaskCompleted,
+    SectionCount
+};
+
 @interface DAOwnedOpportunityViewController(){
     
 }
@@ -57,19 +66,25 @@
 
 - (void)configSections{
     
-    [self.config setCellCls:[DAOpportunityTitleCell class] inSection:self.SectionTitle];
+    [self.config setCellCls:[AGSeparatorCell class] inSection:SectionSeparator];
     
-    for (NSInteger section = 1; section < self.SectionCount; section ++) {
-//        [self.config setHeaderCls:[DAStepHeaderView class] forSection:section];
-        [self.config setCellCls:[DATaskCellStyleProgress class] inSection:section];
-    }
+    [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_COUNTDOWN] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionCountdown]];
+    [self.config setCellCls:[AGTextCell class] inSection:SectionCountdown];
+
+    [self.config setCellCls:[DATaskCellStyleProgress class] inSection:SectionTaskOngoing];
+    
+    [self.config setCellCls:[DATaskCellStyleProgress class] inSection:SectionTaskCompleted];
+
     
     [self setBackgroundColor:STYLE_BACKGROUND_COLOR_DEFAULT];
     [self enableSeparators];
+    [self.config removeSeparatorForSection:SectionCountdown];
+    [self.config removeSeparatorForSection:SectionSeparator];
 }
 
 - (void)setItem:(DAOpportunity *)item{
     _item = item;
+//    TLOG(@"item -> %@ %@", item, item.tasks);
     [self setTitle:item.name];
     [self configSections];
 }
@@ -89,34 +104,21 @@
     [self pushViewController:vc];
 }
 
-#pragma mark - 
-
-- (NSInteger)SectionTitle{
-    return 0;
-}
-
-- (NSInteger)SectionTask{
-    return 1;
-}
-
-- (NSInteger)SectionCount{
-    return self.SectionTask + 1;
-}
-
-//- (NSInteger)stepIndexOfSection:(NSInteger)section{
-//    return section - 1;
-//}
+#pragma mark -
 
 - (NSInteger)numberOfSections{
-    return self.SectionCount;
+    return SectionCount;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
     
-    if (section == self.SectionTitle) return 1;
-//    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-    return self.item.tasks.count;
+    if (section == SectionSeparator) return 1;
+    if (section == SectionCountdown) return 1;
+    if (section == SectionTaskOngoing) return self.item.tasks.count;
+    if (section == SectionTaskCompleted) return 3;
+    
 //    return [super numberOfRowsInSection:section];
+    return 0;
 }
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
@@ -124,10 +126,18 @@
     NSInteger idx = indexPath.row;
     id value = [super valueAtIndexPath:indexPath];
     
-    if (section == self.SectionTitle) return value;
+    if (section == SectionCountdown) {
+        value = @"2 days 23 hours";
+    }
     
-//    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-    value = [self.item.tasks objectAtIndex:idx];
+    if (section == SectionTaskOngoing) {
+        value = [self.item.tasks objectAtIndex:idx];
+    }
+    
+    if (section == SectionTaskCompleted) {
+        value = [self.item.tasks objectAtIndex:idx];
+    }
+    
     
     return value;
 }
@@ -169,7 +179,7 @@
 
 - (UIBarButtonItem *)dashboardBtnItem{
     if (!_dashboardBtnItem) {
-        _dashboardBtnItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"IconDashboard"] style:UIBarButtonItemStylePlain target:self action:@selector(didTapDashboard:)];
+        _dashboardBtnItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"IconLeaderDashboard"] style:UIBarButtonItemStylePlain target:self action:@selector(didTapDashboard:)];
     }
     return _dashboardBtnItem;
 }

@@ -47,7 +47,7 @@
         CGFloat y = self.titleView.frame.size.height + self.titleView.frame.origin.y;
         _timeRequiredLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, y, w, h)];
         [_timeRequiredLabel setFont:[AGStyleCoordinator fontWithSize:11]];
-        [_timeRequiredLabel setText:@"Time Required:  3 days"];
+        [_timeRequiredLabel setText:@"Time Required:  48 hrs"];
         [_timeRequiredLabel setTextColor:STYLE_TEXT_COLOR_SUBTITLE];
     }
     return _timeRequiredLabel;
@@ -65,7 +65,7 @@
         CGFloat w = self.titleView.frame.size.width;
         CGFloat h = 20;
         CGFloat y = self.titleView.frame.size.height + self.titleView.frame.origin.y + 2;
-        _timeRequiredView = [[DAButton alloc] initWithFrame:CGRectMake(x, y, w, h) title:@"3 days" iconName:@"IconClock"];
+        _timeRequiredView = [[DAButton alloc] initWithFrame:CGRectMake(x, y, w, h) title:@"48 hrs" iconName:@"IconClock"];
         [_timeRequiredView setAlignLeft:YES];
     }
     return _timeRequiredView;

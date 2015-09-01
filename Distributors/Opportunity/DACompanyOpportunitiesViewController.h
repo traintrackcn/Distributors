@@ -12,6 +12,7 @@
 
 @interface DACompanyOpportunitiesViewController : AGViewController
 
-@property (nonatomic,strong) DACompany *item;
+@property (nonatomic, strong) DACompany *item;
+@property (nonatomic, assign) NSInteger itemCount;
 
 @end
