@@ -21,9 +21,11 @@
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) AGPortraitView *creatorPortraitView;
-@property (nonatomic, strong) UILabel *companyNameLabel;
+//@property (nonatomic, strong) UILabel *companyNameLabel;
+@property (nonatomic, strong) UIImageView *companyLogoView;
 @property (nonatomic, strong) UIView *buttonContainer;
 @property (nonatomic, strong) UILabel *creatorLabel;
+@property (nonatomic, strong) UILabel *followerNumLabel;
 
 @end
 
@@ -39,11 +41,14 @@
         //        [self.contentView addSubview:self.separatorBetweenTitleAndPortrait];
         [self.contentView addSubview:self.titleLabel];
         [self.contentView addSubview:self.creatorPortraitView];
-        [self.contentView addSubview:self.companyNameLabel];
+        [self.contentView addSubview:self.companyLogoView];
+        [self.contentView addSubview:self.followerNumLabel];
         //        [self.contentView addSubview:self.rateLabel];
         [self.contentView addSubview:self.creatorLabel];
         
         [self.contentView addSubview:self.buttonContainer];
+        
+        
         
         [self assembleButtons];
         
@@ -55,6 +60,9 @@
     [super setValue:value];
     
     [self.titleLabel setText:[NSString stringWithFormat:@"%@", value]];
+    
+    [self.creatorPortraitView.imageView setImage:self.demoPortraitImage];
+    [self.creatorLabel setText:self.demoCreatorName];
 }
 
 
@@ -111,26 +119,41 @@
         [_creatorLabel setTextAlignment:NSTextAlignmentCenter];
         [_creatorLabel setTextColor:RGBA(170, 170, 170, 1)];
         [_creatorLabel setText:@"Name"];
+        [_creatorLabel setAdjustsFontSizeToFitWidth:YES];
     }
     return _creatorLabel;
 }
 
-- (UILabel *)companyNameLabel{
-    if (!_companyNameLabel) {
-        CGFloat h = 20;
+- (UIImageView *)companyLogoView{
+    if (!_companyLogoView) {
+        CGFloat h = 24;
         CGFloat x = self.paddingLR;
-        CGFloat y = self.backgroundView.frame.size.height - h - 15;
-        CGFloat w = self.titleLabel.frame.size.width;
+        CGFloat y = self.backgroundView.frame.size.height - h - 7;
+        CGFloat w = h;
         
-        _companyNameLabel = [[UILabel alloc] init];
-        [_companyNameLabel setAdjustsFontSizeToFitWidth:YES];
-        [_companyNameLabel setFrame:CGRectMake(x, y, w, h)];
+        _companyLogoView = [[UIImageView alloc] init];
+        [_companyLogoView setFrame:CGRectMake(x, y, w, h)];
 //        [_creatorNameLabel setTextAlignment:NSTextAlignmentCenter];
-//        _creatorNameLabel.layer.borderWidth = 1;
-        [_companyNameLabel setText:@"Company"];
-        [_companyNameLabel setTextColor:STYLE_THEME_COLOR_2];
+        [_companyLogoView setContentMode:UIViewContentModeScaleAspectFit];
+//        _companyLogoView.layer.borderWidth = 1;
+//        [_companyNameLabel setText:@"Company"];
+//        [_companyNameLabel setTextColor:STYLE_THEME_COLOR_2];
+        [_companyLogoView setImage:[UIImage imageNamed:@"LogoOGTiny"]];
     }
-    return _companyNameLabel;
+    return _companyLogoView;
+}
+
+- (UILabel *)followerNumLabel{
+    if (!_followerNumLabel) {
+        CGFloat x = self.companyLogoView.frame.size.width + self.companyLogoView.frame.origin.x + 5;
+        CGFloat y = self.companyLogoView.frame.origin.y;
+        CGFloat w = STYLE_DEVICE_WIDTH;
+        CGFloat h = self.companyLogoView.frame.size.height;
+        _followerNumLabel = [[UILabel alloc] initWithFrame:CGRectMake(x, y, w, h)];
+        [_followerNumLabel setText:@"Follower: 22"];
+        [_followerNumLabel setTextColor:[UIColor lightGrayColor]];
+    }
+    return _followerNumLabel;
 }
 
 - (UIView *)buttonContainer{
@@ -189,6 +212,40 @@
     [(AGViewController *)self.associatedViewController presentViewController:activityVC animated:YES completion:nil];
 //    [self pushViewController:activityVC];
 }
+
+
+#pragma mark - demo data
+
+- (NSString *)demoPortraitName{
+    NSInteger i = self.indexPath.row;
+    id value = @"nopic_mini.jpg";
+    if (i == 0) {
+        value = @"DemoP1.jpg";
+    }else if (i == 1){
+        value = @"DemoP2.jpg";
+    }else if (i == 2){
+        value = @"DemoP3.jpg";
+    }
+    return value;
+}
+
+- (UIImage *)demoPortraitImage{
+    return [UIImage imageNamed:self.demoPortraitName];
+}
+
+- (NSString *)demoCreatorName{
+    NSInteger i = self.indexPath.row;
+    id value = @"Name";
+    if (i == 0) {
+        value = @"Mike Jeson";
+    }else if (i == 1){
+        value = @"Lucy";
+    }else if (i == 2){
+        value = @"Ella";
+    }
+    return value;
+}
+
 
 #pragma mark - styles
 
