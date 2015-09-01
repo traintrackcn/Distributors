@@ -21,11 +21,12 @@
 #import "DATextDefine.h"
 #import "DADashboardViewController.h"
 #import "DATaskCellStyleProgress.h"
-//#import "DAStep.h"
-//#import "DATaskProgressEditor.h"
-//#import "DAStepHeaderView.h"
+#import "DAOpportunityDataset.h"
 #import "DATaskReportViewController.h"
 #import "DAOpportunityTitleCell.h"
+#import "DATaskViewController.h"
+#import "DATaskDefine.h"
+#import "DATask.h"
 
 
 typedef NS_ENUM(NSInteger, Section) {
@@ -40,9 +41,10 @@ typedef NS_ENUM(NSInteger, Section) {
     
 }
 
-//@property (nonatomic, strong) DAOpportunityStepSection *stepSection;
 @property (nonatomic, strong) UIBarButtonItem *closeBtnItem;
 @property (nonatomic, strong) UIBarButtonItem *dashboardBtnItem;
+
+
 
 @end
 
@@ -114,8 +116,8 @@ typedef NS_ENUM(NSInteger, Section) {
     
     if (section == SectionSeparator) return 1;
     if (section == SectionCountdown) return 1;
-    if (section == SectionTaskOngoing) return self.item.tasks.count;
-    if (section == SectionTaskCompleted) return 3;
+    if (section == SectionTaskOngoing) return self.item.tasksOngoing.count;
+    if (section == SectionTaskCompleted) return self.item.tasksCompleted.count;
     
 //    return [super numberOfRowsInSection:section];
     return 0;
@@ -131,11 +133,11 @@ typedef NS_ENUM(NSInteger, Section) {
     }
     
     if (section == SectionTaskOngoing) {
-        value = [self.item.tasks objectAtIndex:idx];
+        value = [self.item.tasksOngoing objectAtIndex:idx];
     }
     
     if (section == SectionTaskCompleted) {
-        value = [self.item.tasks objectAtIndex:idx];
+        value = [self.item.tasksCompleted objectAtIndex:idx];
     }
     
     
@@ -157,13 +159,45 @@ typedef NS_ENUM(NSInteger, Section) {
 //}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSInteger section = indexPath.section;
+    NSInteger section = indexPath.section;
     NSInteger idx = indexPath.row;
-//    DAStep *step = [self.item.steps objectAtIndex:[self stepIndexOfSection:section]];
-    DATask *item = [self.item.tasks objectAtIndex:idx];
-//    DATaskViewController *vc = [DATaskViewController instance];
-//    [vc setItem:item];
+    
+    if (section == SectionTaskOngoing) {
+        DATask *item = [self.item.tasksOngoing objectAtIndex:idx];
+        [self pushNext:item];
+    }
+    
+    
+    if (section == SectionTaskCompleted) {
+        DATask *item = [self.item.tasksCompleted objectAtIndex:idx];
+        [self pushNext:item];
+    }
+    
+}
+
+
+#pragma mark - 
+
+- (void)pushNext:(DATask *)item{
+    DATaskType type = item.type;
+    
+    
+    if (type == DATaskTypeTestimonial || type == DATaskTypeOthers) {
+        [self pushDetail:item];
+    }else{
+        [self pushReport:item];
+    }
+    
+}
+
+- (void)pushReport:(DATask *)item{
     DATaskReportViewController *vc = [DATaskReportViewController instance];
+    [vc setItem:item];
+    [self pushViewController:vc];
+}
+
+- (void)pushDetail:(DATask *)item{
+    DATaskViewController *vc = [DATaskViewController instance];
     [vc setItem:item];
     [self pushViewController:vc];
 }

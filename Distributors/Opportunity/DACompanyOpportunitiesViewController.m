@@ -76,19 +76,14 @@ typedef NS_ENUM(NSInteger, Section) {
 
 }
 
-//- (void)assembleTabBar{
-//    NSString *title = [AGTextCoordinator textForKey:KEY_LBL_OPPORTUNITY];
-//    UIImage *img = [[UIImage alloc] init];
-//    NSInteger tag = DARootTabIdxOpportunity;
-//    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:img tag:tag];
-//    [self setTabBarItem:tabBarItem];
-//}
-
 #pragma mark - interactive ops
 
 - (void)didTapAdd:(id)sender{
-//    DACompany *item = [DACompany instance];
-    //        TLOG(@"item -> %@ ", item);
+    [self presentTemplateEditor];
+}
+
+
+- (void)presentTemplateEditor{
     [[DAOpportunityDataset singleton] requestTemplatesByCompany:self.item completion:^(NSArray *templates) {
         TLOG(@"templates -> %@", templates);
         DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
@@ -99,10 +94,7 @@ typedef NS_ENUM(NSInteger, Section) {
             
         }];
     }];
-//    [self pushViewController:vc];
-    
 }
-
 
 #pragma mark - components
 
@@ -200,8 +192,9 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger section = indexPath.section;
     
     if (section == SectionNewOpportunity) {
-        self.itemCount = 10;
-        [self reloadVisibleIndexPaths];
+//        self.itemCount = 10;
+//        [self reloadVisibleIndexPaths];
+        [self presentTemplateEditor];
     }
 }
 

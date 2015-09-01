@@ -16,12 +16,13 @@
 #import "AGCircleProgressCell.h"
 #import "DATaskCircleChartCell.h"
 #import "DATaskViewController.h"
+#import "DATask.h"
 //#import "AGTextCell.h"
 
 typedef NS_ENUM(NSInteger, Section) {
 //    SectionSummary,
-    SectionLog,
-    SectionProgress,
+    SectionLine,
+    SectionCircle,
     SectionCount
 };
 
@@ -43,8 +44,8 @@ typedef NS_ENUM(NSInteger, Section) {
 //        [self.config setCellTitle:@"Products Sold/Bought" atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionSummary]];
 //        [self.config setCellCls:[AGTextCell class] inSection:SectionSummary];
         
-        [self.config setCellCls:[DADashboardChartCell class] inSection:SectionLog];
-        [self.config setCellCls:[DATaskCircleChartCell class] inSection:SectionProgress];
+        [self.config setCellCls:[DADashboardChartCell class] inSection:SectionLine];
+        [self.config setCellCls:[DATaskCircleChartCell class] inSection:SectionCircle];
         [self setBackgroundColor:STYLE_BACKGROUND_COLOR_DEFAULT];
         [self enableSeparators];
     }
@@ -73,7 +74,9 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    if (section == SectionLine && [self isSectionLineAvailable]) return 1;
+    if (section == SectionCircle && [self isSectionCircleAvailable]) return 1;
+    return 0;
 }
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
@@ -85,19 +88,30 @@ typedef NS_ENUM(NSInteger, Section) {
 //        value = @21;
 //    }
     
-    if (section == SectionLog) {
+    if (section == SectionLine) {
         value = @"Products Sold/Bought Total:     21";
     }
     
-    if (section == SectionProgress) {
+    if (section == SectionCircle) {
 //        value = @"No. of persons completed all tasks";
-        value = [NSNumber numberWithFloat:.6];
+        value = [NSNumber numberWithFloat:self.item.progress];
     }
     
     
     return value;
 }
 
+
+- (BOOL)isSectionLineAvailable{
+    if (self.type == DATaskTypeContacts) return YES;
+    return NO;
+}
+
+- (BOOL)isSectionCircleAvailable{
+    if (self.type == DATaskTypeTestimonial) return NO;
+    if (self.type == DATaskTypeOthers) return NO;
+    return YES;
+}
 
 #pragma mark - components
 
@@ -106,6 +120,12 @@ typedef NS_ENUM(NSInteger, Section) {
         _detailButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Detail" style:UIBarButtonItemStylePlain target:self action:@selector(didTapDetail:)];
     }
     return _detailButtonItem;
+}
+
+#pragma mark - properties
+
+- (DATaskType)type{
+    return self.item.type;
 }
 
 

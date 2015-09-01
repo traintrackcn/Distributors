@@ -15,4 +15,14 @@
     return [[DATaskDefine singleton] textForTaskType:self.type];
 }
 
+
+#pragma mark - status
+
+- (BOOL)isCompleted{
+    if (self.progress == 1.0) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

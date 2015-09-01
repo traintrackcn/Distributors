@@ -14,6 +14,9 @@
 
 @interface DAOpportunity : AGModel
 
+- (NSArray *)tasksOngoing;
+- (NSArray *)tasksCompleted;
+
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *desc;

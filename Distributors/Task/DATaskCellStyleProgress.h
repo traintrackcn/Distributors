@@ -13,8 +13,9 @@
 @interface DATaskCellStyleProgress : AGCell
 
 @property (nonatomic, strong) AGLineProgressView *progressView;
-@property (nonatomic, strong) UILabel *targetView;
-@property (nonatomic, strong) UILabel *currentView;
+
+@property (nonatomic, strong) UIView *moreStatusContainer;
+
 @property (nonatomic, strong) UILabel *titleView;
 
 @end

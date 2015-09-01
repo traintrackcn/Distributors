@@ -19,7 +19,8 @@
 }
 
 @property (nonatomic, strong) UIImageView *iconView;
-
+@property (nonatomic, strong) UILabel *targetView;
+@property (nonatomic, strong) UILabel *currentView;
 
 @property (nonatomic, strong) UIView *vBorderView;
 
@@ -35,8 +36,9 @@
         [self.contentView addSubview:self.targetView];
         [self.contentView addSubview:self.progressView];
         [self.contentView addSubview:self.vBorderView];
-        [self.contentView addSubview:self.currentView];
-        [self.contentView addSubview:self.targetView];
+        [self.contentView addSubview:self.moreStatusContainer];
+        [self.moreStatusContainer addSubview:self.currentView];
+        [self.moreStatusContainer addSubview:self.targetView];
         [self.contentView addSubview:self.borderBottomViewStyleSolid];
         
 //        [self setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
@@ -52,6 +54,9 @@
     DATask *item = (DATask *)value;
     [self.titleView setText:item.sentence];
     [self setValueForIconView];
+    [self setValueForProgressView];
+    
+    [self setValueForProgressTextView];
 }
 
 - (void)setValueForIconView{
@@ -63,8 +68,8 @@
     
     
     //for demo only
-    NSInteger section = self.indexPath.section;
-    if (section == 3) { //SectionCompleted
+//    NSInteger section = self.indexPath.section;
+    if (item.isCompleted) { //SectionCompleted
         img = [UIImage imageNamed:@"IconCheckMark"];
         img = [DSImage image:img withMaskColor:STYLE_COLOR_COMPLETED];
     }
@@ -73,6 +78,34 @@
 //    TLOG(@"img -> %@", img);
    
     [self.iconView setImage:img];
+}
+
+- (void)setValueForProgressView{
+    DATask *item = (DATask *)self.value;
+    [self.progressView setProgress:[NSNumber numberWithFloat:item.progress]];
+}
+
+
+- (void)setValueForProgressTextView{
+    DATask *item = (DATask *)self.value;
+    DATaskType type = item.type;
+    
+    
+    
+    if (type == DATaskTypeTestimonial
+        || type == DATaskTypeOthers) {
+        [self.currentView setHidden:YES];
+        [self.targetView setHidden:YES];
+    }else{
+        [self.currentView setHidden:NO];
+        [self.targetView setHidden:NO];
+        
+        [self.currentView setText:[NSString stringWithFormat:@"%.0f", self.currentValue]];
+        [self.targetView setText:[NSString stringWithFormat:@"%.0f by 09/12", self.targetValue]];
+    }
+    
+    
+    
 }
 
 #pragma mark - components
@@ -108,10 +141,12 @@
         CGFloat w = self.titleView.frame.size.width;
         CGFloat x = self.titleView.frame.origin.x;
         CGFloat y = self.titleView.frame.size.height + self.vSpace*2;
-        CGFloat h = self.height - self.titleView.frame.size.height - self.vSpace*3;
+        CGFloat h = self.height - self.titleView.frame.size.height - self.vSpace*3 - 10;
         _progressView = [[AGLineProgressView alloc] initWithFrame:CGRectMake(x, y, w, h)];
         [_progressView setInnerViewBackgroundColor:STYLE_COLOR_COMPLETED];
         [_progressView setTextColorOuter:STYLE_COLOR_COMPLETED];
+        [_progressView setShowTextLabel:NO];
+        [_progressView setCornerRadius:4.0];
 //        _progressView set
         [_progressView assemble];
         [_progressView setProgress:[NSNumber numberWithFloat:.3f]];
@@ -127,35 +162,62 @@
     return _vBorderView;
 }
 
+
+- (UIView *)moreStatusContainer{
+    if (!_moreStatusContainer) {
+        CGFloat x = [DSDeviceUtil bounds].size.width - self.height;
+        CGFloat y = 0;
+        CGFloat w = self.height - 6;
+        CGFloat h = self.height;
+        _moreStatusContainer = [[UIView alloc] initWithFrame:CGRectMake(x, y, w, h)];
+//        _moreStatusContainer.layer.borderWidth = 1;
+    }
+    return _moreStatusContainer;
+}
+
 - (UILabel *)currentView{
     if (!_currentView) {
-        CGFloat w = self.height - 6;
-        CGFloat x = [DSDeviceUtil bounds].size.width - self.height;
+        CGFloat w = self.moreStatusContainer.frame.size.width;
+        CGFloat x = 0;
         CGFloat h = 30.0;
         CGFloat y = self.vSpace1;
         _currentView = [[UILabel alloc] initWithFrame:CGRectMake(x, y, w, h)];
-        [_currentView setFont:[AGStyleCoordinator fontWithSize:36.0]];
+        [_currentView setFont:[AGStyleCoordinator fontWithSize:18]];
 //        _currentView.layer.borderWidth = 1;
-        [_currentView setText:@"3"];
+//        [_currentView setText:@"3"];
         [_currentView setTextAlignment:NSTextAlignmentCenter];
+        [_currentView setTextColor:STYLE_COLOR_COMPLETED];
     }
     return _currentView;
 }
 
 - (UILabel *)targetView{
     if (!_targetView) {
-        CGFloat x = self.currentView.frame.origin.x;
+        CGFloat x = 0;
         CGFloat y = self.currentView.frame.size.height + self.vSpace1*2;
         CGFloat h = self.height - self.currentView.frame.size.height - self.vSpace1*3;
-        CGFloat w = self.currentView.frame.size.width;
+        CGFloat w = self.moreStatusContainer.frame.size.width;
         _targetView = [[UILabel alloc] initWithFrame:CGRectMake(x, y, w, h)];
         [_targetView setAdjustsFontSizeToFitWidth:YES];
         [_targetView setTextAlignment:NSTextAlignmentCenter];
 //        _targetView.layer.borderWidth = 1;
         [_targetView setNumberOfLines:2];
-        [_targetView setText:@"3/10 by 09/12"];
+//        [_targetView setText:@"3/10 by 09/12"];
+        [_targetView setTextColor:[UIColor lightGrayColor]];
+        
     }
     return _targetView;
+}
+
+#pragma mark - demo dates
+
+- (CGFloat)targetValue{
+    return 10.0;
+}
+
+- (CGFloat)currentValue{
+    DATask *item = (DATask *)self.value;
+    return self.targetValue * item.progress;
 }
 
 #pragma mark - styles
@@ -169,7 +231,7 @@
 }
 
 - (CGFloat)vSpace{
-    return 6.0;
+    return 4;
 }
 
 - (CGFloat)vSpace1{

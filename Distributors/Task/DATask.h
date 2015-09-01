@@ -15,6 +15,7 @@
 
 
 - (NSString *)textOfType;
+- (BOOL)isCompleted;
 
 @property (nonatomic, strong) NSString *identifier;
 

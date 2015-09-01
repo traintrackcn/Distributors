@@ -10,6 +10,7 @@
 #import "DAEarningPotentialDataset.h"
 #import "NSObject+Singleton.h"
 #import "DACompany.h"
+#import "DAOpportunityDataset.h"
 
 @implementation DAOpportunity
 
@@ -26,6 +27,15 @@
         _company = [DACompany instance];
     }
     return _company;
+}
+
+
+- (NSArray *)tasksOngoing{
+    return [DAOpportunityDataset singleton].demoTasksOngoing;
+}
+
+- (NSArray *)tasksCompleted{
+    return [DAOpportunityDataset singleton].demoTasksCompleted;
 }
 
 @end

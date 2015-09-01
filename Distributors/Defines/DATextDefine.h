@@ -81,4 +81,4 @@
 
 
 #define KEY_MSG_UNDEFINED @"Undefined"
-#define KEY_MSG_ADD_OPPORTUNITY @"Add opportunity"
+#define KEY_MSG_ADD_AN_OPPORTUNITY @"Add an opportunity"

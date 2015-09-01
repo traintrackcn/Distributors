@@ -94,7 +94,7 @@
         [_titleLabel setAdjustsFontSizeToFitWidth:YES];
         [_titleLabel setTextAlignment:NSTextAlignmentCenter];
         [_titleLabel setTextColor:STYLE_THEME_COLOR_2];
-        [_titleLabel setText:[AGTextCoordinator textForKey:KEY_MSG_ADD_OPPORTUNITY]];
+        [_titleLabel setText:[AGTextCoordinator textForKey:KEY_MSG_ADD_AN_OPPORTUNITY]];
     }
     return _titleLabel;
 }

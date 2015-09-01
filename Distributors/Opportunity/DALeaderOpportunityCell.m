@@ -13,6 +13,7 @@
 #import "UILabel+AGUtil.h"
 #import "DAStyleDefine.h"
 #import "DAButton.h"
+#import "AGViewController.h"
 
 @interface DALeaderOpportunityCell(){
     
@@ -159,7 +160,34 @@
         DAButton *btn = [[DAButton alloc] initWithFrame:frame title:title iconName:iconName];
         [self.buttonContainer addSubview:btn];
         x += w;
+        
+        
+        if (i == 2) {
+            UITapGestureRecognizer *gc = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapShared:)];
+            [btn addGestureRecognizer:gc];
+        }
     }
+}
+
+
+#pragma mark - interactive ops
+
+- (void)didTapShared:(id)sender{
+    NSString *textToShare = @"It's a great opportunity!";
+    NSURL *myWebsite = [NSURL URLWithString:@"http://www.abovegem.com/"];
+    
+    NSArray *objectsToShare = @[textToShare, myWebsite];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    
+    NSArray *excludeActivities = @[UIActivityTypePostToFacebook,
+                                   UIActivityTypePostToTwitter
+                                   ];
+    
+    activityVC.excludedActivityTypes = excludeActivities;
+    
+    [(AGViewController *)self.associatedViewController presentViewController:activityVC animated:YES completion:nil];
+//    [self pushViewController:activityVC];
 }
 
 #pragma mark - styles

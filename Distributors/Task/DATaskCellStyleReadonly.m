@@ -26,8 +26,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self.progressView setHidden:YES];
-        [self.currentView setHidden:YES];
-        [self.targetView setHidden:YES];
+        [self.moreStatusContainer setHidden:YES];
         
 //        [self.contentView addSubview:self.timeRequiredLabel];
         [self.contentView addSubview:self.timeRequiredView];
