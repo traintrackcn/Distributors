@@ -8,11 +8,7 @@
 
 #import "DATaskViewController.h"
 
-@class DAStep;
-@class DATask;
 @interface DATaskEditor : DATaskViewController
 
-@property (nonatomic, weak) DAStep *step;
-//@property (nonatomic, weak) DATask *task;
 
 @end

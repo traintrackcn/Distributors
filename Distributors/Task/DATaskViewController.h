@@ -9,6 +9,7 @@
 #import "AGViewController.h"
 
 @class DATask;
+@class DAOpportunity;
 
 @interface DATaskViewController : AGViewController
 
@@ -22,6 +23,10 @@
 - (BOOL)isLogBookAvailable;
 - (BOOL)isEditorAvailable;
 
+
+- (void)didTapSave:(id)sender;
+
 @property (nonatomic, weak) DATask *item;
+@property (nonatomic, weak) DAOpportunity *opportunity;
 
 @end

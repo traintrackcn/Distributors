@@ -8,19 +8,10 @@
 
 #import "DATaskEditor.h"
 #import "DATextDefine.h"
-#import "AGTextCoordinator.h"
-#import "AGTextfieldBoxCell.h"
-#import "AGViewController+Datasource.h"
-#import "AGViewController+Separator.h"
-#import "DAStyleDefine.h"
 #import "DATask.h"
 #import "GlobalDefine.h"
-#import "DSDeviceUtil.h"
-#import "AGTextfieldCellStyleOptions.h"
-#import "AGButtonCell.h"
-#import "AGButtonItem.h"
-#import "DATaskTypeCell.h"
-
+#import "DAOpportunity.h"
+#import "DAOpportunityDataset.h"
 
 
 @interface DATaskEditor(){
@@ -36,13 +27,25 @@
     self = [super init];
     if (self) {
         [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_TASK_EDITOR]];
-        
-        
-        
     }
     return self;
 }
 
+
+#pragma mark - interactive ops
+
+- (void)didTapSave:(id)sender{
+    
+    //demo ops
+    TLOG(@"self.opportunity -> %@", self.opportunity);
+    [self.opportunity setTasks:@[[DAOpportunityDataset singleton].demoTasksOngoing.firstObject ]];
+    
+    
+    [self.previousViewController setFlagDoReload:YES];
+    [super didTapSave:sender];
+}
+
+#pragma mark -
 
 - (BOOL)isSectionReportAvailable{
     return NO;
@@ -76,5 +79,7 @@
 - (BOOL)isSectionNotificationAvailable{
     return YES;
 }
+
+
 
 @end

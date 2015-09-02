@@ -19,7 +19,7 @@
 #import "AGViewController+Separator.h"
 #import "DAStyleDefine.h"
 #import "AGTextCellStyleMore.h"
-#import "DATaskSection.h"
+//#import "DATaskSection.h"
 #import "DATaskEditor.h"
 #import "DATextDefine.h"
 #import "GlobalDefine.h"
@@ -27,10 +27,13 @@
 #import "DATaskDefine.h"
 #import "DAOpportunity.h"
 #import "RootViewController.h"
+#import "DATaskCellStyleEditor.h"
+#import "DANewTaskCell.h"
 
 typedef NS_ENUM(NSInteger, Section) {
 //    SectionName,
     SectionTask,
+    SectionAddButton,
     SectionTimeToComplete,
     SectionNotification,
     SectionButton,
@@ -41,7 +44,7 @@ typedef NS_ENUM(NSInteger, Section) {
     
 }
 
-@property (nonatomic, strong) DATaskSection *taskSection;
+//@property (nonatomic, strong) DATaskSection *taskSection;
 
 @end
 
@@ -57,12 +60,10 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 - (void)configSections{
-//    NSString *title = [NSString stringWithFormat:@"%@", [AGTextCoordinator textForKey:KEY_LBL_STEP_NAME]];
     
-//    [self.config setCellTitle:title atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionName]];
-//    [self.config setCellCls:[AGTextfieldBoxCell class] inSection:SectionName];
-    
-    [self taskSection];
+//    [self taskSection];
+    [self.config setCellCls:[DATaskCellStyleEditor class] inSection:SectionTask];
+    [self.config setCellCls:[DANewTaskCell class] inSection:SectionAddButton];
     
     
     [self.config setCellTitle:[AGTextCoordinator textForKey:KEY_LBL_TIME_TO_COMPLETE] atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionTimeToComplete]];
@@ -105,7 +106,8 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
-//    if (section == SectionName) return 1;
+    if (section == SectionTask) return self.item.tasks.count;
+    if (section == SectionAddButton) return 1;
     if (section == SectionNotification) return 1;
     if (section == SectionButton) return 1;
     if (section == SectionTimeToComplete) return 1;
@@ -114,11 +116,12 @@ typedef NS_ENUM(NSInteger, Section) {
 
 - (id)valueAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger section = indexPath.section;
+    NSInteger idx = indexPath.row;
     id value = [super valueAtIndexPath:indexPath];
     
-//    if (section == SectionName){
-//        value = @"Become a Product of the Product";
-//    }
+    if (section == SectionTask) {
+        value = [self.item.tasks objectAtIndex:idx];
+    }
     
     if (section == SectionTimeToComplete) {
         value = @"21Days";
@@ -152,37 +155,26 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger idx = indexPath.row;
     
     if (section == SectionTask) {
-        @try {
-            if (idx != self.taskSection.lastIndex) {
-                DATaskType type = idx;
-                Class cls = [[DATaskDefine singleton] taskEditorClsForTaskType:type];
-                DATaskEditor *vc = [cls instance];
-//                [vc setItem:self.item];
-                [vc setItem:[self.item.tasks objectAtIndex:idx]];
-                [self.navigationController pushViewController:vc animated:YES];
-            }
-        }
-        @catch (NSException *exception) {
-            
-        }
-        
-        
-        
-        
+        DATaskType type = idx;
+        Class cls = [[DATaskDefine singleton] taskEditorClsForTaskType:type];
+        DATaskEditor *vc = [cls instance];
+    //                [vc setItem:self.item];
+        [vc setItem:[self.item.tasks objectAtIndex:idx]];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
 }
 
-#pragma mark - components
+//#pragma mark - components
 
-- (DATaskSection *)taskSection{
-    if (!_taskSection) {
-        _taskSection = [DATaskSection instanceWithSection:SectionTask config:self.config];
-        [_taskSection setItem:self.item];
-        [_taskSection setEditMode:YES];
-    }
-    return _taskSection;
-}
+//- (DATaskSection *)taskSection{
+//    if (!_taskSection) {
+//        _taskSection = [DATaskSection instanceWithSection:SectionTask config:self.config];
+//        [_taskSection setItem:self.item];
+//        [_taskSection setEditMode:YES];
+//    }
+//    return _taskSection;
+//}
 
 #pragma mark - 
 
@@ -190,10 +182,12 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger section = indexPath.section;
     id value;
     
-    if (section == SectionTask) {
+    if (section == SectionTask || section == SectionAddButton) {
         TLOG(@"self.item -> %@", self.item);
         value = @[self.item];
     }
+    
+    
     
     return value;
 }

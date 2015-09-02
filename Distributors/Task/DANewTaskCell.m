@@ -46,7 +46,7 @@
     
     NSArray *taskTypes = [DATaskDefine singleton].taskTexts;
    
-    DAStep *step = self.parameters.firstObject;
+    DAOpportunity *opportunity = self.parameters.firstObject;
     [UIActionSheet showInView:v withTitle:@"Choose a template" cancelButtonTitle:[AGTextCoordinator textForKey:KEY_BTN_CANCEL] destructiveButtonTitle:nil otherButtonTitles:taskTypes tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
         
         TLOG(@"buttonIndex -> %ld", (long)buttonIndex);
@@ -55,7 +55,7 @@
             DATaskEditor *vc = [DATaskEditor instance];
             DATask *task = [DATask instance];
             [task setType:buttonIndex];
-            [vc setStep:step];
+            [vc setOpportunity:opportunity];
             [vc setItem:task];
             [self pushViewController:vc];
         }

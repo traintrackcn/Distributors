@@ -8,6 +8,6 @@
 
 #import "DATaskCellStyleProgress.h"
 
-@interface DATaskCellStyleTemplateEditor : DATaskCellStyleProgress
+@interface DATaskCellStyleEditor : DATaskCellStyleProgress
 
 @end

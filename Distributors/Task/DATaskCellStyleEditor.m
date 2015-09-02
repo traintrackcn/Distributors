@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DATaskCellStyleTemplateEditor.h"
+#import "DATaskCellStyleEditor.h"
 #import "AGLineProgressView.h"
 #import "DAStyleDefine.h"
 #import "DAButton.h"
 
-@interface DATaskCellStyleTemplateEditor(){
+@interface DATaskCellStyleEditor(){
     
 }
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation DATaskCellStyleTemplateEditor
+@implementation DATaskCellStyleEditor
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

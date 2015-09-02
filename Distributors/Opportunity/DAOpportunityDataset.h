@@ -16,8 +16,8 @@
 
 - (void)requestTemplatesByCompany:(DACompany *)company completion:(void(^)(NSArray *templates))completion;
 
-- (NSArray *)demoTasksOngoing;
-- (NSArray *)demoTasksCompleted;
+@property (nonatomic, strong) NSArray *demoTasksOngoing;
+@property (nonatomic, strong) NSArray *demoTasksCompleted;
 
 
 @property (nonatomic, strong) DAOpportunity *demoOpportunity;

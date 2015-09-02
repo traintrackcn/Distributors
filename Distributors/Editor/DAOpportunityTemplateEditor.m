@@ -25,7 +25,7 @@
 #import "DAEarningPotentialSection.h"
 #import "AGTextfieldCellStyleOptions.h"
 #import "DAOpportunityTitleCell.h"
-#import "DATaskCellStyleTemplateEditor.h"
+#import "DATaskCellStyleEditor.h"
 #import "DATaskEditor.h"
 #import "RootViewController.h"
 
@@ -74,7 +74,7 @@
 ////        [self.config setHeaderCls:[DAStepHeaderView class] forSection:section];
 //        [self.config setCellCls:[DATaskCellStyleTemplateEditor class] inSection:section];
 //    }
-    [self.config setCellCls:[DATaskCellStyleTemplateEditor class] inSection:self.SectionTask];
+    [self.config setCellCls:[DATaskCellStyleEditor class] inSection:self.SectionTask];
     
     [self earningPotentialSection];
     

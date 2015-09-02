@@ -56,6 +56,8 @@
 
 - (NSArray *)demoTasksOngoing{
 //    return @[];
+    if (!_demoTasksOngoing){
+    
     DATask *task1 = [DATask instance];
     [task1 setSentence:@"Submit your testimonial within 48 hours"];
     [task1 setType:DATaskTypeTestimonial];
@@ -120,27 +122,34 @@
     [task11 setType:DATaskTypeTraining];
     [task11 setProgress:.3];
     
-    return @[task1, task1_1, task1_2, task2, task3, task4, task5, task6,task7, task8, task9, task10, task11];
+    _demoTasksOngoing = @[task1, task1_1, task1_2, task2, task3, task4, task5, task6,task7, task8, task9, task10, task11];
+    }
+    return _demoTasksOngoing;
 }
 
 
 - (NSArray *)demoTasksCompleted{
     //    return @[];
-    DATask *task1 = [DATask instance];
-    [task1 setSentence:@"Submit your testimonial within 48 hours"];
-    [task1 setType:DATaskTypeTestimonial];
-    [task1 setProgress:1];
+    if (!_demoTasksCompleted) {
+        DATask *task1 = [DATask instance];
+        [task1 setSentence:@"Submit your testimonial within 48 hours"];
+        [task1 setType:DATaskTypeTestimonial];
+        [task1 setProgress:1];
+        
+        DATask *task1_1 = [DATask instance];
+        [task1_1 setSentence:@"Set yourself up on the proper Autoship"];
+        [task1_1 setType:DATaskTypeAutoship];
+        [task1_1 setProgress:1];
+        
+        DATask *task1_2 = [DATask instance];
+        [task1_2 setSentence:@"Purchase 2 Boxes of Coffee"];
+        [task1_2 setType:DATaskTypeProducts];
+        [task1_2 setProgress:1];
+        _demoTasksCompleted = @[task1, task1_1, task1_2];
+    }
     
-    DATask *task1_1 = [DATask instance];
-    [task1_1 setSentence:@"Set yourself up on the proper Autoship"];
-    [task1_1 setType:DATaskTypeAutoship];
-    [task1_1 setProgress:1];
+    return _demoTasksCompleted;
     
-    DATask *task1_2 = [DATask instance];
-    [task1_2 setSentence:@"Purchase 2 Boxes of Coffee"];
-    [task1_2 setType:DATaskTypeProducts];
-    [task1_2 setProgress:1];
-    return @[task1, task1_1, task1_2];
 }
 
 @end

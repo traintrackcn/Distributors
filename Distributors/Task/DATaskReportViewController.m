@@ -17,10 +17,12 @@
 #import "DATaskCircleChartCell.h"
 #import "DATaskViewController.h"
 #import "DATask.h"
+#import "AGTextCell.h"
 //#import "AGTextCell.h"
 
 typedef NS_ENUM(NSInteger, Section) {
 //    SectionSummary,
+    SectionTest,
     SectionLine,
     SectionCircle,
     SectionCount
@@ -42,7 +44,7 @@ typedef NS_ENUM(NSInteger, Section) {
         [self setTitle:[AGTextCoordinator textForKey:KEY_LBL_TASK_REPORT]];
         
 //        [self.config setCellTitle:@"Products Sold/Bought" atIndexPath:[NSIndexPath indexPathForRow:0 inSection:SectionSummary]];
-//        [self.config setCellCls:[AGTextCell class] inSection:SectionSummary];
+        [self.config setCellCls:[AGTextCell class] inSection:SectionTest];
         
         [self.config setCellCls:[DADashboardChartCell class] inSection:SectionLine];
         [self.config setCellCls:[DATaskCircleChartCell class] inSection:SectionCircle];
@@ -74,6 +76,7 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section{
+//    if (section == SectionTest) return 1;
     if (section == SectionLine && [self isSectionLineAvailable]) return 1;
     if (section == SectionCircle && [self isSectionCircleAvailable]) return 1;
     return 0;
@@ -84,9 +87,9 @@ typedef NS_ENUM(NSInteger, Section) {
     NSInteger section = indexPath.section;
     NSInteger idx = indexPath.row;
     
-//    if (section == SectionSummary) {
-//        value = @21;
-//    }
+    if (section == SectionTest) {
+        value = [NSString stringWithFormat:@"test %d %d item:%@ type:%d", [self isSectionLineAvailable], [self isSectionCircleAvailable], self.item, self.type];
+    }
     
     if (section == SectionLine) {
         value = @"Products Sold/Bought Total:     21";
