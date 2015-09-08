@@ -54,6 +54,7 @@
         _datePickerView = [[RSDFDatePickerView alloc] initWithFrame:frame calendar:self.calendar];
         _datePickerView.delegate = self;
         _datePickerView.dataSource = self;
+        [_datePickerView selectDate:[NSDate date]];
 //        _datePickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
     return _datePickerView;
@@ -69,6 +70,8 @@
 
 - (BOOL)datePickerView:(RSDFDatePickerView *)view shouldSelectDate:(NSDate *)date
 {
+    
+    TLOG(@"date -> %@", date);
     return YES;
 }
 
@@ -77,6 +80,7 @@
 //    TLOG(@"date -> %@  %@", date, self.datesToMark );
 //    TLOG(@"[self.datesToMark containsObject:date] -> %d", [self.datesToMark containsObject:date]);
 //    return [self.datesToMark containsObject:date];
+    if (arc4random()%10>2) return NO;
     return YES;
 }
 
@@ -97,7 +101,7 @@
 #pragma mark - styles
 
 + (CGFloat)height{
-    return (STYLE_DEVICE_HEIGHT - STYLE_STATUS_BAR_HEIGHT - STYLE_NAVIGATION_BAR_HEIGHT)/2.0;
+    return ((STYLE_DEVICE_HEIGHT - STYLE_STATUS_BAR_HEIGHT - STYLE_NAVIGATION_BAR_HEIGHT)/4.0)*3.0;
 }
 
 #pragma mark - properties

@@ -71,6 +71,8 @@
 {
     self.backgroundColor = [self selfBackgroundColor];
     
+//    self.layer.borderWidth = 1;
+    
     [self addSubview:self.selectedDayImageView];
     [self addSubview:self.overlayImageView];
     [self addSubview:self.markImageView];
@@ -84,7 +86,7 @@
 {
     [super layoutSubviews];
     
-    self.dateLabel.frame = [self selectedImageViewFrame];
+    self.dateLabel.frame = [self markImageViewFrame];
     self.selectedDayImageView.frame = [self selectedImageViewFrame];
     self.overlayImageView.frame = [self selectedImageViewFrame];
     self.markImageView.frame = [self markImageViewFrame];
@@ -105,6 +107,7 @@
         _dateLabel = [[UILabel alloc] initWithFrame:[self selectedImageViewFrame]];
         _dateLabel.backgroundColor = [UIColor clearColor];
         _dateLabel.textAlignment = NSTextAlignmentCenter;
+        
     }
     return _dateLabel;
 }
@@ -115,6 +118,7 @@
         _dividerImageView = [[UIImageView alloc] initWithFrame:[self dividerImageViewFrame]];
         _dividerImageView.contentMode = UIViewContentModeCenter;
         _dividerImageView.image = [self dividerImage];
+//        _dividerImageView.layer.borderWidth = 5;
     }
     return _dividerImageView;
 }
@@ -126,7 +130,8 @@
 
 - (CGRect)markImageViewFrame
 {
-    return CGRectMake(CGRectGetWidth(self.frame) / 2 - 4.5f, 45.5f, 9.0f, 9.0f);
+//    return CGRectMake(CGRectGetWidth(self.frame) / 2 - 4.5f, 45.5f, 9.0f, 9.0f);
+    return CGRectMake(CGRectGetWidth(self.frame) / 2 - 17.5f, 5.5f, 35.0f, 35.0f);
 }
 
 - (UIImage *)markImage
@@ -153,6 +158,7 @@
         _markImageView.backgroundColor = [UIColor clearColor];
         _markImageView.contentMode = UIViewContentModeCenter;
         _markImageView.image = self.markImage;
+//        _markImageView.layer.borderWidth = 1;
     }
     return _markImageView;
 }
@@ -166,6 +172,7 @@
         _overlayImageView.alpha = 0.5f;
         _overlayImageView.contentMode = UIViewContentModeCenter;
         _overlayImageView.image = [self overlayImage];
+//        _overlayImageView.layer.borderWidth = 5;
     }
     return _overlayImageView;
 }
@@ -177,13 +184,16 @@
         _selectedDayImageView.backgroundColor = [UIColor clearColor];
         _selectedDayImageView.contentMode = UIViewContentModeCenter;
         _selectedDayImageView.image = [self selectedDayImage];
+//        _selectedDayImageView.layer.borderWidth = 3;
     }
     return _selectedDayImageView;
 }
 
 - (CGRect)selectedImageViewFrame
 {
-    return CGRectMake(CGRectGetWidth(self.frame) / 2 - 17.5f, 5.5f, 35.0f, 35.0f);
+    return CGRectMake(CGRectGetWidth(self.frame) / 2 - 4.5f, 45.5f, 9.0f, 9.0f);
+    
+//    return CGRectMake(CGRectGetWidth(self.frame) / 2 - 17.5f, 5.5f, 35.0f, 35.0f);
 }
 
 - (void)setMarkImage:(UIImage *)markImage
@@ -213,53 +223,91 @@
     self.overlayImageView.hidden = !self.isHighlighted || self.isNotThisMonth || self.isOutOfRange;
     self.markImageView.hidden = !self.isMarked || self.isNotThisMonth || self.isOutOfRange;
     self.dividerImageView.hidden = self.isNotThisMonth;
+    
+    
+    
+    
 
     if (self.isNotThisMonth) {
         self.dateLabel.textColor = [self notThisMonthLabelTextColor];
+//        self.dateLabel.textColor = [UIColor greenColor];
         self.dateLabel.font = [self dayLabelFont];
+//        self.dateLabel.layer.borderWidth = 0;
     } else {
+//        self.dateLabel.layer.borderWidth = 1;
         if (self.isOutOfRange) {
             self.dateLabel.textColor = [self outOfRangeDayLabelTextColor];
             self.dateLabel.font = [self outOfRangeDayLabelFont];
         } else {
-            if (!self.isSelected) {
-                if (!self.isToday) {
-                    self.dateLabel.font = [self dayLabelFont];
-                    if (!self.dayOff) {
-                        if (self.isPastDate) {
-                            self.dateLabel.textColor = [self pastDayLabelTextColor];
-                        } else {
-                            self.dateLabel.textColor = [self dayLabelTextColor];
-                        }
-                    } else {
-                        if (self.isPastDate) {
-                            self.dateLabel.textColor = [self pastDayOffLabelTextColor];
-                        } else {
-                            self.dateLabel.textColor = [self dayOffLabelTextColor];
-                        }
-                    }
-                } else {
-                    self.dateLabel.font = [self todayLabelFont];
-                    self.dateLabel.textColor = [self todayLabelTextColor];
-                }
-                
-            } else {
-                if (!self.isToday) {
-                    self.dateLabel.font = [self selectedDayLabelFont];
-                    self.dateLabel.textColor = [self selectedDayLabelTextColor];
-                    self.selectedDayImageView.image = [self selectedDayImage];
-                } else {
-                    self.dateLabel.font = [self selectedTodayLabelFont];
-                    self.dateLabel.textColor = [self selectedTodayLabelTextColor];
-                    self.selectedDayImageView.image = [self selectedTodayImage];
-                }
-            }
             
             if (self.marked) {
+//                self.isToday
+                
+                self.dateLabel.font = [self selectedDayLabelFont];
+                self.dateLabel.textColor = [self selectedDayLabelTextColor];
                 self.markImageView.image = self.markImage;
+                
+//                if (self.isDayOff) {
+//                    [self.dateLabel setTextColor:[UIColor greenColor]];
+//                }
+//                
+//                if (self.isPastDate) {
+//                    [self.dateLabel setTextColor:[UIColor lightGrayColor]];
+//                }
+                
             } else {
+//                self.isToday
+//                self.dayOff
+//                self.isPastDate
+                self.dateLabel.font = [self dayLabelFont];
+                self.dateLabel.textColor = [self dayLabelTextColor];
                 self.markImageView.image = nil;
             }
+            
+            if (self.isSelected) {
+                if (self.isToday) {
+                    self.selectedDayImageView.image = [self selectedTodayImage];
+                }else{
+                    self.selectedDayImageView.image = [self selectedDayImage];
+                }
+            }
+        
+//            return;
+            
+//            if (!self.isSelected) {
+//                if (!self.isToday) {
+//                    self.dateLabel.font = [self dayLabelFont];
+//                    if (!self.dayOff) {
+//                        if (self.isPastDate) {
+//                            self.dateLabel.textColor = [self pastDayLabelTextColor];
+//                        } else {
+//                            self.dateLabel.textColor = [self dayLabelTextColor];
+//                        }
+//                    } else {
+//                        if (self.isPastDate) {
+//                            self.dateLabel.textColor = [self pastDayOffLabelTextColor];
+//                        } else {
+//                            self.dateLabel.textColor = [self dayOffLabelTextColor];
+//                        }
+//                    }
+//                } else {
+//                    self.dateLabel.font = [self todayLabelFont];
+//                    self.dateLabel.textColor = [self todayLabelTextColor];
+//                }
+//                
+//            } else {
+//                if (!self.isToday) {
+//                    self.dateLabel.font = [self selectedDayLabelFont];
+//                    self.dateLabel.textColor = [self selectedDayLabelTextColor];
+//                    self.selectedDayImageView.image = [self selectedDayImage];
+//                } else {
+//                    self.dateLabel.font = [self selectedTodayLabelFont];
+//                    self.dateLabel.textColor = [self selectedTodayLabelTextColor];
+//                    self.selectedDayImageView.image = [self selectedTodayImage];
+//                }
+//            }
+            
+            
         }
     }
 
@@ -290,6 +338,8 @@
     UIImage *ellipseImage = [[self class] fetchObjectForKey:key withCreator:^id{
         UIGraphicsBeginImageContextWithOptions(frame.size, NO, self.window.screen.scale);
         CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        
         
         CGRect rect = frame;
         rect.origin = CGPointZero;
@@ -358,7 +408,8 @@
 
 - (UIColor *)notThisMonthLabelTextColor
 {
-    return [UIColor clearColor];
+//    return [UIColor clearColor];
+    return [UIColor lightGrayColor];
 }
 
 - (UIColor *)pastDayLabelTextColor
@@ -414,7 +465,7 @@
 
 - (UIFont *)selectedDayLabelFont
 {
-    return [UIFont fontWithName:@"HelveticaNeue-Bold" size:19.0f];
+    return [UIFont fontWithName:@"HelveticaNeue" size:19.0f];
 }
 
 - (UIColor *)selectedDayLabelTextColor
