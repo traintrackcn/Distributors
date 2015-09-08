@@ -22,11 +22,12 @@
 #import "DADashboardViewController.h"
 #import "DATaskCellStyleProgress.h"
 #import "DAOpportunityDataset.h"
-#import "DATaskReportViewController.h"
+#import "DATaskProgressViewController.h"
 #import "DAOpportunityTitleCell.h"
 #import "DATaskViewController.h"
 #import "DATaskDefine.h"
 #import "DATask.h"
+#import "DATaskOperator.h"
 
 
 typedef NS_ENUM(NSInteger, Section) {
@@ -182,6 +183,9 @@ typedef NS_ENUM(NSInteger, Section) {
     DATaskType type = item.type;
     
     
+    [self pushOperator:item];
+    return;
+    
     if (type == DATaskTypeTestimonial || type == DATaskTypeOthers) {
         [self pushDetail:item];
     }else{
@@ -190,8 +194,14 @@ typedef NS_ENUM(NSInteger, Section) {
     
 }
 
+- (void)pushOperator:(DATask *)item{
+    DATaskOperator *vc = [DATaskOperator instance];
+    [vc setItem:item];
+    [self pushViewController:vc];
+}
+
 - (void)pushReport:(DATask *)item{
-    DATaskReportViewController *vc = [DATaskReportViewController instance];
+    DATaskProgressViewController *vc = [DATaskProgressViewController instance];
     [vc setItem:item];
     [self pushViewController:vc];
 }

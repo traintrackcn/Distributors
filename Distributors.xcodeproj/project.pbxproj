@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		4A0D23761B79B92600FF9D40 /* DALabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D23751B79B92600FF9D40 /* DALabViewController.m */; };
 		4A0D23791B79BBAE00FF9D40 /* DALabConvertSpeechToTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0D23781B79BBAE00FF9D40 /* DALabConvertSpeechToTextViewController.m */; };
+		4A165DF71B9C1A6200598E84 /* DATaskProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165DF61B9C1A6200598E84 /* DATaskProgressViewController.m */; };
+		4A165DFB1B9C1AC700598E84 /* DATaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165DFA1B9C1AC700598E84 /* DATaskViewController.m */; };
+		4A165DFE1B9C226000598E84 /* DATaskOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165DFD1B9C226000598E84 /* DATaskOperator.m */; };
+		4A165E101B9D084300598E84 /* NSCalendar+RSDFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E011B9D084300598E84 /* NSCalendar+RSDFAdditions.m */; };
+		4A165E111B9D084300598E84 /* RSDFDatePickerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E041B9D084300598E84 /* RSDFDatePickerCollectionView.m */; };
+		4A165E121B9D084300598E84 /* RSDFDatePickerCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E061B9D084300598E84 /* RSDFDatePickerCollectionViewLayout.m */; };
+		4A165E131B9D084300598E84 /* RSDFDatePickerDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E091B9D084300598E84 /* RSDFDatePickerDayCell.m */; };
+		4A165E141B9D084300598E84 /* RSDFDatePickerDaysOfWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E0B1B9D084300598E84 /* RSDFDatePickerDaysOfWeekView.m */; };
+		4A165E151B9D084300598E84 /* RSDFDatePickerMonthHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E0D1B9D084300598E84 /* RSDFDatePickerMonthHeader.m */; };
+		4A165E161B9D084300598E84 /* RSDFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E0F1B9D084300598E84 /* RSDFDatePickerView.m */; };
+		4A165E1A1B9D09C800598E84 /* DADatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E191B9D09C800598E84 /* DADatePickerCell.m */; };
+		4A165E1E1B9EB1F500598E84 /* DACalendarTodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E1D1B9EB1F500598E84 /* DACalendarTodoCell.m */; };
 		4A2839AA1B82AC16007EA77E /* DAContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839A91B82AC16007EA77E /* DAContactViewController.m */; };
 		4A2839AE1B82AD0B007EA77E /* DADiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839AD1B82AD0B007EA77E /* DADiscoverViewController.m */; };
 		4A2839B21B82ADD1007EA77E /* DASettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839B11B82ADD1007EA77E /* DASettingViewController.m */; };
@@ -37,12 +49,10 @@
 		4A6497331B9539F8005A56CD /* DANewOpportunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6497321B9539F8005A56CD /* DANewOpportunityCell.m */; };
 		4A7111E31B8F0696003FD26D /* DADownlineProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111E21B8F0696003FD26D /* DADownlineProgressViewController.m */; };
 		4A7111E61B8F073B003FD26D /* DADownlineProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111E51B8F073B003FD26D /* DADownlineProgressCell.m */; };
-		4A7111E91B8F1048003FD26D /* DATaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111E81B8F1048003FD26D /* DATaskViewController.m */; };
 		4A7111F21B8F2ECA003FD26D /* DATaskNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111F11B8F2ECA003FD26D /* DATaskNoteCell.m */; };
 		4A7111FF1B8F2FA6003FD26D /* DAImageCollectionUnitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111FC1B8F2FA6003FD26D /* DAImageCollectionUnitCell.m */; };
 		4A7112001B8F2FA6003FD26D /* DAImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111FE1B8F2FA6003FD26D /* DAImageCollectionCell.m */; };
 		4A7112031B8F2FF2003FD26D /* DATaskImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7112021B8F2FF2003FD26D /* DATaskImageCollectionCell.m */; };
-		4A7112061B8F3266003FD26D /* DATaskReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7112051B8F3266003FD26D /* DATaskReportViewController.m */; };
 		4A7112091B8F3A32003FD26D /* DATaskCircleChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7112081B8F3A32003FD26D /* DATaskCircleChartCell.m */; };
 		4A71120C1B8F3C3B003FD26D /* DATaskAudioNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71120B1B8F3C3B003FD26D /* DATaskAudioNoteCell.m */; };
 		4A71120F1B8F3D77003FD26D /* DATaskDueTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A71120E1B8F3D77003FD26D /* DATaskDueTimeCell.m */; };
@@ -124,6 +134,32 @@
 		4A0D23751B79B92600FF9D40 /* DALabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabViewController.m; sourceTree = "<group>"; };
 		4A0D23771B79BBAE00FF9D40 /* DALabConvertSpeechToTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabConvertSpeechToTextViewController.h; sourceTree = "<group>"; };
 		4A0D23781B79BBAE00FF9D40 /* DALabConvertSpeechToTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabConvertSpeechToTextViewController.m; sourceTree = "<group>"; };
+		4A165DF51B9C1A6200598E84 /* DATaskProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskProgressViewController.h; sourceTree = "<group>"; };
+		4A165DF61B9C1A6200598E84 /* DATaskProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskProgressViewController.m; sourceTree = "<group>"; };
+		4A165DF91B9C1AC700598E84 /* DATaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskViewController.h; sourceTree = "<group>"; };
+		4A165DFA1B9C1AC700598E84 /* DATaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskViewController.m; sourceTree = "<group>"; };
+		4A165DFC1B9C226000598E84 /* DATaskOperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskOperator.h; sourceTree = "<group>"; };
+		4A165DFD1B9C226000598E84 /* DATaskOperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskOperator.m; sourceTree = "<group>"; };
+		4A165E001B9D084300598E84 /* NSCalendar+RSDFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+RSDFAdditions.h"; sourceTree = "<group>"; };
+		4A165E011B9D084300598E84 /* NSCalendar+RSDFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+RSDFAdditions.m"; sourceTree = "<group>"; };
+		4A165E021B9D084300598E84 /* RSDayFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDayFlow.h; sourceTree = "<group>"; };
+		4A165E031B9D084300598E84 /* RSDFDatePickerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerCollectionView.h; sourceTree = "<group>"; };
+		4A165E041B9D084300598E84 /* RSDFDatePickerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerCollectionView.m; sourceTree = "<group>"; };
+		4A165E051B9D084300598E84 /* RSDFDatePickerCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerCollectionViewLayout.h; sourceTree = "<group>"; };
+		4A165E061B9D084300598E84 /* RSDFDatePickerCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerCollectionViewLayout.m; sourceTree = "<group>"; };
+		4A165E071B9D084300598E84 /* RSDFDatePickerDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerDate.h; sourceTree = "<group>"; };
+		4A165E081B9D084300598E84 /* RSDFDatePickerDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerDayCell.h; sourceTree = "<group>"; };
+		4A165E091B9D084300598E84 /* RSDFDatePickerDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerDayCell.m; sourceTree = "<group>"; };
+		4A165E0A1B9D084300598E84 /* RSDFDatePickerDaysOfWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerDaysOfWeekView.h; sourceTree = "<group>"; };
+		4A165E0B1B9D084300598E84 /* RSDFDatePickerDaysOfWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerDaysOfWeekView.m; sourceTree = "<group>"; };
+		4A165E0C1B9D084300598E84 /* RSDFDatePickerMonthHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerMonthHeader.h; sourceTree = "<group>"; };
+		4A165E0D1B9D084300598E84 /* RSDFDatePickerMonthHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerMonthHeader.m; sourceTree = "<group>"; };
+		4A165E0E1B9D084300598E84 /* RSDFDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSDFDatePickerView.h; sourceTree = "<group>"; };
+		4A165E0F1B9D084300598E84 /* RSDFDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSDFDatePickerView.m; sourceTree = "<group>"; };
+		4A165E181B9D09C800598E84 /* DADatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADatePickerCell.h; sourceTree = "<group>"; };
+		4A165E191B9D09C800598E84 /* DADatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADatePickerCell.m; sourceTree = "<group>"; };
+		4A165E1C1B9EB1F500598E84 /* DACalendarTodoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACalendarTodoCell.h; sourceTree = "<group>"; };
+		4A165E1D1B9EB1F500598E84 /* DACalendarTodoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACalendarTodoCell.m; sourceTree = "<group>"; };
 		4A2839A81B82AC16007EA77E /* DAContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAContactViewController.h; sourceTree = "<group>"; };
 		4A2839A91B82AC16007EA77E /* DAContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAContactViewController.m; sourceTree = "<group>"; };
 		4A2839AC1B82AD0B007EA77E /* DADiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADiscoverViewController.h; sourceTree = "<group>"; };
@@ -183,8 +219,6 @@
 		4A7111E21B8F0696003FD26D /* DADownlineProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADownlineProgressViewController.m; sourceTree = "<group>"; };
 		4A7111E41B8F073B003FD26D /* DADownlineProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADownlineProgressCell.h; sourceTree = "<group>"; };
 		4A7111E51B8F073B003FD26D /* DADownlineProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADownlineProgressCell.m; sourceTree = "<group>"; };
-		4A7111E71B8F1048003FD26D /* DATaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskViewController.h; sourceTree = "<group>"; };
-		4A7111E81B8F1048003FD26D /* DATaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskViewController.m; sourceTree = "<group>"; };
 		4A7111F01B8F2ECA003FD26D /* DATaskNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskNoteCell.h; sourceTree = "<group>"; };
 		4A7111F11B8F2ECA003FD26D /* DATaskNoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskNoteCell.m; sourceTree = "<group>"; };
 		4A7111FB1B8F2FA6003FD26D /* DAImageCollectionUnitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAImageCollectionUnitCell.h; sourceTree = "<group>"; };
@@ -193,8 +227,6 @@
 		4A7111FE1B8F2FA6003FD26D /* DAImageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAImageCollectionCell.m; sourceTree = "<group>"; };
 		4A7112011B8F2FF2003FD26D /* DATaskImageCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskImageCollectionCell.h; sourceTree = "<group>"; };
 		4A7112021B8F2FF2003FD26D /* DATaskImageCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskImageCollectionCell.m; sourceTree = "<group>"; };
-		4A7112041B8F3266003FD26D /* DATaskReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskReportViewController.h; sourceTree = "<group>"; };
-		4A7112051B8F3266003FD26D /* DATaskReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskReportViewController.m; sourceTree = "<group>"; };
 		4A7112071B8F3A32003FD26D /* DATaskCircleChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskCircleChartCell.h; sourceTree = "<group>"; };
 		4A7112081B8F3A32003FD26D /* DATaskCircleChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskCircleChartCell.m; sourceTree = "<group>"; };
 		4A71120A1B8F3C3B003FD26D /* DATaskAudioNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskAudioNoteCell.h; sourceTree = "<group>"; };
@@ -362,6 +394,67 @@
 				4A0D23781B79BBAE00FF9D40 /* DALabConvertSpeechToTextViewController.m */,
 			);
 			path = Lab;
+			sourceTree = "<group>";
+		};
+		4A165DF41B9C1A3D00598E84 /* TaskProgress */ = {
+			isa = PBXGroup;
+			children = (
+				4A165DF51B9C1A6200598E84 /* DATaskProgressViewController.h */,
+				4A165DF61B9C1A6200598E84 /* DATaskProgressViewController.m */,
+				4A165DFC1B9C226000598E84 /* DATaskOperator.h */,
+				4A165DFD1B9C226000598E84 /* DATaskOperator.m */,
+			);
+			path = TaskProgress;
+			sourceTree = "<group>";
+		};
+		4A165DF81B9C1AA400598E84 /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4A165DF91B9C1AC700598E84 /* DATaskViewController.h */,
+				4A165DFA1B9C1AC700598E84 /* DATaskViewController.m */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		4A165DFF1B9D084300598E84 /* RSDayFlow */ = {
+			isa = PBXGroup;
+			children = (
+				4A165E001B9D084300598E84 /* NSCalendar+RSDFAdditions.h */,
+				4A165E011B9D084300598E84 /* NSCalendar+RSDFAdditions.m */,
+				4A165E021B9D084300598E84 /* RSDayFlow.h */,
+				4A165E031B9D084300598E84 /* RSDFDatePickerCollectionView.h */,
+				4A165E041B9D084300598E84 /* RSDFDatePickerCollectionView.m */,
+				4A165E051B9D084300598E84 /* RSDFDatePickerCollectionViewLayout.h */,
+				4A165E061B9D084300598E84 /* RSDFDatePickerCollectionViewLayout.m */,
+				4A165E071B9D084300598E84 /* RSDFDatePickerDate.h */,
+				4A165E081B9D084300598E84 /* RSDFDatePickerDayCell.h */,
+				4A165E091B9D084300598E84 /* RSDFDatePickerDayCell.m */,
+				4A165E0A1B9D084300598E84 /* RSDFDatePickerDaysOfWeekView.h */,
+				4A165E0B1B9D084300598E84 /* RSDFDatePickerDaysOfWeekView.m */,
+				4A165E0C1B9D084300598E84 /* RSDFDatePickerMonthHeader.h */,
+				4A165E0D1B9D084300598E84 /* RSDFDatePickerMonthHeader.m */,
+				4A165E0E1B9D084300598E84 /* RSDFDatePickerView.h */,
+				4A165E0F1B9D084300598E84 /* RSDFDatePickerView.m */,
+			);
+			path = RSDayFlow;
+			sourceTree = "<group>";
+		};
+		4A165E171B9D09B800598E84 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4A165E181B9D09C800598E84 /* DADatePickerCell.h */,
+				4A165E191B9D09C800598E84 /* DADatePickerCell.m */,
+			);
+			path = DatePicker;
+			sourceTree = "<group>";
+		};
+		4A165E1B1B9EB1DD00598E84 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4A165E1C1B9EB1F500598E84 /* DACalendarTodoCell.h */,
+				4A165E1D1B9EB1F500598E84 /* DACalendarTodoCell.m */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		4A2839A71B82ABF9007EA77E /* Contact */ = {
@@ -701,6 +794,8 @@
 		4AB3F2611B8D2ED3008DC70F /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				4A165DF81B9C1AA400598E84 /* TaskDetail */,
+				4A165DF41B9C1A3D00598E84 /* TaskProgress */,
 				4A71128B1B900C26003FD26D /* TaskEditor */,
 				4A7112721B900BFC003FD26D /* TaskDefineSection */,
 				4A6497281B943A41005A56CD /* DATasksEditor.h */,
@@ -721,16 +816,12 @@
 				4AB3F26F1B8D2ED3008DC70F /* DATaskTypeCell.m */,
 				4AB3F2701B8D2ED3008DC70F /* DATask.h */,
 				4AB3F2711B8D2ED3008DC70F /* DATask.m */,
-				4A7111E71B8F1048003FD26D /* DATaskViewController.h */,
-				4A7111E81B8F1048003FD26D /* DATaskViewController.m */,
 				4A7111F01B8F2ECA003FD26D /* DATaskNoteCell.h */,
 				4A7111F11B8F2ECA003FD26D /* DATaskNoteCell.m */,
 				4A71120A1B8F3C3B003FD26D /* DATaskAudioNoteCell.h */,
 				4A71120B1B8F3C3B003FD26D /* DATaskAudioNoteCell.m */,
 				4A7112011B8F2FF2003FD26D /* DATaskImageCollectionCell.h */,
 				4A7112021B8F2FF2003FD26D /* DATaskImageCollectionCell.m */,
-				4A7112041B8F3266003FD26D /* DATaskReportViewController.h */,
-				4A7112051B8F3266003FD26D /* DATaskReportViewController.m */,
 				4A7112071B8F3A32003FD26D /* DATaskCircleChartCell.h */,
 				4A7112081B8F3A32003FD26D /* DATaskCircleChartCell.m */,
 				4A71120D1B8F3D77003FD26D /* DATaskDueTimeCell.h */,
@@ -772,9 +863,12 @@
 		4AB8B6B41B66081F008073B6 /* Distributors */ = {
 			isa = PBXGroup;
 			children = (
+				4A165E171B9D09B800598E84 /* DatePicker */,
+				4A165DFF1B9D084300598E84 /* RSDayFlow */,
 				4A71122D1B8FD27A003FD26D /* ToolboxView */,
 				4A7112261B8FCD97003FD26D /* CircleNote */,
 				4A7111FA1B8F2FA6003FD26D /* ImageCollectionCell */,
+				4A165E1B1B9EB1DD00598E84 /* Calendar */,
 				4AB3F23A1B8CA1AD008DC70F /* Chart */,
 				4AB3F1E91B8B04FD008DC70F /* Map */,
 				4A283A2D1B846D31007EA77E /* Period */,
@@ -922,6 +1016,7 @@
 				4A71128A1B900BFC003FD26D /* DATrainingTaskDefineSection.m in Sources */,
 				4A7112881B900BFC003FD26D /* DATaskDefineSection.m in Sources */,
 				4AB8B6BB1B66081F008073B6 /* AppDelegate.m in Sources */,
+				4A165E101B9D084300598E84 /* NSCalendar+RSDFAdditions.m in Sources */,
 				4A283A1D1B843C4E007EA77E /* DAEarningPotentialCell.m in Sources */,
 				4A2839EE1B830B96007EA77E /* DASession.m in Sources */,
 				4AB3F24C1B8CA1AD008DC70F /* DAChartCoordinatorView.m in Sources */,
@@ -953,9 +1048,12 @@
 				4AB3F24A1B8CA1AD008DC70F /* DAChartCell+Utils.m in Sources */,
 				4A8E8E391B6AFA1500F48CDD /* RootTabController.m in Sources */,
 				4A8E8E401B6AFFE400F48CDD /* DACompanyOpportunitiesViewController.m in Sources */,
+				4A165E111B9D084300598E84 /* RSDFDatePickerCollectionView.m in Sources */,
 				4AB3F1EC1B8B050E008DC70F /* DAMapCell.m in Sources */,
+				4A165E1A1B9D09C800598E84 /* DADatePickerCell.m in Sources */,
 				4A283A3C1B869E20007EA77E /* DAEarningPotentialSection.m in Sources */,
 				4A7112861B900BFC003FD26D /* DAOthersTaskDefineSection.m in Sources */,
+				4A165DFE1B9C226000598E84 /* DATaskOperator.m in Sources */,
 				4AB3F2131B8C6384008DC70F /* DALeaderViewController.m in Sources */,
 				4AB3F27F1B8D2ED3008DC70F /* DATaskProgressEditor.m in Sources */,
 				4A6497301B944DE1005A56CD /* DATaskDefine.m in Sources */,
@@ -963,18 +1061,22 @@
 				4AB3F2051B8C18E7008DC70F /* DAOpportunityDescriptionCell.m in Sources */,
 				4A8E8E431B6B01CD00F48CDD /* DAOpportunityViewController.m in Sources */,
 				4A2839AE1B82AD0B007EA77E /* DADiscoverViewController.m in Sources */,
+				4A165E1E1B9EB1F500598E84 /* DACalendarTodoCell.m in Sources */,
 				4A7112001B8F2FA6003FD26D /* DAImageCollectionCell.m in Sources */,
 				4A7112851B900BFC003FD26D /* DAEventsTaskDefineSection.m in Sources */,
 				4A2839F11B830BA7007EA77E /* DASessionCoordinator.m in Sources */,
 				4A7112361B8FE292003FD26D /* DATaskToolboxView.m in Sources */,
+				4A165DFB1B9C1AC700598E84 /* DATaskViewController.m in Sources */,
 				4A71129A1B900C82003FD26D /* DAEventsTaskEditor.m in Sources */,
 				4AB8B6B81B66081F008073B6 /* main.m in Sources */,
 				4A2839E01B83083A007EA77E /* DAUser.m in Sources */,
+				4A165E131B9D084300598E84 /* RSDFDatePickerDayCell.m in Sources */,
 				4AB3F2761B8D2ED3008DC70F /* DAOpportunityTemplateEditor.m in Sources */,
 				4A7112181B8F4051003FD26D /* DATaskVideoCell.m in Sources */,
 				4A7112151B8F3DEA003FD26D /* DATaskLocationCell.m in Sources */,
 				4A7112A91B9044F6003FD26D /* DAButton.m in Sources */,
 				4AB3F28F1B8D5780008DC70F /* DAGeneralOpportunitesViewController.m in Sources */,
+				4A165E141B9D084300598E84 /* RSDFDatePickerDaysOfWeekView.m in Sources */,
 				4A7112831B900BFC003FD26D /* DAAutoshipTaskDefineSection.m in Sources */,
 				4A7112301B8FD29F003FD26D /* DAToolboxView.m in Sources */,
 				4A7112911B900C47003FD26D /* DATestimonialTaskEditor.m in Sources */,
@@ -986,18 +1088,20 @@
 				4A71120F1B8F3D77003FD26D /* DATaskDueTimeCell.m in Sources */,
 				4A8E8E241B6AE8D100F48CDD /* RootViewController.m in Sources */,
 				4AB3F2481B8CA1AD008DC70F /* DAChartCell+RemoteOps.m in Sources */,
+				4A165E161B9D084300598E84 /* RSDFDatePickerView.m in Sources */,
+				4A165E121B9D084300598E84 /* RSDFDatePickerCollectionViewLayout.m in Sources */,
 				4A7112AF1B90640F003FD26D /* DAOpportunityTitleCell.m in Sources */,
 				4A7112A61B903E66003FD26D /* DASearchCell.m in Sources */,
-				4A7112061B8F3266003FD26D /* DATaskReportViewController.m in Sources */,
 				4A7111F21B8F2ECA003FD26D /* DATaskNoteCell.m in Sources */,
 				4A2839F91B830D71007EA77E /* DADataset.m in Sources */,
-				4A7111E91B8F1048003FD26D /* DATaskViewController.m in Sources */,
 				4A7112121B8F3D9A003FD26D /* DATaskReminderCell.m in Sources */,
 				4AB3F2161B8C64B8008DC70F /* DALeaderBasicInfoCell.m in Sources */,
 				4A7112A31B900CDF003FD26D /* DATrainingTaskEditor.m in Sources */,
 				4A2839FC1B83133E007EA77E /* DAOpportunityCoordinator.m in Sources */,
+				4A165E151B9D084300598E84 /* RSDFDatePickerMonthHeader.m in Sources */,
 				4A283A2C1B846314007EA77E /* DSEarningPotentialPickerCell.m in Sources */,
 				4A7112391B8FE772003FD26D /* DAToolboxItem.m in Sources */,
+				4A165DF71B9C1A6200598E84 /* DATaskProgressViewController.m in Sources */,
 				4AB3F2951B8D6120008DC70F /* DANavigationController.m in Sources */,
 				4AB3F1EF1B8B1CFD008DC70F /* DAOwnedOpportunityViewController.m in Sources */,
 				4AB3F2811B8D2ED3008DC70F /* DATaskTypeCell.m in Sources */,

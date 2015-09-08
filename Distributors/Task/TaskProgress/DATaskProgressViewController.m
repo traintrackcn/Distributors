@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 AboveGEM. All rights reserved.
 //
 
-#import "DATaskReportViewController.h"
+#import "DATaskProgressViewController.h"
 #import "AGTextCoordinator.h"
 #import "DATextDefine.h"
 #import "DADashboardChartCell.h"
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, Section) {
     SectionCount
 };
 
-@interface DATaskReportViewController(){
+@interface DATaskProgressViewController(){
     
 }
 
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, Section) {
 
 @end
 
-@implementation DATaskReportViewController
+@implementation DATaskProgressViewController
 
 - (instancetype)init{
     self = [super init];
