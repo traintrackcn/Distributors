@@ -1,3 +1,4 @@
+
 //
 //  RootTabController.h
 //  Distributors
@@ -8,6 +9,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class DATabBarCenterButton;
 @interface RootTabController : UITabBarController
+
+
+@property (nonatomic, strong) DATabBarCenterButton *centerButton;
 
 @end

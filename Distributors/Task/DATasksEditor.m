@@ -29,6 +29,7 @@
 #import "RootViewController.h"
 #import "DATaskCellStyleEditor.h"
 #import "DANewTaskCell.h"
+#import "UIImage+DAUtils.h"
 
 typedef NS_ENUM(NSInteger, Section) {
 //    SectionName,
@@ -45,6 +46,7 @@ typedef NS_ENUM(NSInteger, Section) {
 }
 
 //@property (nonatomic, strong) DATaskSection *taskSection;
+@property (nonatomic, strong) UIBarButtonItem *closeBtnItem;
 
 @end
 
@@ -79,6 +81,14 @@ typedef NS_ENUM(NSInteger, Section) {
     [self enableSeparators];
 }
 
+
+#pragma mark - view lifecycle
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    [self.navigationItem setLeftBarButtonItem:self.closeBtnItem];
+}
+
 #pragma mark - interactive ops
 
 - (void)didTapSave:(id)sender{
@@ -89,6 +99,10 @@ typedef NS_ENUM(NSInteger, Section) {
     }];
     
     
+}
+
+- (void)didTapClose:(id)sender{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - setter
@@ -165,16 +179,17 @@ typedef NS_ENUM(NSInteger, Section) {
     
 }
 
-//#pragma mark - components
+#pragma mark - components
 
-//- (DATaskSection *)taskSection{
-//    if (!_taskSection) {
-//        _taskSection = [DATaskSection instanceWithSection:SectionTask config:self.config];
-//        [_taskSection setItem:self.item];
-//        [_taskSection setEditMode:YES];
-//    }
-//    return _taskSection;
-//}
+- (UIBarButtonItem *)closeBtnItem{
+    if (!_closeBtnItem) {
+//        UIImage *img = [UIImage imageNamed:@"IconAdd"];
+//        img = [img imageRotatedByDegrees:45];
+        _closeBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"X" style:UIBarButtonItemStylePlain target:self action:@selector(didTapClose:)];
+//        _closeBtnItem = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStylePlain target:self action:@selector(didTapClose:)];
+    }
+    return _closeBtnItem;
+}
 
 #pragma mark - 
 

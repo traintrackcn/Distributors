@@ -8,6 +8,9 @@
 
 #import "DATaskDefine.h"
 #import "DATextDefine.h"
+#import "DATaskTypeItem.h"
+#import "DSImage.h"
+#import "DAStyleDefine.h"
 
 @interface DATaskDefine(){
     
@@ -45,6 +48,27 @@
 }
 
 #pragma mark - properties
+
+- (NSArray *)taskTypeItems{
+    if (!_taskTypeItems) {
+        NSMutableArray *tmpArr = [NSMutableArray array];
+        
+        for (NSInteger i = 0; i < self.taskTexts.count; i++) {
+            DATaskTypeItem *item = [DATaskTypeItem instance];
+            UIImage *iconImg = [self iconImageForTaskType:i];
+            NSString *title = [self textForTaskType:i];
+            Class editorCls = [self taskEditorClsForTaskType:i];
+            iconImg = [DSImage image:iconImg withMaskColor:STYLE_THEME_COLOR_2];
+            [item setIconImage:iconImg];
+            [item setTitle:title];
+            [item setEditorCls:editorCls];
+            [tmpArr addObject:item];
+        }
+        
+        _taskTypeItems = tmpArr;
+    }
+    return _taskTypeItems;
+}
 
 - (NSArray *)taskIconImages{
     if (!_taskIconImages) {

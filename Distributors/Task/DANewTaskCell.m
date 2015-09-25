@@ -19,6 +19,7 @@
 #import "DAOpportunityCoordinator.h"
 #import "DACircleNoteView.h"
 #import "DSImage.h"
+#import "DATaskTypePicker.h"
 
 @interface DANewTaskCell(){
     
@@ -42,34 +43,14 @@
 }
 
 - (void)didTapCell{
-    UIView *v = [self.associatedViewController view];
     
-    NSArray *taskTypes = [DATaskDefine singleton].taskTexts;
-   
-    DAOpportunity *opportunity = self.parameters.firstObject;
-    [UIActionSheet showInView:v withTitle:@"Choose a template" cancelButtonTitle:[AGTextCoordinator textForKey:KEY_BTN_CANCEL] destructiveButtonTitle:nil otherButtonTitles:taskTypes tapBlock:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
-        
-        TLOG(@"buttonIndex -> %ld", (long)buttonIndex);
-        
-        if (buttonIndex != actionSheet.cancelButtonIndex) {
-            DATaskEditor *vc = [DATaskEditor instance];
-            DATask *task = [DATask instance];
-            [task setType:buttonIndex];
-            [vc setOpportunity:opportunity];
-            [vc setItem:task];
-            [self pushViewController:vc];
-        }
-        
-        
-    }];
+    DATaskTypePicker *vc = [DATaskTypePicker instance];
+//    vc setModalPresentationStyle:uimo
+//    vc setModalTransitionStyle:uimo
+    [vc setViewConrollerPresentedFrom:self.associatedViewController];
+    [[self.associatedViewController navigationController] presentViewController:vc animated:YES completion:nil];
     
     
-//    DAOpportunityTaskEditor *vc = [DAOpportunityTaskEditor instance];
-//    DAOpportunityTask *task = [DAOpportunityTask instance];
-//    [task setType:0];
-//    [vc setStep:self.parameters.firstObject];
-//    [vc setTask:task];
-//    [self pushViewController:vc];
 }
 
 #pragma mark - setter

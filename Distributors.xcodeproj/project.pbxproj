@@ -21,6 +21,12 @@
 		4A165E161B9D084300598E84 /* RSDFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E0F1B9D084300598E84 /* RSDFDatePickerView.m */; };
 		4A165E1A1B9D09C800598E84 /* DADatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E191B9D09C800598E84 /* DADatePickerCell.m */; };
 		4A165E1E1B9EB1F500598E84 /* DACalendarTodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E1D1B9EB1F500598E84 /* DACalendarTodoCell.m */; };
+		4A165E221BA0171900598E84 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E211BA0171900598E84 /* CFNetwork.framework */; };
+		4A165E241BA0171F00598E84 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E231BA0171F00598E84 /* Security.framework */; };
+		4A165E261BA0172800598E84 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E251BA0172800598E84 /* MobileCoreServices.framework */; };
+		4A165E281BA0173100598E84 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E271BA0173100598E84 /* SystemConfiguration.framework */; };
+		4A165E2D1BA017BE00598E84 /* LayerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E2A1BA017BE00598E84 /* LayerKit.framework */; };
+		4A165E2E1BA017BE00598E84 /* layer-client-messaging-schema.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A165E2C1BA017BE00598E84 /* layer-client-messaging-schema.bundle */; };
 		4A2839AA1B82AC16007EA77E /* DAContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839A91B82AC16007EA77E /* DAContactViewController.m */; };
 		4A2839AE1B82AD0B007EA77E /* DADiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839AD1B82AD0B007EA77E /* DADiscoverViewController.m */; };
 		4A2839B21B82ADD1007EA77E /* DASettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839B11B82ADD1007EA77E /* DASettingViewController.m */; };
@@ -37,7 +43,6 @@
 		4A2839FC1B83133E007EA77E /* DAOpportunityCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839FB1B83133E007EA77E /* DAOpportunityCoordinator.m */; };
 		4A2839FF1B83FACB007EA77E /* DAEarningPotentialDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839FE1B83FACB007EA77E /* DAEarningPotentialDataset.m */; };
 		4A283A021B8403BD007EA77E /* DAEarningPotentialPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A011B8403BD007EA77E /* DAEarningPotentialPicker.m */; };
-		4A283A0F1B842E40007EA77E /* DAOpportunityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A0C1B842E40007EA77E /* DAOpportunityLoader.m */; };
 		4A283A101B842E40007EA77E /* DAFunctionLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A0E1B842E40007EA77E /* DAFunctionLoader.m */; };
 		4A283A1D1B843C4E007EA77E /* DAEarningPotentialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A1C1B843C4E007EA77E /* DAEarningPotentialCell.m */; };
 		4A283A2C1B846314007EA77E /* DSEarningPotentialPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A283A2B1B846314007EA77E /* DSEarningPotentialPickerCell.m */; };
@@ -47,6 +52,11 @@
 		4A64972A1B943A41005A56CD /* DATasksEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6497291B943A41005A56CD /* DATasksEditor.m */; };
 		4A6497301B944DE1005A56CD /* DATaskDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A64972F1B944DE1005A56CD /* DATaskDefine.m */; };
 		4A6497331B9539F8005A56CD /* DANewOpportunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6497321B9539F8005A56CD /* DANewOpportunityCell.m */; };
+		4A6620961BA1018700540FAD /* DAOpportunityLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6620951BA1018700540FAD /* DAOpportunityLoader.m */; };
+		4A6620991BA101A100540FAD /* DAChatLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6620981BA101A100540FAD /* DAChatLoader.m */; };
+		4A66209C1BA1020000540FAD /* DAConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A66209B1BA1020000540FAD /* DAConversationCell.m */; };
+		4A66209F1BA1083200540FAD /* DAChatCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A66209E1BA1083200540FAD /* DAChatCoordinator.m */; };
+		4A6620A21BA10C5800540FAD /* DAConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6620A11BA10C5800540FAD /* DAConversationViewController.m */; };
 		4A7111E31B8F0696003FD26D /* DADownlineProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111E21B8F0696003FD26D /* DADownlineProgressViewController.m */; };
 		4A7111E61B8F073B003FD26D /* DADownlineProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111E51B8F073B003FD26D /* DADownlineProgressCell.m */; };
 		4A7111F21B8F2ECA003FD26D /* DATaskNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A7111F11B8F2ECA003FD26D /* DATaskNoteCell.m */; };
@@ -96,8 +106,14 @@
 		4A8E8E391B6AFA1500F48CDD /* RootTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E381B6AFA1500F48CDD /* RootTabController.m */; };
 		4A8E8E401B6AFFE400F48CDD /* DACompanyOpportunitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E3F1B6AFFE400F48CDD /* DACompanyOpportunitiesViewController.m */; };
 		4A8E8E431B6B01CD00F48CDD /* DAOpportunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E421B6B01CD00F48CDD /* DAOpportunityViewController.m */; };
-		4A8E8E471B6B2C7B00F48CDD /* DAChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E461B6B2C7B00F48CDD /* DAChatViewController.m */; };
+		4A8E8E471B6B2C7B00F48CDD /* DAConversationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E461B6B2C7B00F48CDD /* DAConversationsViewController.m */; };
 		4A8E8E4C1B6B67A300F48CDD /* DALeaderOpportunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8E8E4B1B6B67A300F48CDD /* DALeaderOpportunityCell.m */; };
+		4AA673441BB4D4E500F65224 /* UIImage+DAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA673431BB4D4E500F65224 /* UIImage+DAUtils.m */; settings = {ASSET_TAGS = (); }; };
+		4AA6734D1BB4E1BE00F65224 /* AGMenuAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6734A1BB4E1BE00F65224 /* AGMenuAnimatedTransitioning.m */; settings = {ASSET_TAGS = (); }; };
+		4AA6734E1BB4E1BE00F65224 /* AGMenuTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA6734C1BB4E1BE00F65224 /* AGMenuTransitionDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		4AA673511BB4E1D800F65224 /* DATaskTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA673501BB4E1D800F65224 /* DATaskTypePicker.m */; settings = {ASSET_TAGS = (); }; };
+		4AA673541BB51B5000F65224 /* DATaskTypeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA673531BB51B5000F65224 /* DATaskTypeCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		4AA673571BB522FA00F65224 /* DATaskTypeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA673561BB522FA00F65224 /* DATaskTypeItem.m */; settings = {ASSET_TAGS = (); }; };
 		4AB3F1E81B8B04D3008DC70F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3F1E71B8B04D3008DC70F /* MapKit.framework */; };
 		4AB3F1EC1B8B050E008DC70F /* DAMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1EB1B8B050E008DC70F /* DAMapCell.m */; };
 		4AB3F1EF1B8B1CFD008DC70F /* DAOwnedOpportunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1EE1B8B1CFD008DC70F /* DAOwnedOpportunityViewController.m */; };
@@ -127,6 +143,9 @@
 		4AB3F2951B8D6120008DC70F /* DANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F2941B8D6120008DC70F /* DANavigationController.m */; };
 		4AB8B6B81B66081F008073B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8B6B71B66081F008073B6 /* main.m */; };
 		4AB8B6BB1B66081F008073B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8B6BA1B66081F008073B6 /* AppDelegate.m */; };
+		4AFE17EC1BAB92430092F3C4 /* DATabBarCenterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE17EB1BAB92430092F3C4 /* DATabBarCenterButton.m */; };
+		4AFE17EF1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE17EE1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.m */; };
+		4AFE17F21BABA95E0092F3C4 /* DATabBarCenterButtonContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE17F11BABA95E0092F3C4 /* DATabBarCenterButtonContentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +179,12 @@
 		4A165E191B9D09C800598E84 /* DADatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADatePickerCell.m; sourceTree = "<group>"; };
 		4A165E1C1B9EB1F500598E84 /* DACalendarTodoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACalendarTodoCell.h; sourceTree = "<group>"; };
 		4A165E1D1B9EB1F500598E84 /* DACalendarTodoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACalendarTodoCell.m; sourceTree = "<group>"; };
+		4A165E211BA0171900598E84 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		4A165E231BA0171F00598E84 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		4A165E251BA0172800598E84 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		4A165E271BA0173100598E84 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4A165E2A1BA017BE00598E84 /* LayerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LayerKit.framework; sourceTree = "<group>"; };
+		4A165E2C1BA017BE00598E84 /* layer-client-messaging-schema.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "layer-client-messaging-schema.bundle"; sourceTree = "<group>"; };
 		4A2839A81B82AC16007EA77E /* DAContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAContactViewController.h; sourceTree = "<group>"; };
 		4A2839A91B82AC16007EA77E /* DAContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAContactViewController.m; sourceTree = "<group>"; };
 		4A2839AC1B82AD0B007EA77E /* DADiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADiscoverViewController.h; sourceTree = "<group>"; };
@@ -192,8 +217,6 @@
 		4A2839FE1B83FACB007EA77E /* DAEarningPotentialDataset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAEarningPotentialDataset.m; sourceTree = "<group>"; };
 		4A283A001B8403BD007EA77E /* DAEarningPotentialPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAEarningPotentialPicker.h; sourceTree = "<group>"; };
 		4A283A011B8403BD007EA77E /* DAEarningPotentialPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAEarningPotentialPicker.m; sourceTree = "<group>"; };
-		4A283A0B1B842E40007EA77E /* DAOpportunityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityLoader.h; sourceTree = "<group>"; };
-		4A283A0C1B842E40007EA77E /* DAOpportunityLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityLoader.m; sourceTree = "<group>"; };
 		4A283A0D1B842E40007EA77E /* DAFunctionLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAFunctionLoader.h; sourceTree = "<group>"; };
 		4A283A0E1B842E40007EA77E /* DAFunctionLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAFunctionLoader.m; sourceTree = "<group>"; };
 		4A283A1B1B843C4E007EA77E /* DAEarningPotentialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAEarningPotentialCell.h; sourceTree = "<group>"; };
@@ -215,6 +238,16 @@
 		4A64972F1B944DE1005A56CD /* DATaskDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskDefine.m; sourceTree = "<group>"; };
 		4A6497311B9539F8005A56CD /* DANewOpportunityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DANewOpportunityCell.h; sourceTree = "<group>"; };
 		4A6497321B9539F8005A56CD /* DANewOpportunityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DANewOpportunityCell.m; sourceTree = "<group>"; };
+		4A6620941BA1018700540FAD /* DAOpportunityLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityLoader.h; sourceTree = "<group>"; };
+		4A6620951BA1018700540FAD /* DAOpportunityLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityLoader.m; sourceTree = "<group>"; };
+		4A6620971BA101A100540FAD /* DAChatLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAChatLoader.h; sourceTree = "<group>"; };
+		4A6620981BA101A100540FAD /* DAChatLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAChatLoader.m; sourceTree = "<group>"; };
+		4A66209A1BA1020000540FAD /* DAConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAConversationCell.h; sourceTree = "<group>"; };
+		4A66209B1BA1020000540FAD /* DAConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAConversationCell.m; sourceTree = "<group>"; };
+		4A66209D1BA1083200540FAD /* DAChatCoordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAChatCoordinator.h; sourceTree = "<group>"; };
+		4A66209E1BA1083200540FAD /* DAChatCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAChatCoordinator.m; sourceTree = "<group>"; };
+		4A6620A01BA10C5800540FAD /* DAConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAConversationViewController.h; sourceTree = "<group>"; };
+		4A6620A11BA10C5800540FAD /* DAConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAConversationViewController.m; sourceTree = "<group>"; };
 		4A7111E11B8F0696003FD26D /* DADownlineProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADownlineProgressViewController.h; sourceTree = "<group>"; };
 		4A7111E21B8F0696003FD26D /* DADownlineProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADownlineProgressViewController.m; sourceTree = "<group>"; };
 		4A7111E41B8F073B003FD26D /* DADownlineProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DADownlineProgressCell.h; sourceTree = "<group>"; };
@@ -308,10 +341,22 @@
 		4A8E8E3F1B6AFFE400F48CDD /* DACompanyOpportunitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACompanyOpportunitiesViewController.m; sourceTree = "<group>"; };
 		4A8E8E411B6B01CD00F48CDD /* DAOpportunityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOpportunityViewController.h; sourceTree = "<group>"; };
 		4A8E8E421B6B01CD00F48CDD /* DAOpportunityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAOpportunityViewController.m; sourceTree = "<group>"; };
-		4A8E8E451B6B2C7B00F48CDD /* DAChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAChatViewController.h; sourceTree = "<group>"; };
-		4A8E8E461B6B2C7B00F48CDD /* DAChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAChatViewController.m; sourceTree = "<group>"; };
+		4A8E8E451B6B2C7B00F48CDD /* DAConversationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAConversationsViewController.h; sourceTree = "<group>"; };
+		4A8E8E461B6B2C7B00F48CDD /* DAConversationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAConversationsViewController.m; sourceTree = "<group>"; };
 		4A8E8E4A1B6B67A300F48CDD /* DALeaderOpportunityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALeaderOpportunityCell.h; sourceTree = "<group>"; };
 		4A8E8E4B1B6B67A300F48CDD /* DALeaderOpportunityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALeaderOpportunityCell.m; sourceTree = "<group>"; };
+		4AA673421BB4D4E500F65224 /* UIImage+DAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DAUtils.h"; sourceTree = "<group>"; };
+		4AA673431BB4D4E500F65224 /* UIImage+DAUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DAUtils.m"; sourceTree = "<group>"; };
+		4AA673491BB4E1BE00F65224 /* AGMenuAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMenuAnimatedTransitioning.h; sourceTree = "<group>"; };
+		4AA6734A1BB4E1BE00F65224 /* AGMenuAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMenuAnimatedTransitioning.m; sourceTree = "<group>"; };
+		4AA6734B1BB4E1BE00F65224 /* AGMenuTransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMenuTransitionDelegate.h; sourceTree = "<group>"; };
+		4AA6734C1BB4E1BE00F65224 /* AGMenuTransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMenuTransitionDelegate.m; sourceTree = "<group>"; };
+		4AA6734F1BB4E1D800F65224 /* DATaskTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskTypePicker.h; sourceTree = "<group>"; };
+		4AA673501BB4E1D800F65224 /* DATaskTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskTypePicker.m; sourceTree = "<group>"; };
+		4AA673521BB51B5000F65224 /* DATaskTypeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskTypeCollectionViewCell.h; sourceTree = "<group>"; };
+		4AA673531BB51B5000F65224 /* DATaskTypeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskTypeCollectionViewCell.m; sourceTree = "<group>"; };
+		4AA673551BB522FA00F65224 /* DATaskTypeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskTypeItem.h; sourceTree = "<group>"; };
+		4AA673561BB522FA00F65224 /* DATaskTypeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskTypeItem.m; sourceTree = "<group>"; };
 		4AB3F1E71B8B04D3008DC70F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4AB3F1EA1B8B050E008DC70F /* DAMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMapCell.h; sourceTree = "<group>"; };
 		4AB3F1EB1B8B050E008DC70F /* DAMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMapCell.m; sourceTree = "<group>"; };
@@ -370,6 +415,12 @@
 		4AB8B6B71B66081F008073B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4AB8B6B91B66081F008073B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AB8B6BA1B66081F008073B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4AFE17EA1BAB92430092F3C4 /* DATabBarCenterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATabBarCenterButton.h; sourceTree = "<group>"; };
+		4AFE17EB1BAB92430092F3C4 /* DATabBarCenterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATabBarCenterButton.m; sourceTree = "<group>"; };
+		4AFE17ED1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATabBarCenterButtonExtraView.h; sourceTree = "<group>"; };
+		4AFE17EE1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATabBarCenterButtonExtraView.m; sourceTree = "<group>"; };
+		4AFE17F01BABA95E0092F3C4 /* DATabBarCenterButtonContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATabBarCenterButtonContentView.h; sourceTree = "<group>"; };
+		4AFE17F11BABA95E0092F3C4 /* DATabBarCenterButtonContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATabBarCenterButtonContentView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -377,6 +428,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A165E281BA0173100598E84 /* SystemConfiguration.framework in Frameworks */,
+				4A165E261BA0172800598E84 /* MobileCoreServices.framework in Frameworks */,
+				4A165E241BA0171F00598E84 /* Security.framework in Frameworks */,
+				4A165E221BA0171900598E84 /* CFNetwork.framework in Frameworks */,
+				4A165E2D1BA017BE00598E84 /* LayerKit.framework in Frameworks */,
 				4AB3F1E81B8B04D3008DC70F /* MapKit.framework in Frameworks */,
 				4A8E8E361B6AF8FB00F48CDD /* libz.dylib in Frameworks */,
 			);
@@ -455,6 +511,23 @@
 				4A165E1D1B9EB1F500598E84 /* DACalendarTodoCell.m */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		4A165E291BA017BE00598E84 /* LayerKit.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				4A165E2A1BA017BE00598E84 /* LayerKit.framework */,
+				4A165E2B1BA017BE00598E84 /* Resources */,
+			);
+			path = LayerKit.embeddedframework;
+			sourceTree = "<group>";
+		};
+		4A165E2B1BA017BE00598E84 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A165E2C1BA017BE00598E84 /* layer-client-messaging-schema.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		4A2839A71B82ABF9007EA77E /* Contact */ = {
@@ -556,6 +629,8 @@
 				4A7112A51B903E66003FD26D /* DASearchCell.m */,
 				4A7112A71B9044F6003FD26D /* DAButton.h */,
 				4A7112A81B9044F6003FD26D /* DAButton.m */,
+				4AA673421BB4D4E500F65224 /* UIImage+DAUtils.h */,
+				4AA673431BB4D4E500F65224 /* UIImage+DAUtils.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -563,8 +638,6 @@
 		4A283A0A1B842E1D007EA77E /* FunctionLoader */ = {
 			isa = PBXGroup;
 			children = (
-				4A283A0B1B842E40007EA77E /* DAOpportunityLoader.h */,
-				4A283A0C1B842E40007EA77E /* DAOpportunityLoader.m */,
 				4A283A0D1B842E40007EA77E /* DAFunctionLoader.h */,
 				4A283A0E1B842E40007EA77E /* DAFunctionLoader.m */,
 			);
@@ -687,6 +760,8 @@
 		4A8E8E3D1B6AFFE400F48CDD /* Opportunity */ = {
 			isa = PBXGroup;
 			children = (
+				4A6620941BA1018700540FAD /* DAOpportunityLoader.h */,
+				4A6620951BA1018700540FAD /* DAOpportunityLoader.m */,
 				4A7112AD1B90640F003FD26D /* DAOpportunityTitleCell.h */,
 				4A7112AE1B90640F003FD26D /* DAOpportunityTitleCell.m */,
 				4AB3F2001B8B2070008DC70F /* DAOpportunityDataset.h */,
@@ -720,10 +795,35 @@
 		4A8E8E441B6B0E0900F48CDD /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				4A8E8E451B6B2C7B00F48CDD /* DAChatViewController.h */,
-				4A8E8E461B6B2C7B00F48CDD /* DAChatViewController.m */,
+				4A6620971BA101A100540FAD /* DAChatLoader.h */,
+				4A6620981BA101A100540FAD /* DAChatLoader.m */,
+				4A8E8E451B6B2C7B00F48CDD /* DAConversationsViewController.h */,
+				4A8E8E461B6B2C7B00F48CDD /* DAConversationsViewController.m */,
+				4A66209A1BA1020000540FAD /* DAConversationCell.h */,
+				4A66209B1BA1020000540FAD /* DAConversationCell.m */,
+				4A66209D1BA1083200540FAD /* DAChatCoordinator.h */,
+				4A66209E1BA1083200540FAD /* DAChatCoordinator.m */,
+				4A6620A01BA10C5800540FAD /* DAConversationViewController.h */,
+				4A6620A11BA10C5800540FAD /* DAConversationViewController.m */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		4AA673481BB4E1BE00F65224 /* TaskTypePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4AA6734F1BB4E1D800F65224 /* DATaskTypePicker.h */,
+				4AA673501BB4E1D800F65224 /* DATaskTypePicker.m */,
+				4AA673491BB4E1BE00F65224 /* AGMenuAnimatedTransitioning.h */,
+				4AA6734A1BB4E1BE00F65224 /* AGMenuAnimatedTransitioning.m */,
+				4AA6734B1BB4E1BE00F65224 /* AGMenuTransitionDelegate.h */,
+				4AA6734C1BB4E1BE00F65224 /* AGMenuTransitionDelegate.m */,
+				4AA673521BB51B5000F65224 /* DATaskTypeCollectionViewCell.h */,
+				4AA673531BB51B5000F65224 /* DATaskTypeCollectionViewCell.m */,
+				4AA673551BB522FA00F65224 /* DATaskTypeItem.h */,
+				4AA673561BB522FA00F65224 /* DATaskTypeItem.m */,
+			);
+			path = TaskTypePicker;
 			sourceTree = "<group>";
 		};
 		4AB3F1E91B8B04FD008DC70F /* Map */ = {
@@ -794,6 +894,7 @@
 		4AB3F2611B8D2ED3008DC70F /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				4AA673481BB4E1BE00F65224 /* TaskTypePicker */,
 				4A165DF81B9C1AA400598E84 /* TaskDetail */,
 				4A165DF41B9C1A3D00598E84 /* TaskProgress */,
 				4A71128B1B900C26003FD26D /* TaskEditor */,
@@ -845,6 +946,11 @@
 		4AB8B6A91B66081F008073B6 = {
 			isa = PBXGroup;
 			children = (
+				4A165E291BA017BE00598E84 /* LayerKit.embeddedframework */,
+				4A165E271BA0173100598E84 /* SystemConfiguration.framework */,
+				4A165E251BA0172800598E84 /* MobileCoreServices.framework */,
+				4A165E231BA0171F00598E84 /* Security.framework */,
+				4A165E211BA0171900598E84 /* CFNetwork.framework */,
 				4AB3F1E71B8B04D3008DC70F /* MapKit.framework */,
 				4AB8B6B41B66081F008073B6 /* Distributors */,
 				4AB8B6B31B66081F008073B6 /* Products */,
@@ -863,6 +969,7 @@
 		4AB8B6B41B66081F008073B6 /* Distributors */ = {
 			isa = PBXGroup;
 			children = (
+				4AFE17E91BAB92430092F3C4 /* TabBarCenterButton */,
 				4A165E171B9D09B800598E84 /* DatePicker */,
 				4A165DFF1B9D084300598E84 /* RSDayFlow */,
 				4A71122D1B8FD27A003FD26D /* ToolboxView */,
@@ -909,6 +1016,19 @@
 				4A8E8E381B6AFA1500F48CDD /* RootTabController.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4AFE17E91BAB92430092F3C4 /* TabBarCenterButton */ = {
+			isa = PBXGroup;
+			children = (
+				4AFE17EA1BAB92430092F3C4 /* DATabBarCenterButton.h */,
+				4AFE17EB1BAB92430092F3C4 /* DATabBarCenterButton.m */,
+				4AFE17ED1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.h */,
+				4AFE17EE1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.m */,
+				4AFE17F01BABA95E0092F3C4 /* DATabBarCenterButtonContentView.h */,
+				4AFE17F11BABA95E0092F3C4 /* DATabBarCenterButtonContentView.m */,
+			);
+			path = TabBarCenterButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -972,6 +1092,7 @@
 			files = (
 				4A8E8E2E1B6AE95400F48CDD /* Text-en.plist in Resources */,
 				4A8E8E2B1B6AE95400F48CDD /* LaunchScreen.xib in Resources */,
+				4A165E2E1BA017BE00598E84 /* layer-client-messaging-schema.bundle in Resources */,
 				4A8E8E2D1B6AE95400F48CDD /* Style.plist in Resources */,
 				4A8E8E2C1B6AE95400F48CDD /* Images.xcassets in Resources */,
 			);
@@ -1001,6 +1122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A66209C1BA1020000540FAD /* DAConversationCell.m in Sources */,
 				4A7111E61B8F073B003FD26D /* DADownlineProgressCell.m in Sources */,
 				4A7112971B900C71003FD26D /* DAContactsTaskEditor.m in Sources */,
 				4A71128E1B900C26003FD26D /* DATaskEditor.m in Sources */,
@@ -1009,9 +1131,11 @@
 				4A2839AA1B82AC16007EA77E /* DAContactViewController.m in Sources */,
 				4A7111FF1B8F2FA6003FD26D /* DAImageCollectionUnitCell.m in Sources */,
 				4A7112891B900BFC003FD26D /* DATestimonialTaskDefineSection.m in Sources */,
+				4AA6734D1BB4E1BE00F65224 /* AGMenuAnimatedTransitioning.m in Sources */,
 				4A283A331B846D6E007EA77E /* DAPeriodDataset.m in Sources */,
 				4A8E8E4C1B6B67A300F48CDD /* DALeaderOpportunityCell.m in Sources */,
 				4AB3F2391B8C9F1B008DC70F /* DADashboardChartCell.m in Sources */,
+				4A6620A21BA10C5800540FAD /* DAConversationViewController.m in Sources */,
 				4A7112A01B900CCD003FD26D /* DAOthersTaskEditor.m in Sources */,
 				4A71128A1B900BFC003FD26D /* DATrainingTaskDefineSection.m in Sources */,
 				4A7112881B900BFC003FD26D /* DATaskDefineSection.m in Sources */,
@@ -1029,7 +1153,6 @@
 				4AB3F2081B8C1904008DC70F /* DAOpportunityLeaderCell.m in Sources */,
 				4A0D23761B79B92600FF9D40 /* DALabViewController.m in Sources */,
 				4A2839D21B83008E007EA77E /* DAOpportunity.m in Sources */,
-				4A283A0F1B842E40007EA77E /* DAOpportunityLoader.m in Sources */,
 				4A71121B1B8F4060003FD26D /* DATaskLinkCell.m in Sources */,
 				4A7112031B8F2FF2003FD26D /* DATaskImageCollectionCell.m in Sources */,
 				4A7111E31B8F0696003FD26D /* DADownlineProgressViewController.m in Sources */,
@@ -1046,6 +1169,7 @@
 				4A71121E1B8F4104003FD26D /* DATaskUnitCell.m in Sources */,
 				4A2839EA1B8309C4007EA77E /* DACurrencyDataset.m in Sources */,
 				4AB3F24A1B8CA1AD008DC70F /* DAChartCell+Utils.m in Sources */,
+				4AA673511BB4E1D800F65224 /* DATaskTypePicker.m in Sources */,
 				4A8E8E391B6AFA1500F48CDD /* RootTabController.m in Sources */,
 				4A8E8E401B6AFFE400F48CDD /* DACompanyOpportunitiesViewController.m in Sources */,
 				4A165E111B9D084300598E84 /* RSDFDatePickerCollectionView.m in Sources */,
@@ -1062,6 +1186,7 @@
 				4A8E8E431B6B01CD00F48CDD /* DAOpportunityViewController.m in Sources */,
 				4A2839AE1B82AD0B007EA77E /* DADiscoverViewController.m in Sources */,
 				4A165E1E1B9EB1F500598E84 /* DACalendarTodoCell.m in Sources */,
+				4AA6734E1BB4E1BE00F65224 /* AGMenuTransitionDelegate.m in Sources */,
 				4A7112001B8F2FA6003FD26D /* DAImageCollectionCell.m in Sources */,
 				4A7112851B900BFC003FD26D /* DAEventsTaskDefineSection.m in Sources */,
 				4A2839F11B830BA7007EA77E /* DASessionCoordinator.m in Sources */,
@@ -1071,14 +1196,17 @@
 				4AB8B6B81B66081F008073B6 /* main.m in Sources */,
 				4A2839E01B83083A007EA77E /* DAUser.m in Sources */,
 				4A165E131B9D084300598E84 /* RSDFDatePickerDayCell.m in Sources */,
+				4A6620961BA1018700540FAD /* DAOpportunityLoader.m in Sources */,
 				4AB3F2761B8D2ED3008DC70F /* DAOpportunityTemplateEditor.m in Sources */,
 				4A7112181B8F4051003FD26D /* DATaskVideoCell.m in Sources */,
 				4A7112151B8F3DEA003FD26D /* DATaskLocationCell.m in Sources */,
 				4A7112A91B9044F6003FD26D /* DAButton.m in Sources */,
+				4AA673441BB4D4E500F65224 /* UIImage+DAUtils.m in Sources */,
 				4AB3F28F1B8D5780008DC70F /* DAGeneralOpportunitesViewController.m in Sources */,
 				4A165E141B9D084300598E84 /* RSDFDatePickerDaysOfWeekView.m in Sources */,
 				4A7112831B900BFC003FD26D /* DAAutoshipTaskDefineSection.m in Sources */,
 				4A7112301B8FD29F003FD26D /* DAToolboxView.m in Sources */,
+				4AA673541BB51B5000F65224 /* DATaskTypeCollectionViewCell.m in Sources */,
 				4A7112911B900C47003FD26D /* DATestimonialTaskEditor.m in Sources */,
 				4AB3F2721B8D2ED3008DC70F /* DAOpportunityBasicEditor.m in Sources */,
 				4A7112331B8FD2DC003FD26D /* DAToolboxUnitView.m in Sources */,
@@ -1086,6 +1214,8 @@
 				4A7112871B900BFC003FD26D /* DAProductsTaskDefineSection.m in Sources */,
 				4A6497331B9539F8005A56CD /* DANewOpportunityCell.m in Sources */,
 				4A71120F1B8F3D77003FD26D /* DATaskDueTimeCell.m in Sources */,
+				4AFE17EF1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.m in Sources */,
+				4AA673571BB522FA00F65224 /* DATaskTypeItem.m in Sources */,
 				4A8E8E241B6AE8D100F48CDD /* RootViewController.m in Sources */,
 				4AB3F2481B8CA1AD008DC70F /* DAChartCell+RemoteOps.m in Sources */,
 				4A165E161B9D084300598E84 /* RSDFDatePickerView.m in Sources */,
@@ -1094,6 +1224,8 @@
 				4A7112A61B903E66003FD26D /* DASearchCell.m in Sources */,
 				4A7111F21B8F2ECA003FD26D /* DATaskNoteCell.m in Sources */,
 				4A2839F91B830D71007EA77E /* DADataset.m in Sources */,
+				4A66209F1BA1083200540FAD /* DAChatCoordinator.m in Sources */,
+				4AFE17EC1BAB92430092F3C4 /* DATabBarCenterButton.m in Sources */,
 				4A7112121B8F3D9A003FD26D /* DATaskReminderCell.m in Sources */,
 				4AB3F2161B8C64B8008DC70F /* DALeaderBasicInfoCell.m in Sources */,
 				4A7112A31B900CDF003FD26D /* DATrainingTaskEditor.m in Sources */,
@@ -1108,9 +1240,11 @@
 				4A64972A1B943A41005A56CD /* DATasksEditor.m in Sources */,
 				4A2839F51B830D1A007EA77E /* DAEarningPotential.m in Sources */,
 				4A7112841B900BFC003FD26D /* DAContactsTaskDefineSection.m in Sources */,
+				4A6620991BA101A100540FAD /* DAChatLoader.m in Sources */,
 				4AB3F27C1B8D2ED3008DC70F /* DATaskCell.m in Sources */,
 				4A71120C1B8F3C3B003FD26D /* DATaskAudioNoteCell.m in Sources */,
-				4A8E8E471B6B2C7B00F48CDD /* DAChatViewController.m in Sources */,
+				4A8E8E471B6B2C7B00F48CDD /* DAConversationsViewController.m in Sources */,
+				4AFE17F21BABA95E0092F3C4 /* DATabBarCenterButtonContentView.m in Sources */,
 				4A283A301B846D44007EA77E /* DAPeriod.m in Sources */,
 				4A7112091B8F3A32003FD26D /* DATaskCircleChartCell.m in Sources */,
 				4A7112291B8FCD97003FD26D /* DACircleNoteView.m in Sources */,
@@ -1218,7 +1352,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/LayerKit.embeddedframework",
+				);
 				INFOPLIST_FILE = Distributors/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1235,6 +1372,7 @@
 					"-llibOpen",
 					"-lthirdPartyOpenResources",
 					"-lAGNetwork",
+					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1248,7 +1386,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/LayerKit.embeddedframework",
+				);
 				INFOPLIST_FILE = Distributors/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1265,6 +1406,7 @@
 					"-llibOpen",
 					"-lthirdPartyOpenResources",
 					"-lAGNetwork",
+					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

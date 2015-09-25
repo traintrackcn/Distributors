@@ -25,6 +25,8 @@
 #import "DACompany.h"
 #import "DANewOpportunityCell.h"
 #import "DAStyleDefine.h"
+#import "DATasksEditor.h"
+#import "DAOpportunityCoordinator.h"
 
 typedef NS_ENUM(NSInteger, Section) {
     SectionSearch,
@@ -86,9 +88,13 @@ typedef NS_ENUM(NSInteger, Section) {
 - (void)presentTemplateEditor{
     [[DAOpportunityDataset singleton] requestTemplatesByCompany:self.item completion:^(NSArray *templates) {
         TLOG(@"templates -> %@", templates);
-        DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
-        [vc setCompany:self.item];
-        [vc setItem:templates.firstObject];
+//        DAOpportunityTemplateEditor *vc = [DAOpportunityTemplateEditor instance];
+//        [vc setCompany:self.item];
+//        [vc setItem:templates.firstObject];
+        
+        DATasksEditor *vc = [DATasksEditor instance];
+        [vc setItem:[DAOpportunityCoordinator singleton].opportunityInstance];
+        
         DANavigationController *naviC = [[DANavigationController alloc] initWithRootViewController:vc];
         [self presentViewController:naviC animated:YES completion:^{
             

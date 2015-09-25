@@ -76,5 +76,6 @@ typedef NS_ENUM(NSInteger, DATaskType) {
 - (UIImage *)iconImageForTaskType:(DATaskType)type;
 
 @property (nonatomic, strong) NSArray *taskTexts;
+@property (nonatomic, strong) NSArray *taskTypeItems;
 
 @end

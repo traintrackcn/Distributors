@@ -38,7 +38,7 @@
 
     
     
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+//    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     [[self window] makeKeyAndVisible];
 }
 
