@@ -21,10 +21,6 @@
 		4A165E161B9D084300598E84 /* RSDFDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E0F1B9D084300598E84 /* RSDFDatePickerView.m */; };
 		4A165E1A1B9D09C800598E84 /* DADatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E191B9D09C800598E84 /* DADatePickerCell.m */; };
 		4A165E1E1B9EB1F500598E84 /* DACalendarTodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A165E1D1B9EB1F500598E84 /* DACalendarTodoCell.m */; };
-		4A165E221BA0171900598E84 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E211BA0171900598E84 /* CFNetwork.framework */; };
-		4A165E241BA0171F00598E84 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E231BA0171F00598E84 /* Security.framework */; };
-		4A165E261BA0172800598E84 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E251BA0172800598E84 /* MobileCoreServices.framework */; };
-		4A165E281BA0173100598E84 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E271BA0173100598E84 /* SystemConfiguration.framework */; };
 		4A165E2D1BA017BE00598E84 /* LayerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A165E2A1BA017BE00598E84 /* LayerKit.framework */; };
 		4A165E2E1BA017BE00598E84 /* layer-client-messaging-schema.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A165E2C1BA017BE00598E84 /* layer-client-messaging-schema.bundle */; };
 		4A2839AA1B82AC16007EA77E /* DAContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A2839A91B82AC16007EA77E /* DAContactViewController.m */; };
@@ -114,7 +110,6 @@
 		4AA673511BB4E1D800F65224 /* DATaskTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA673501BB4E1D800F65224 /* DATaskTypePicker.m */; settings = {ASSET_TAGS = (); }; };
 		4AA673541BB51B5000F65224 /* DATaskTypeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA673531BB51B5000F65224 /* DATaskTypeCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		4AA673571BB522FA00F65224 /* DATaskTypeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA673561BB522FA00F65224 /* DATaskTypeItem.m */; settings = {ASSET_TAGS = (); }; };
-		4AB3F1E81B8B04D3008DC70F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB3F1E71B8B04D3008DC70F /* MapKit.framework */; };
 		4AB3F1EC1B8B050E008DC70F /* DAMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1EB1B8B050E008DC70F /* DAMapCell.m */; };
 		4AB3F1EF1B8B1CFD008DC70F /* DAOwnedOpportunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F1EE1B8B1CFD008DC70F /* DAOwnedOpportunityViewController.m */; };
 		4AB3F2021B8B2070008DC70F /* DAOpportunityDataset.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F2011B8B2070008DC70F /* DAOpportunityDataset.m */; };
@@ -143,6 +138,7 @@
 		4AB3F2951B8D6120008DC70F /* DANavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB3F2941B8D6120008DC70F /* DANavigationController.m */; };
 		4AB8B6B81B66081F008073B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8B6B71B66081F008073B6 /* main.m */; };
 		4AB8B6BB1B66081F008073B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8B6BA1B66081F008073B6 /* AppDelegate.m */; };
+		4ADEAE1E1BCB53680053EEAF /* libWebRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ADEAE1D1BCB53680053EEAF /* libWebRTC.a */; settings = {ASSET_TAGS = (); }; };
 		4AFE17EC1BAB92430092F3C4 /* DATabBarCenterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE17EB1BAB92430092F3C4 /* DATabBarCenterButton.m */; };
 		4AFE17EF1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE17EE1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.m */; };
 		4AFE17F21BABA95E0092F3C4 /* DATabBarCenterButtonContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE17F11BABA95E0092F3C4 /* DATabBarCenterButtonContentView.m */; };
@@ -179,10 +175,6 @@
 		4A165E191B9D09C800598E84 /* DADatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DADatePickerCell.m; sourceTree = "<group>"; };
 		4A165E1C1B9EB1F500598E84 /* DACalendarTodoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACalendarTodoCell.h; sourceTree = "<group>"; };
 		4A165E1D1B9EB1F500598E84 /* DACalendarTodoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACalendarTodoCell.m; sourceTree = "<group>"; };
-		4A165E211BA0171900598E84 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		4A165E231BA0171F00598E84 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		4A165E251BA0172800598E84 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		4A165E271BA0173100598E84 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4A165E2A1BA017BE00598E84 /* LayerKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LayerKit.framework; sourceTree = "<group>"; };
 		4A165E2C1BA017BE00598E84 /* layer-client-messaging-schema.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "layer-client-messaging-schema.bundle"; sourceTree = "<group>"; };
 		4A2839A81B82AC16007EA77E /* DAContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAContactViewController.h; sourceTree = "<group>"; };
@@ -357,7 +349,6 @@
 		4AA673531BB51B5000F65224 /* DATaskTypeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskTypeCollectionViewCell.m; sourceTree = "<group>"; };
 		4AA673551BB522FA00F65224 /* DATaskTypeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATaskTypeItem.h; sourceTree = "<group>"; };
 		4AA673561BB522FA00F65224 /* DATaskTypeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATaskTypeItem.m; sourceTree = "<group>"; };
-		4AB3F1E71B8B04D3008DC70F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4AB3F1EA1B8B050E008DC70F /* DAMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAMapCell.h; sourceTree = "<group>"; };
 		4AB3F1EB1B8B050E008DC70F /* DAMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAMapCell.m; sourceTree = "<group>"; };
 		4AB3F1ED1B8B1CFD008DC70F /* DAOwnedOpportunityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAOwnedOpportunityViewController.h; sourceTree = "<group>"; };
@@ -415,6 +406,37 @@
 		4AB8B6B71B66081F008073B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4AB8B6B91B66081F008073B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4AB8B6BA1B66081F008073B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4ADEADFF1BCB53680053EEAF /* RTCAudioSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCAudioSource.h; sourceTree = "<group>"; };
+		4ADEAE001BCB53680053EEAF /* RTCAudioTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCAudioTrack.h; sourceTree = "<group>"; };
+		4ADEAE011BCB53680053EEAF /* RTCAVFoundationVideoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCAVFoundationVideoSource.h; sourceTree = "<group>"; };
+		4ADEAE021BCB53680053EEAF /* RTCDataChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCDataChannel.h; sourceTree = "<group>"; };
+		4ADEAE031BCB53680053EEAF /* RTCEAGLVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCEAGLVideoView.h; sourceTree = "<group>"; };
+		4ADEAE041BCB53680053EEAF /* RTCFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCFileLogger.h; sourceTree = "<group>"; };
+		4ADEAE051BCB53680053EEAF /* RTCI420Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCI420Frame.h; sourceTree = "<group>"; };
+		4ADEAE061BCB53680053EEAF /* RTCICECandidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCICECandidate.h; sourceTree = "<group>"; };
+		4ADEAE071BCB53680053EEAF /* RTCICEServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCICEServer.h; sourceTree = "<group>"; };
+		4ADEAE081BCB53680053EEAF /* RTCLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCLogging.h; sourceTree = "<group>"; };
+		4ADEAE091BCB53680053EEAF /* RTCMediaConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCMediaConstraints.h; sourceTree = "<group>"; };
+		4ADEAE0A1BCB53680053EEAF /* RTCMediaSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCMediaSource.h; sourceTree = "<group>"; };
+		4ADEAE0B1BCB53680053EEAF /* RTCMediaStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCMediaStream.h; sourceTree = "<group>"; };
+		4ADEAE0C1BCB53680053EEAF /* RTCMediaStreamTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCMediaStreamTrack.h; sourceTree = "<group>"; };
+		4ADEAE0D1BCB53680053EEAF /* RTCNSGLVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCNSGLVideoView.h; sourceTree = "<group>"; };
+		4ADEAE0E1BCB53680053EEAF /* RTCOpenGLVideoRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCOpenGLVideoRenderer.h; sourceTree = "<group>"; };
+		4ADEAE0F1BCB53680053EEAF /* RTCPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCPair.h; sourceTree = "<group>"; };
+		4ADEAE101BCB53680053EEAF /* RTCPeerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCPeerConnection.h; sourceTree = "<group>"; };
+		4ADEAE111BCB53680053EEAF /* RTCPeerConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCPeerConnectionDelegate.h; sourceTree = "<group>"; };
+		4ADEAE121BCB53680053EEAF /* RTCPeerConnectionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCPeerConnectionFactory.h; sourceTree = "<group>"; };
+		4ADEAE131BCB53680053EEAF /* RTCPeerConnectionInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCPeerConnectionInterface.h; sourceTree = "<group>"; };
+		4ADEAE141BCB53680053EEAF /* RTCSessionDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCSessionDescription.h; sourceTree = "<group>"; };
+		4ADEAE151BCB53680053EEAF /* RTCSessionDescriptionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCSessionDescriptionDelegate.h; sourceTree = "<group>"; };
+		4ADEAE161BCB53680053EEAF /* RTCStatsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCStatsDelegate.h; sourceTree = "<group>"; };
+		4ADEAE171BCB53680053EEAF /* RTCStatsReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCStatsReport.h; sourceTree = "<group>"; };
+		4ADEAE181BCB53680053EEAF /* RTCTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCTypes.h; sourceTree = "<group>"; };
+		4ADEAE191BCB53680053EEAF /* RTCVideoCapturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoCapturer.h; sourceTree = "<group>"; };
+		4ADEAE1A1BCB53680053EEAF /* RTCVideoRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoRenderer.h; sourceTree = "<group>"; };
+		4ADEAE1B1BCB53680053EEAF /* RTCVideoSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoSource.h; sourceTree = "<group>"; };
+		4ADEAE1C1BCB53680053EEAF /* RTCVideoTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoTrack.h; sourceTree = "<group>"; };
+		4ADEAE1D1BCB53680053EEAF /* libWebRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWebRTC.a; sourceTree = "<group>"; };
 		4AFE17EA1BAB92430092F3C4 /* DATabBarCenterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATabBarCenterButton.h; sourceTree = "<group>"; };
 		4AFE17EB1BAB92430092F3C4 /* DATabBarCenterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DATabBarCenterButton.m; sourceTree = "<group>"; };
 		4AFE17ED1BAB9A750092F3C4 /* DATabBarCenterButtonExtraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DATabBarCenterButtonExtraView.h; sourceTree = "<group>"; };
@@ -428,12 +450,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A165E281BA0173100598E84 /* SystemConfiguration.framework in Frameworks */,
-				4A165E261BA0172800598E84 /* MobileCoreServices.framework in Frameworks */,
-				4A165E241BA0171F00598E84 /* Security.framework in Frameworks */,
-				4A165E221BA0171900598E84 /* CFNetwork.framework in Frameworks */,
+				4ADEAE1E1BCB53680053EEAF /* libWebRTC.a in Frameworks */,
 				4A165E2D1BA017BE00598E84 /* LayerKit.framework in Frameworks */,
-				4AB3F1E81B8B04D3008DC70F /* MapKit.framework in Frameworks */,
 				4A8E8E361B6AF8FB00F48CDD /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -946,12 +964,8 @@
 		4AB8B6A91B66081F008073B6 = {
 			isa = PBXGroup;
 			children = (
+				4ADEADFD1BCB53680053EEAF /* libjingle_peerconnection */,
 				4A165E291BA017BE00598E84 /* LayerKit.embeddedframework */,
-				4A165E271BA0173100598E84 /* SystemConfiguration.framework */,
-				4A165E251BA0172800598E84 /* MobileCoreServices.framework */,
-				4A165E231BA0171F00598E84 /* Security.framework */,
-				4A165E211BA0171900598E84 /* CFNetwork.framework */,
-				4AB3F1E71B8B04D3008DC70F /* MapKit.framework */,
 				4AB8B6B41B66081F008073B6 /* Distributors */,
 				4AB8B6B31B66081F008073B6 /* Products */,
 				4A8E8E351B6AF8FB00F48CDD /* libz.dylib */,
@@ -1016,6 +1030,52 @@
 				4A8E8E381B6AFA1500F48CDD /* RootTabController.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ADEADFD1BCB53680053EEAF /* libjingle_peerconnection */ = {
+			isa = PBXGroup;
+			children = (
+				4ADEADFE1BCB53680053EEAF /* Headers */,
+				4ADEAE1D1BCB53680053EEAF /* libWebRTC.a */,
+			);
+			path = libjingle_peerconnection;
+			sourceTree = "<group>";
+		};
+		4ADEADFE1BCB53680053EEAF /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				4ADEADFF1BCB53680053EEAF /* RTCAudioSource.h */,
+				4ADEAE001BCB53680053EEAF /* RTCAudioTrack.h */,
+				4ADEAE011BCB53680053EEAF /* RTCAVFoundationVideoSource.h */,
+				4ADEAE021BCB53680053EEAF /* RTCDataChannel.h */,
+				4ADEAE031BCB53680053EEAF /* RTCEAGLVideoView.h */,
+				4ADEAE041BCB53680053EEAF /* RTCFileLogger.h */,
+				4ADEAE051BCB53680053EEAF /* RTCI420Frame.h */,
+				4ADEAE061BCB53680053EEAF /* RTCICECandidate.h */,
+				4ADEAE071BCB53680053EEAF /* RTCICEServer.h */,
+				4ADEAE081BCB53680053EEAF /* RTCLogging.h */,
+				4ADEAE091BCB53680053EEAF /* RTCMediaConstraints.h */,
+				4ADEAE0A1BCB53680053EEAF /* RTCMediaSource.h */,
+				4ADEAE0B1BCB53680053EEAF /* RTCMediaStream.h */,
+				4ADEAE0C1BCB53680053EEAF /* RTCMediaStreamTrack.h */,
+				4ADEAE0D1BCB53680053EEAF /* RTCNSGLVideoView.h */,
+				4ADEAE0E1BCB53680053EEAF /* RTCOpenGLVideoRenderer.h */,
+				4ADEAE0F1BCB53680053EEAF /* RTCPair.h */,
+				4ADEAE101BCB53680053EEAF /* RTCPeerConnection.h */,
+				4ADEAE111BCB53680053EEAF /* RTCPeerConnectionDelegate.h */,
+				4ADEAE121BCB53680053EEAF /* RTCPeerConnectionFactory.h */,
+				4ADEAE131BCB53680053EEAF /* RTCPeerConnectionInterface.h */,
+				4ADEAE141BCB53680053EEAF /* RTCSessionDescription.h */,
+				4ADEAE151BCB53680053EEAF /* RTCSessionDescriptionDelegate.h */,
+				4ADEAE161BCB53680053EEAF /* RTCStatsDelegate.h */,
+				4ADEAE171BCB53680053EEAF /* RTCStatsReport.h */,
+				4ADEAE181BCB53680053EEAF /* RTCTypes.h */,
+				4ADEAE191BCB53680053EEAF /* RTCVideoCapturer.h */,
+				4ADEAE1A1BCB53680053EEAF /* RTCVideoRenderer.h */,
+				4ADEAE1B1BCB53680053EEAF /* RTCVideoSource.h */,
+				4ADEAE1C1BCB53680053EEAF /* RTCVideoTrack.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 		4AFE17E91BAB92430092F3C4 /* TabBarCenterButton */ = {
@@ -1361,18 +1421,44 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"../3rd/libOpen\"",
-					"\"../3rd/AGNetwork\"",
-					"\"../3rd/thirdPartyOpenResources\"",
-					"\"../3rd/AGUIKit\"",
+					../3rd/libOpen,
+					../3rd/AGNetwork,
+					../3rd/thirdPartyOpenResources,
+					../3rd/AGUIKit,
+					"$(PROJECT_DIR)/libjingle_peerconnection",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-lAGUIKit",
-					"-llibOpen",
-					"-lthirdPartyOpenResources",
-					"-lAGNetwork",
-					"-lz",
+					"-l\"AGUIKit\"",
+					"-l\"libOpen\"",
+					"-l\"thirdPartyOpenResources\"",
+					"-l\"AGNetwork\"",
+					"-l\"z\"",
+					"-l\"c\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1395,18 +1481,44 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"../3rd/libOpen\"",
-					"\"../3rd/AGNetwork\"",
-					"\"../3rd/thirdPartyOpenResources\"",
-					"\"../3rd/AGUIKit\"",
+					../3rd/libOpen,
+					../3rd/AGNetwork,
+					../3rd/thirdPartyOpenResources,
+					../3rd/AGUIKit,
+					"$(PROJECT_DIR)/libjingle_peerconnection",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-lAGUIKit",
-					"-llibOpen",
-					"-lthirdPartyOpenResources",
-					"-lAGNetwork",
-					"-lz",
+					"-l\"AGUIKit\"",
+					"-l\"libOpen\"",
+					"-l\"thirdPartyOpenResources\"",
+					"-l\"AGNetwork\"",
+					"-l\"z\"",
+					"-l\"c\"",
+					"-l\"sqlite3\"",
+					"-l\"stdc++\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"VideoToolbox\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"CoreGraphics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -148,12 +148,12 @@
 
 - (void)setSelected:(BOOL)selected{
     [self.button setSelected:selected];
-    
-    if (selected) {
-        [self appendContentView];
-    }else{
-        [self removeContentView];
-    }
+//    return;
+//    if (selected) {
+//        [self appendContentView];
+//    }else{
+//        [self removeContentView];
+//    }
 }
 
 - (void)setNormalImage:(UIImage *)normalImage highlightImage:(UIImage *)highlightImage{
